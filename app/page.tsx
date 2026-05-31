@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
+import Process from "@/components/Process";
 import Ecosystem from "@/components/Ecosystem";
 import Gallery from "@/components/Gallery";
 import Experience from "@/components/Experience";
@@ -13,6 +14,7 @@ export default function Page() {
       <Navbar />
       <Hero />
       <ProjectGrid />
+      <Process />
       <Ecosystem />
       <Gallery />
       <Experience />

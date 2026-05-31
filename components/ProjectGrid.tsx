@@ -1,61 +1,61 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const projects = [
   {
     id: "01",
-    title: "Paperwurk",
-    subtitle: "Bilingual UX Ecosystem for an Enterprise Three-Sided Platform",
-    description:
-      "Designed a mobile-aware onboarding wizard and progressive disclosure architecture to streamline complex business formation and legal workflows in the UAE.",
-    link: "#",
-    linkLabel: "Read Case Study →",
+    slug: "paperwurk",
+    category: "UX Design",
+    title: "Paperwurk: Designing a mobile-aware, bilingual UX ecosystem for a complex three-sided platform",
+    image: "/images/paperwurk-thumb.webp",
   },
   {
     id: "02",
-    title: "Alya Auditors",
-    subtitle: "High-Conversion Lead Generation & CRO Funnel",
-    description:
-      "Engineered frictionless landing page architectures, trust frameworks, and energetic visual marketing assets optimized specifically to capture corporate financial leads.",
-    link: "#",
-    linkLabel: "Read Case Study →",
+    slug: "alya-auditors",
+    category: "CRO / Lead Generation",
+    title: "Alya Auditors: High-conversion lead generation and CRO funnel for a B2B audit firm",
+    image: "/images/alya-auditors-thumb.webp",
   },
   {
     id: "03",
-    title: "4BC Global",
-    subtitle: "Corporate Redesign & Brand Architecture",
-    description:
-      "Modernized the digital presence and data presentation layer for a market research firm, establishing a modular design system and custom identity assets.",
-    link: "#",
-    linkLabel: "Read Case Study →",
+    slug: "4bc-global",
+    category: "Brand / Web Design",
+    title: "4BC Global: Corporate redesign and brand architecture for a market research firm",
+    image: "/images/4bc-global-thumb.webp",
   },
 ];
 
 export default function ProjectGrid() {
   return (
-    <section className="px-8 py-24 border-t border-white/5">
-      <p className="text-white/30 text-xs tracking-[0.3em] uppercase mb-16">
-        Selected Work
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
-        {projects.map((p) => (
-          <article
-            key={p.id}
-            className="bg-black p-8 flex flex-col gap-6 group hover:bg-white/[0.02] transition-colors duration-500"
-          >
-            <div className="w-full aspect-[4/3] bg-white/[0.03] border border-white/5 rounded-sm" />
-            <div className="flex flex-col gap-3 flex-1">
-              <span className="text-white/20 text-xs tracking-widest">{p.id}</span>
-              <h2 className="text-white text-xl tracking-tight">{p.title}</h2>
-              <p className="text-white/40 text-xs tracking-wider uppercase leading-relaxed">
-                {p.subtitle}
+    <section className="bg-white px-8 md:px-16 lg:px-24 py-24 border-t border-neutral-100">
+
+      <h2 className="text-neutral-900 text-4xl tracking-tight mb-16">
+        Case Studies
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
+        {projects.map((p, i) => (
+          <article key={p.id} className="flex flex-col group relative">
+            <Link href={`/case-study/${p.slug}`} className="absolute inset-0 z-10" aria-label={p.title} />
+
+            <div className="w-full aspect-4/3 relative overflow-hidden">
+              <Image
+                src={p.image}
+                alt={p.title}
+                fill
+                priority={i === 0}
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+
+            <div className="flex flex-col gap-3 pt-6">
+              <p className="text-neutral-400 text-sm">
+                {p.category}
               </p>
-              <p className="text-white/30 text-sm leading-relaxed flex-1">
-                {p.description}
-              </p>
-              <a
-                href={p.link}
-                className="text-white/50 text-xs tracking-wider hover:text-white transition-colors duration-300 mt-2 inline-block"
-              >
-                {p.linkLabel}
-              </a>
+              <h3 className="text-neutral-900 text-base md:text-lg leading-snug tracking-tight group-hover:text-neutral-500 transition-colors duration-300">
+                {p.title}
+              </h3>
             </div>
           </article>
         ))}

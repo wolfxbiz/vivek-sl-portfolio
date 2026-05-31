@@ -1,30 +1,36 @@
 export default function Footer() {
   return (
-    <footer className="px-8 py-20 border-t border-white/5">
-      <div className="max-w-3xl mb-16">
-        <p className="text-white text-2xl md:text-3xl leading-snug tracking-tight">
-          Bridging the gap between disciplined interface design, business
-          metrics, and production code. Let&apos;s build something efficient.
+    <footer className="bg-white px-8 md:px-16 lg:px-24 py-24 border-t border-neutral-100">
+      <div className="max-w-3xl mb-20">
+        <p className="text-neutral-900 text-3xl md:text-4xl leading-snug tracking-tight">
+          A designer who thinks like a PM — with the business education to back it up.
+          Open to product roles, design leadership, and high-growth teams.
         </p>
       </div>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <div className="flex gap-8">
+        <div className="flex gap-10">
           <a
-            href="mailto:cristusventures@gmail.com"
-            className="text-white/40 text-xs tracking-wider hover:text-white transition-colors duration-300 uppercase"
+            href="tel:+918921284894"
+            className="text-neutral-400 text-sm tracking-wider hover:text-black transition-colors duration-300"
           >
-            Email
+            +91 8921284894
+          </a>
+          <a
+            href="mailto:vivekshajilekha@gmail.com"
+            className="text-neutral-400 text-sm tracking-wider hover:text-black transition-colors duration-300"
+          >
+            vivekshajilekha@gmail.com
           </a>
           <a
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/40 text-xs tracking-wider hover:text-white transition-colors duration-300 uppercase"
+            className="text-neutral-400 text-sm tracking-wider hover:text-black transition-colors duration-300"
           >
             LinkedIn
           </a>
         </div>
-        <p className="text-white/20 text-xs tracking-wider">
+        <p className="text-neutral-300 text-sm tracking-wider">
           © {new Date().getFullYear()} VIVEK S L
         </p>
       </div>
