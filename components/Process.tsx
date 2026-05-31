@@ -104,7 +104,7 @@ export default function Process() {
                     isOpen ? 'max-h-40 pb-6' : 'max-h-0'
                   }`}
                 >
-                  <p className="text-neutral-400 text-base leading-relaxed pl-16 max-w-xl">
+                  <p className="text-neutral-400 text-base leading-relaxed pl-0 md:pl-16 max-w-xl">
                     {item.description}
                   </p>
                 </div>

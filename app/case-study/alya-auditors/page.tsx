@@ -194,8 +194,9 @@ export default function AlyaAuditorsPage() {
             {funnelStages.map((stage, i) => (
               <div
                 key={stage.stage}
-                className={`${stage.color} p-8 flex flex-col md:flex-row md:items-center gap-6`}
-                style={{ marginLeft: `${i * 24}px`, marginRight: `${i * 24}px` }}
+                className={`${stage.color} p-8 flex flex-col md:flex-row md:items-center gap-6 ${
+                  i === 1 ? 'md:mx-6' : i === 2 ? 'md:mx-12' : ''
+                }`}
               >
                 <div className="shrink-0">
                   <p className={`text-xs tracking-widest uppercase mb-1 ${stage.subColor}`}>{stage.stage}</p>

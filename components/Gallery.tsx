@@ -4,7 +4,7 @@ import Link from "next/link";
 const items = [
   { title: "Talk of the Town", meta: "Website UI & Branding", image: "/images/talk-of-the-town.webp", href: "/case-study/talk-of-the-town" },
   { title: "Ensurio First", meta: "Risk Management Landing UI", image: "/images/ensurio-first.webp", href: "/case-study/ensurio-first" },
-  { title: "greekstreetlab", meta: "Web Design Execution", image: "/images/greekstreetlab.webp", href: null },
+  { title: "Greek Street Lab", meta: "Web Design Execution", image: "/images/greekstreetlab.webp", href: "/case-study/greek-street-lab" },
   { title: "IMEX Tires", meta: "Interface Layouts", image: "/images/imex-tires.webp", href: "/case-study/imex-tires" },
   { title: "Turquoic", meta: "Website Design & Development", image: "/images/turquoic.webp", href: "/case-study/turquoic" },
 ];

@@ -8,7 +8,7 @@ export default function Footer() {
         </p>
       </div>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <div className="flex gap-10">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-10">
           <a
             href="tel:+918921284894"
             className="text-neutral-400 text-sm tracking-wider hover:text-black transition-colors duration-300"

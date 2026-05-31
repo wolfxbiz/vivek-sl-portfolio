@@ -74,7 +74,7 @@ export default async function CaseStudyPage({ params }: Props) {
               </h2>
             </div>
 
-            <div className="ml-16 flex flex-col gap-6 max-w-2xl">
+            <div className="ml-0 md:ml-16 flex flex-col gap-6 max-w-2xl">
               {section.body.map((block, i) => {
                 if (block.type === "paragraph") {
                   return (
