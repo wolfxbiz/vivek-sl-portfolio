@@ -105,7 +105,7 @@ export default function FourBCGlobalPage() {
 
       {/* Legacy State image */}
       <div className="w-full relative aspect-16/7">
-        <Image src="/images/4bc/legacy-state.webp" alt="4BC Global — Legacy State Documentation" fill className="object-cover" />
+        <Image src="/images/4bc/legacy-state.webp" alt="4BC Global — Legacy State Documentation" fill sizes="100vw" quality={90} className="object-cover" />
       </div>
 
       {/* ── 02 WORKFLOW — split layout ── */}
@@ -146,7 +146,7 @@ export default function FourBCGlobalPage() {
 
       {/* Workflow Session image */}
       <div className="w-full relative aspect-16/7">
-        <Image src="/images/4bc/workflow-session.webp" alt="4BC Global — Workflow Session" fill className="object-cover" />
+        <Image src="/images/4bc/workflow-session.webp" alt="4BC Global — Workflow Session" fill sizes="100vw" quality={90} className="object-cover" />
       </div>
 
       {/* ── 03 DESIGN SYSTEM ── */}
@@ -213,7 +213,7 @@ export default function FourBCGlobalPage() {
 
       {/* Brand Identity image */}
       <div className="w-full relative aspect-16/7">
-        <Image src="/images/4bc/brand-identity.webp" alt="4BC Global — Brand Identity Assets" fill className="object-cover" />
+        <Image src="/images/4bc/brand-identity.webp" alt="4BC Global — Brand Identity Assets" fill sizes="100vw" quality={90} className="object-cover" />
       </div>
 
       {/* ── 04 UI ARCHITECTURE ── */}
@@ -275,7 +275,7 @@ export default function FourBCGlobalPage() {
 
       {/* Live Platform image */}
       <div className="w-full relative aspect-16/7">
-        <Image src="/images/4bc/live-platform.webp" alt="4BC Global — Live Platform Screenshots" fill className="object-cover" />
+        <Image src="/images/4bc/live-platform.webp" alt="4BC Global — Live Platform Screenshots" fill sizes="100vw" quality={90} className="object-cover" />
       </div>
 
       {/* ── 05 RESOLUTION ── */}
