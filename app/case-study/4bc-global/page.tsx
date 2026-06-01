@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     "Redesigning Corporate Market Research: Turning Static Presentation Slides into a High-Performance Digital Platform",
 };
 
-const tokens = [
-  { asset: "Primary Core Color", token: "#0B132B", application: "Structural layout backgrounds, dominant section divs", swatch: "bg-[#0B132B]" },
-  { asset: "Accent Glow", token: "#48CAE4", application: "High-intent CTAs, metric emphasizers, interaction states", swatch: "bg-[#48CAE4]" },
-  { asset: "Typography — Header", token: "Inter Display", application: "Corporate headlines, section dividers, data cards", swatch: null },
-  { asset: "Typography — Body", token: "Inter Regular", application: "Dense analytical paragraphs, research text blocks", swatch: null },
+const palette = [
+  { hex: "#F8F9FB", label: "Background",    swatch: "bg-[#F8F9FB]",  dark: false },
+  { hex: "#E8A020", label: "Brand Amber",   swatch: "bg-[#E8A020]",  dark: false },
+  { hex: "#0F1320", label: "Primary Dark",  swatch: "bg-[#0F1320]",  dark: true  },
+  { hex: "#1A4FA0", label: "Brand Blue",    swatch: "bg-[#1A4FA0]",  dark: true  },
 ];
 
 export default function FourBCGlobalPage() {
@@ -27,7 +27,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative bg-[#0B132B] px-8 md:px-16 lg:px-24 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-[#0F1320] px-8 md:px-16 lg:px-24 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-neutral-200 opacity-10" />
         <div className="relative">
           <p className="text-white/40 text-xs tracking-[0.3em] uppercase mb-6">Brand / Web Design</p>
@@ -149,7 +149,7 @@ export default function FourBCGlobalPage() {
         <Image src="/images/4bc/workflow-session.webp" alt="4BC Global — Workflow Session" fill className="object-cover" />
       </div>
 
-      {/* ── 03 DESIGN SYSTEM — text + tokens ── */}
+      {/* ── 03 DESIGN SYSTEM ── */}
       <section className="px-8 md:px-16 lg:px-24 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — Design System</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
@@ -157,27 +157,57 @@ export default function FourBCGlobalPage() {
             Visual Identity Modernization
           </h2>
           <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
-            To establish immediate authority, I engineered a highly disciplined visual design system directly inside utility-first code classes — building a complete token system for color, typography, and spacing.
+            To establish immediate corporate authority, I built a disciplined visual identity system from scratch — a tight colour palette anchored in professionalism, paired with a single geometric typeface used at full weight range for maximum hierarchy.
           </p>
         </div>
 
-        {/* Tokens table */}
-        <div className="border border-neutral-100">
-          <div className="grid grid-cols-3 bg-neutral-50 px-6 py-4 border-b border-neutral-100">
-            <p className="text-neutral-400 text-xs tracking-widest uppercase">Asset Type</p>
-            <p className="text-neutral-400 text-xs tracking-widest uppercase">Token / Value</p>
-            <p className="text-neutral-400 text-xs tracking-widest uppercase">Application</p>
-          </div>
-          {tokens.map((t, i) => (
-            <div key={t.asset} className={`grid grid-cols-3 gap-4 px-6 py-6 items-center ${i < tokens.length - 1 ? "border-b border-neutral-100" : ""}`}>
-              <p className="text-neutral-700 text-base">{t.asset}</p>
-              <div className="flex items-center gap-4">
-                {t.swatch && <div className={`w-6 h-6 rounded-sm shrink-0 ${t.swatch}`} />}
-                <p className="text-neutral-500 text-sm font-mono">{t.token}</p>
+        {/* Colour palette */}
+        <div className="mb-16">
+          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">Colour Palette</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-neutral-100">
+            {palette.map((c) => (
+              <div key={c.hex} className="flex flex-col">
+                <div className={`aspect-video w-full ${c.swatch} border border-neutral-100`} />
+                <div className="bg-white px-5 py-4 flex flex-col gap-1">
+                  <p className="text-neutral-900 text-sm font-mono tracking-wide">{c.hex}</p>
+                  <p className="text-neutral-400 text-xs tracking-wider">{c.label}</p>
+                </div>
               </div>
-              <p className="text-neutral-400 text-sm leading-relaxed">{t.application}</p>
+            ))}
+          </div>
+        </div>
+
+        {/* Typography */}
+        <div>
+          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">Typography</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100">
+            <div className="bg-white p-10 flex flex-col gap-4">
+              <p className="text-neutral-400 text-xs tracking-widest uppercase">Typeface</p>
+              <p className="text-neutral-900 text-4xl md:text-5xl font-extrabold tracking-tight leading-none mt-2">
+                Plus Jakarta Sans
+              </p>
+              <p className="text-neutral-400 text-sm leading-relaxed mt-2">
+                Modern geometric sans-serif — clean, professional, and highly legible at both display and body sizes. Used across all headings and body copy.
+              </p>
             </div>
-          ))}
+            <div className="bg-white p-10 flex flex-col gap-6">
+              <p className="text-neutral-400 text-xs tracking-widest uppercase">Weight Range</p>
+              <div className="flex flex-col gap-4">
+                <div className="flex items-baseline justify-between border-b border-neutral-100 pb-4">
+                  <span className="text-neutral-700 text-2xl" style={{ fontWeight: 400 }}>Regular</span>
+                  <span className="text-neutral-300 text-xs tracking-widest">400</span>
+                </div>
+                <div className="flex items-baseline justify-between border-b border-neutral-100 pb-4">
+                  <span className="text-neutral-800 text-2xl" style={{ fontWeight: 600 }}>SemiBold</span>
+                  <span className="text-neutral-300 text-xs tracking-widest">600</span>
+                </div>
+                <div className="flex items-baseline justify-between">
+                  <span className="text-neutral-900 text-2xl" style={{ fontWeight: 800 }}>ExtraBold</span>
+                  <span className="text-neutral-300 text-xs tracking-widest">800</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
