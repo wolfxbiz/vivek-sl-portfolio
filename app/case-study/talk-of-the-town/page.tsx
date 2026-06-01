@@ -111,14 +111,14 @@ export default function TalkOfTheTownPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── editorial teal */}
-      <section className="relative bg-[#11454F] px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-[#11454F] px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: "radial-gradient(circle at 90% 10%, #BBDCCE 0%, transparent 50%)" }}
         />
@@ -138,7 +138,7 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-[#F5E9CE]/30">
+      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-[#F5E9CE]/30">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead Brand Architect & UI/UX Designer" },
@@ -155,17 +155,17 @@ export default function TalkOfTheTownPage() {
       </div>
 
       {/* ── 01 CHALLENGE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge & Creative Identity</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             A publishing house that needed to feel poetic and convert like a business
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               TOTT Books was established as a contemporary publishing house built to empower independent authors, celebrate bold storytelling, and remove entry barriers in literature. The core challenge was designing a platform that honors the traditional craft of bespoke bookmaking while functioning as an active lead-acquisition system.
             </p>
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               The interface needed to feel welcoming, poetic, and creative — while keeping user goals organized through clear visual parameters. A balance most publishing sites fail to strike.
             </p>
           </div>
@@ -186,18 +186,24 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-[#11454F] flex items-center justify-center border-y border-neutral-100">
-        <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — TOTT Brand Identity & Landing</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-[#11454F] flex items-center justify-center">
+
+          <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — TOTT Brand Identity & Landing</span>
+
+        </div>
+
       </div>
 
       {/* ── 02 DESIGN PRINCIPLES ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — UI Design Principles</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             The editorial canvas — four disciplines that define the system
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             The visual system relies on clear UI disciplines to support an emotional tone of trust, growth, and creativity. Every design decision was grounded in one question: does this feel like a place where authors belong?
           </p>
         </div>
@@ -225,18 +231,24 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-[#F5E9CE] flex items-center justify-center border-y border-neutral-100">
-        <span className="text-[#11454F]/30 text-xs tracking-widest uppercase">Project Image — Design System & Component Library</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-[#F5E9CE] flex items-center justify-center">
+
+          <span className="text-[#11454F]/30 text-xs tracking-widest uppercase">Project Image — Design System & Component Library</span>
+
+        </div>
+
       </div>
 
       {/* ── 03 PAGE STRUCTURE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UX Blueprint</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Page structure map — six sequential intent blocks
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             The storefront layout is organized into distinct, bite-sized components designed to introduce the brand and handle user intent sequentially — each block passing the visitor forward with increasing conversion pressure.
           </p>
         </div>
@@ -294,18 +306,24 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Full Page Screens</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Full Page Screens</span>
+
+        </div>
+
       </div>
 
       {/* ── 04 USER FLOW ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — User Flow Breakdown</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             The 4-tier funnel path — from curious visitor to published author
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             To ensure the interface successfully converts curious site visitors into published authors, the component layout maps tightly to a 4-tiered interaction framework — each stage progressively increasing trust and commitment.
           </p>
         </div>
@@ -327,7 +345,7 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24 border-t border-neutral-100">
+      <section className="px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           A first professional project delivered as a fully realized, conversion-driven publishing identity
@@ -359,7 +377,7 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* Footer */}
-      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

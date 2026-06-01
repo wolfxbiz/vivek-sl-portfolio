@@ -27,7 +27,7 @@ const projects = [
 
 export default function ProjectGrid() {
   return (
-    <section className="bg-white px-8 md:px-20 lg:px-32 py-24 border-t border-neutral-100">
+    <section className="bg-white px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
 
       <h2 className="text-neutral-900 text-4xl tracking-tight mb-16">
         Case Studies

@@ -27,7 +27,7 @@ export default async function CaseStudyPage({ params }: Props) {
   return (
     <main className="bg-white min-h-screen">
       {/* Back nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-8 border-b border-neutral-100">
+      <div className="px-8 md:px-30 lg:px-60 py-8 border-b border-neutral-100">
         <Link
           href="/"
           className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase"
@@ -37,7 +37,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </div>
 
       {/* Header */}
-      <header className="bg-neutral-900 px-8 md:px-20 lg:px-32 pt-20 pb-16">
+      <header className="bg-neutral-900 px-8 md:px-30 lg:px-60 pt-20 pb-16">
         <p className="text-white/40 text-xs tracking-[0.3em] uppercase mb-6">
           Case Study
         </p>
@@ -50,7 +50,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </header>
 
       {/* Mockup placeholder */}
-      <div className="px-8 md:px-20 lg:px-32 py-16 border-b border-neutral-100">
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-b border-neutral-100">
         <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
           <span className="text-neutral-300 text-xs tracking-widest uppercase">
             Project Mockup
@@ -59,7 +59,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </div>
 
       {/* Sections */}
-      <div className="px-8 md:px-20 lg:px-32 py-4">
+      <div className="px-8 md:px-30 lg:px-60 py-4">
         {cs.sections.map((section) => (
           <section
             key={section.num}
@@ -78,7 +78,7 @@ export default async function CaseStudyPage({ params }: Props) {
               {section.body.map((block, i) => {
                 if (block.type === "paragraph") {
                   return (
-                    <p key={i} className="text-neutral-500 text-base leading-[1.9]">
+                    <p key={i} className="text-neutral-700 text-base leading-relaxed">
                       {block.text}
                     </p>
                   );
@@ -93,7 +93,7 @@ export default async function CaseStudyPage({ params }: Props) {
                         return (
                           <li key={j} className="flex gap-4">
                             <span className="mt-2.5 shrink-0 w-1 h-1 rounded-full bg-neutral-300 block" />
-                            <span className="text-neutral-500 text-base leading-[1.9]">
+                            <span className="text-neutral-700 text-base leading-relaxed">
                               {hasLabel ? (
                                 <>
                                   <span className="text-neutral-800">
@@ -118,7 +118,7 @@ export default async function CaseStudyPage({ params }: Props) {
                       <p className="text-neutral-400 text-xs tracking-wider uppercase mb-3">
                         {block.label}
                       </p>
-                      <p className="text-neutral-500 text-base leading-[1.9]">
+                      <p className="text-neutral-700 text-base leading-relaxed">
                         {block.text}
                       </p>
                     </div>
@@ -133,7 +133,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </div>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link
           href="/"
           className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase"

@@ -101,14 +101,14 @@ export default function GreekStreetLabPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative bg-neutral-900 px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-neutral-900 px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{ background: "radial-gradient(ellipse at 60% 40%, #2d1f0e 0%, #0a0a0a 70%)" }}
@@ -131,7 +131,7 @@ export default function GreekStreetLabPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-neutral-50">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead Experience Designer & Frontend Engineer" },
@@ -148,17 +148,17 @@ export default function GreekStreetLabPage() {
       </div>
 
       {/* ── 01 THE CHALLENGE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             The Dubai delivery market has zero tolerance for friction
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               Greek Street Lab is a high-energy culinary brand delivering authentic Mediterranean street food — signature pitas, artisanal gyros, traditional bougatsa pastries, and sweet and savory crepes — directly into one of the most competitive food delivery markets in the world.
             </p>
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               A user who arrives hungry has one intent and almost no patience. If the digital storefront fails to communicate appetite, credibility, and ease of ordering within the first few seconds, they are gone. The brand needed a digital experience that worked as fast as the food itself. Their existing interface hit every structural failure point that kills mobile conversion in food-tech.
             </p>
           </div>
@@ -183,22 +183,28 @@ export default function GreekStreetLabPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Brand & Market Context</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Brand & Market Context</span>
+
+        </div>
+
       </div>
 
       {/* ── 02 THE PROCESS ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Process</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Strategy brief to live components — no static canvas in between
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               To capture the bold, soulful energy of the Greek Street Lab brand without getting trapped in slow design-to-handoff cycles, I bypassed static canvas tools entirely. The culinary concept was translated directly into functional frontend components from day one.
             </p>
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               This meant layout decisions were verified against real mobile viewports, not desktop simulations. Spacing behavior, image performance, and touch target scaling were resolved at the component level — not discovered during development.
             </p>
           </div>
@@ -235,18 +241,24 @@ export default function GreekStreetLabPage() {
       </section>
 
       {/* Full-bleed image — dark */}
-      <div className="w-full aspect-16/7 bg-neutral-900 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Mobile Component Build Process</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-900 flex items-center justify-center">
+
+          <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Mobile Component Build Process</span>
+
+        </div>
+
       </div>
 
       {/* ── 03 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             The Digital Appetite Framework — food as the interface
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             The solution was building what I call the Digital Appetite Framework: a set of layered design decisions that collectively create an interface where the food photography does the selling. The layout is stripped of everything that competes with the dish — leaving only the visual stimulus, the price, and the action.
           </p>
         </div>
@@ -288,7 +300,7 @@ export default function GreekStreetLabPage() {
               <div key={block.id} className="border-l-2 border-neutral-200 pl-6 py-2">
                 <p className="text-neutral-300 text-xs tracking-widest uppercase mb-1">{block.tag}</p>
                 <p className="text-neutral-900 text-xl mb-3">{block.title}</p>
-                <p className="text-neutral-500 text-base leading-relaxed">{block.desc}</p>
+                <p className="text-neutral-700 text-base leading-relaxed">{block.desc}</p>
               </div>
             ))}
           </div>
@@ -318,12 +330,18 @@ export default function GreekStreetLabPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Live Menu Interface & Component Spread</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Live Menu Interface & Component Spread</span>
+
+        </div>
+
       </div>
 
       {/* ── 04 RESOLUTION ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           A digital storefront that sells with visuals before a word is read
@@ -352,7 +370,7 @@ export default function GreekStreetLabPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

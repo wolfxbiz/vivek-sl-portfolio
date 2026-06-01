@@ -75,14 +75,14 @@ export default function ImexTiresPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── industrial stone */}
-      <section className="relative bg-stone-900 px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-stone-900 px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0"
           style={{ background: "linear-gradient(160deg, #1c1917 0%, #292524 60%, #1c1917 100%)" }}
         />
@@ -105,7 +105,7 @@ export default function ImexTiresPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-stone-200 bg-stone-50">
+      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-stone-200 bg-stone-50">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead Experience Designer & Frontend Engineer" },
@@ -122,17 +122,17 @@ export default function ImexTiresPage() {
       </div>
 
       {/* ── 01 STRATEGIC CONTEXT ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — Strategic Context</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-12">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Equipment downtime costs millions per day — the platform cannot add friction
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               IMEX Tires operates at the absolute macro-scale of global heavy industry — sourcing and distributing massive Off-The-Road (OTR), earthmoving, mining, and agricultural tires and wheels. In the heavy machinery and mining sectors, equipment downtime can cost operations millions of dollars per day.
             </p>
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               B2B industrial procurement officers do not browse for aesthetic novelty. They operate under extreme operational stress and tight timelines — facing distinct informational bottlenecks when navigating traditional supplier platforms.
             </p>
           </div>
@@ -167,19 +167,25 @@ export default function ImexTiresPage() {
       </section>
 
       {/* Full-bleed dark image */}
-      <div className="w-full aspect-16/7 bg-stone-900 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-stone-600 text-xs tracking-widest uppercase">Project Image — Industrial Product Interface</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-stone-900 flex items-center justify-center">
+
+          <span className="text-stone-600 text-xs tracking-widest uppercase">Project Image — Industrial Product Interface</span>
+
+        </div>
+
       </div>
 
       {/* ── 02 PROCESS ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Process</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Component-driven industrial architecture — direct from spec to grid
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               To build a highly authoritative digital asset for IMEX Tires' global partners, I skipped slow static asset-drafting pipelines and translated heavy industrial inventory requirements directly into an agile, type-safe production code environment.
             </p>
           </div>
@@ -212,13 +218,13 @@ export default function ImexTiresPage() {
       </section>
 
       {/* ── 03 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             The technical data matrix — four product silos, zero cognitive overload
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             The core solution was maintaining absolute corporate visual discipline — a highly structured, ultra-clean framework to display complex product definitions without creating cognitive data dumps. Every element earns its position on the screen.
           </p>
         </div>
@@ -293,12 +299,18 @@ export default function ImexTiresPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-stone-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-stone-300 text-xs tracking-widest uppercase">Project Image — Full Interface Spread</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-stone-100 flex items-center justify-center">
+
+          <span className="text-stone-300 text-xs tracking-widest uppercase">Project Image — Full Interface Spread</span>
+
+        </div>
+
       </div>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24 border-t border-neutral-100">
+      <section className="px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           A global B2B procurement hub built to withstand the demands of international heavy industry
@@ -334,7 +346,7 @@ export default function ImexTiresPage() {
       </section>
 
       {/* Footer */}
-      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-end px-8 md:px-20 lg:px-32 pb-24 pt-32 bg-black">
+    <section className="min-h-screen flex flex-col justify-end px-8 md:px-30 lg:px-60 pb-24 pt-32 bg-black">
       <div className="max-w-5xl">
         <p className="text-white/30 text-xs tracking-[0.3em] uppercase mb-10">
           VIVEK S L — Product-Minded Designer

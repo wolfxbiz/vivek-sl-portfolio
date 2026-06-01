@@ -83,14 +83,14 @@ export default function EnsurioFirstPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative bg-slate-900 px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-slate-900 px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0"
           style={{ background: "linear-gradient(135deg, #0B132B 0%, #1a2744 50%, #0d1b2a 100%)" }}
         />
@@ -113,7 +113,7 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-neutral-50">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead Conversion Experience Architect & Frontend Engineer" },
@@ -130,13 +130,13 @@ export default function EnsurioFirstPage() {
       </div>
 
       {/* ── 01 STRATEGIC CONTEXT ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — Strategic Context</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Three systemic friction points killing every B2B funnel
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             Most B2B digital architectures suffer from structural lead drop-off. The Growth Funnel System was engineered specifically to solve all three failure points in one unified, interconnected pipeline — replacing passive corporate pages with an active acquisition engine.
           </p>
         </div>
@@ -180,18 +180,24 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-slate-900 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Full Funnel System Overview</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-slate-900 flex items-center justify-center">
+
+          <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Full Funnel System Overview</span>
+
+        </div>
+
       </div>
 
       {/* ── 02 ARCHITECTURE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             End-to-end pipeline — 5 stages, zero drop-off gaps
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             To establish a continuous flow of high-value corporate inquiries, I mapped and engineered a 5-stage customer journey matrix — each stage precisely designed to hand the user forward to the next with minimal friction and maximum psychological momentum.
           </p>
         </div>
@@ -265,18 +271,24 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Social Ad Layouts</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Social Ad Layouts</span>
+
+        </div>
+
       </div>
 
       {/* ── 03 DIAGNOSTIC TOOL ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — The Diagnostic Tool</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             A 3-step interactive insurance diagnostic — embedded above the fold
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             The central interactive milestone of the platform. Each step is programmatically engineered to gather critical underwriting data without triggering user fatigue — progressive disclosure built directly into the interaction model.
           </p>
         </div>
@@ -335,18 +347,24 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-900 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Diagnostic Tool Interface</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-900 flex items-center justify-center">
+
+          <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Diagnostic Tool Interface</span>
+
+        </div>
+
       </div>
 
       {/* ── 04 SCORED OUTPUT ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — Scored Output & Lead Gate</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             The psychological lead gate — shown at peak intent, not before
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             Upon completing Step 3, the user is not hit with a generic thank-you page. The system processes their exact selections to present an authoritative, scored dashboard — then gates the full report behind a 3-field lead form at the moment of highest conversion intent.
           </p>
         </div>
@@ -426,18 +444,24 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Scored Output & Lead Capture Screen</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Scored Output & Lead Capture Screen</span>
+
+        </div>
+
       </div>
 
       {/* ── 05 EMAIL NURTURE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Email Nurture Sequence</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Automated 2-stage inbox sequence to prevent leads going cold
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             The system doesn't stop at the lead form. A precisely timed 2-part automated email architecture ensures every captured contact is immediately nurtured toward a consultation booking — while the diagnostic score is still front of mind.
           </p>
         </div>
@@ -471,7 +495,7 @@ export default function EnsurioFirstPage() {
                   <p className="text-neutral-300 text-xs mb-1">Subject</p>
                   <p className="text-neutral-900 text-base">{email.subject}</p>
                 </div>
-                <p className="text-neutral-500 text-base leading-relaxed flex-1">{email.body}</p>
+                <p className="text-neutral-700 text-base leading-relaxed flex-1">{email.body}</p>
                 <div className={`${email.ctaStyle} text-sm tracking-wider text-center py-4 px-6 self-start`}>
                   {email.cta}
                 </div>
@@ -482,7 +506,7 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* ── 06 RESOLUTION ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24 border-t border-neutral-100">
+      <section className="px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">06 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           Passive corporate pages replaced with a live B2B customer acquisition engine
@@ -517,7 +541,7 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

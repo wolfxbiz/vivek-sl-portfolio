@@ -62,7 +62,7 @@ export default function Process() {
   };
 
   return (
-    <section className="bg-white px-8 md:px-20 lg:px-32 py-24 border-t border-neutral-100">
+    <section className="bg-white px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
         <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-24">

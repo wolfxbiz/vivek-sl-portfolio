@@ -71,14 +71,14 @@ export default function TurquoicPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── sharp matte black */}
-      <section className="relative bg-neutral-950 px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-neutral-950 px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-20"
           style={{ backgroundImage: "linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg, #ffffff08 1px, transparent 1px)", backgroundSize: "60px 60px" }}
         />
@@ -101,7 +101,7 @@ export default function TurquoicPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-neutral-950">
+      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-neutral-950">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "In-House Experience Designer & Lead Frontend Engineer" },
@@ -118,17 +118,17 @@ export default function TurquoicPage() {
       </div>
 
       {/* ── 01 CHALLENGE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             The company's digital face no longer reflected the product inside it
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               Turquoic operates as an internal product and design infrastructure firm. As the company scaled its digital footprint, the core digital face faced a distinct hurdle — the legacy web presence had become severely outdated, failing to demonstrate engineering capabilities, structural design discipline, or modern full-stack development ethos.
             </p>
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               Unlike a standard client contract where a designer delivers static files, working as an in-house experience architect demanded deep, long-term product ownership — with full accountability for performance, visual alignment, and shipping velocity.
             </p>
           </div>
@@ -157,19 +157,25 @@ export default function TurquoicPage() {
       </section>
 
       {/* Full-bleed dark image */}
-      <div className="w-full aspect-16/7 bg-neutral-950 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Legacy vs Rebuilt Interface Comparison</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-950 flex items-center justify-center">
+
+          <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Legacy vs Rebuilt Interface Comparison</span>
+
+        </div>
+
       </div>
 
       {/* ── 02 PROCESS ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Process</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             End-to-end design-to-code execution — zero handoff friction
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               Operating with full ownership over both creative direction and the frontend development layer, I established an agile, integrated execution pipeline. Deep contextual knowledge of our brand identity meant I could completely bypass traditional handoff friction — translating conceptual design directly into clean, type-safe production code.
             </p>
           </div>
@@ -206,18 +212,24 @@ export default function TurquoicPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Component Architecture Spread</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Component Architecture Spread</span>
+
+        </div>
+
       </div>
 
       {/* ── 03 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Engineering a technical presence — minimal, high-contrast, data-first
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             The structural re-engineering focused on establishing absolute digital authority. Every layout decision was made to signal engineering precision — because for a product and design firm, the website itself is the portfolio.
           </p>
         </div>
@@ -270,12 +282,18 @@ export default function TurquoicPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Live Site Screens</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Live Site Screens</span>
+
+        </div>
+
       </div>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24 border-t border-neutral-100">
+      <section className="px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           Turquoic's digital presence now reflects the engineering standard of the product inside it
@@ -311,7 +329,7 @@ export default function TurquoicPage() {
       </section>
 
       {/* Footer */}
-      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

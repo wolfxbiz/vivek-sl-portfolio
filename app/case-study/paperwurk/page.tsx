@@ -92,14 +92,14 @@ export default function PaperwurkPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative bg-neutral-900 px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-neutral-900 px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-30"
           style={{ background: "radial-gradient(ellipse at 70% 50%, #1e3a5f 0%, #0a0a0a 70%)" }}
         />
@@ -115,7 +115,7 @@ export default function PaperwurkPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-neutral-50">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead UX Architect & Interface Designer" },
@@ -132,17 +132,17 @@ export default function PaperwurkPage() {
       </div>
 
       {/* ── 01 CHALLENGE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             An enterprise network too complex for a single user path
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               Paperwurk is an enterprise-scale digital workspace managing heavy corporate setups, financial tracking, and cross-organization compliance logistics. Because it serves an entire network of distinct corporate users, the architecture could not rely on a simple template or linear user path.
             </p>
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               The core problem was untangling a massive web of conflicting user motivations, operational data requirements, and authorization boundaries — different personas interact with entirely different data pools and have completely conflicting operational goals.
             </p>
           </div>
@@ -158,7 +158,7 @@ export default function PaperwurkPage() {
               </div>
               <ul className="flex flex-col gap-2">
                 {p.needs.map((n) => (
-                  <li key={n} className="text-neutral-500 text-base leading-relaxed flex gap-3">
+                  <li key={n} className="text-neutral-700 text-base leading-relaxed flex gap-3">
                     <span className="text-neutral-300 shrink-0 mt-1">—</span>
                     {n}
                   </li>
@@ -170,19 +170,25 @@ export default function PaperwurkPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — System Complexity Overview</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — System Complexity Overview</span>
+
+        </div>
+
       </div>
 
       {/* ── 02 PROCESS ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Process</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Deep traditional UX architecture — no shortcuts taken
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               This project could not be shortcutted. Because of the vast web of cross-role dependencies, I executed this platform using a disciplined, traditional UX design methodology. Every branch, decision diamond, and transition state had to be manually validated before moving into design software.
             </p>
           </div>
@@ -224,18 +230,24 @@ export default function PaperwurkPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-900 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Whiteboard Flow Sessions</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-900 flex items-center justify-center">
+
+          <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Whiteboard Flow Sessions</span>
+
+        </div>
+
       </div>
 
       {/* ── 03 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Multi-tenant workspace blueprints
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             The definitive proof of this design sprint lives in the highly detailed user flow matrices built for each user class. Three distinct workspace environments — each serving radically different operational needs — had to coexist inside a single coherent platform entry point.
           </p>
         </div>
@@ -287,12 +299,18 @@ export default function PaperwurkPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Complete Wireframe Spread</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Complete Wireframe Spread</span>
+
+        </div>
+
       </div>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-16 max-w-3xl">
           A bulletproof structural blueprint ready for full-scale software development
@@ -308,7 +326,7 @@ export default function PaperwurkPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

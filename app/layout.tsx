@@ -4,7 +4,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const poppins = Poppins({
-  weight: ["300", "400"],
+  weight: ["200", "300", "400"],
   subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} antialiased`}>
-      <body className="bg-black text-white font-(family-name:--font-poppins) min-h-screen">
+      <body className="bg-black text-white font-(family-name:--font-poppins) font-light min-h-screen">
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

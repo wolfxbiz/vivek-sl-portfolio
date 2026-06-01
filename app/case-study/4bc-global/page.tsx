@@ -20,14 +20,14 @@ export default function FourBCGlobalPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative bg-[#0F1320] px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-[#0F1320] px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-neutral-200 opacity-10" />
         <div className="relative">
           <p className="text-white/40 text-xs tracking-[0.3em] uppercase mb-6">Brand / Web Design</p>
@@ -41,7 +41,7 @@ export default function FourBCGlobalPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-neutral-50">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead Experience Designer & Frontend Engineer" },
@@ -58,68 +58,72 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 01 CHALLENGE — text + full-bleed image ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             A premium firm trapped inside static documents
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               4BC Global is a global corporate market research and strategic advisory firm delivering data-dense industry insights to enterprise executives. Their digital presence was virtually non-existent — their primary delivery method was tied up in dense, static PDF decks and physical slide documents.
             </p>
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               Executives had to download and sift through massive static documents to find relevant data points. The team had no way to track consumption. And the web presence didn't match the premium nature of their services.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Full-bleed comparison block */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100 mb-0">
-        <div className="bg-neutral-50 px-8 md:px-20 lg:px-32 py-16 flex flex-col gap-6">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-2 h-2 rounded-full bg-red-400 shrink-0" />
-            <p className="text-neutral-400 text-xs tracking-widest uppercase">Legacy Distribution</p>
-          </div>
-          {["Static PDF decks — download required", "No responsiveness across devices", "Zero user analytics or tracking", "Low visual engagement rate"].map((item) => (
-            <div key={item} className="flex items-start gap-4">
-              <span className="text-red-300 shrink-0 text-xl mt-0.5">✕</span>
-              <p className="text-neutral-600 text-lg leading-relaxed">{item}</p>
+      {/* Comparison block */}
+      <div className="px-8 md:px-30 lg:px-60 pb-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100">
+          <div className="bg-neutral-50 p-10 flex flex-col gap-6">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-2 h-2 rounded-full bg-red-400 shrink-0" />
+              <p className="text-neutral-400 text-xs tracking-widest uppercase">Legacy Distribution</p>
             </div>
-          ))}
-        </div>
-        <div className="bg-white px-8 md:px-20 lg:px-32 py-16 flex flex-col gap-6">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
-            <p className="text-neutral-400 text-xs tracking-widest uppercase">Modern Platform Solution</p>
+            {["Static PDF decks — download required", "No responsiveness across devices", "Zero user analytics or tracking", "Low visual engagement rate"].map((item) => (
+              <div key={item} className="flex items-start gap-4">
+                <span className="text-red-300 shrink-0 text-xl mt-0.5">✕</span>
+                <p className="text-neutral-600 text-base leading-relaxed">{item}</p>
+              </div>
+            ))}
           </div>
-          {["Interactive web layers — instant access", "Fluid grid layouts across all viewports", "Granular section-level tracking", "High-end typographic hierarchy"].map((item) => (
-            <div key={item} className="flex items-start gap-4">
-              <span className="text-emerald-400 shrink-0 text-xl mt-0.5">✓</span>
-              <p className="text-neutral-600 text-lg leading-relaxed">{item}</p>
+          <div className="bg-white p-10 flex flex-col gap-6">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
+              <p className="text-neutral-400 text-xs tracking-widest uppercase">Modern Platform Solution</p>
             </div>
-          ))}
+            {["Interactive web layers — instant access", "Fluid grid layouts across all viewports", "Granular section-level tracking", "High-end typographic hierarchy"].map((item) => (
+              <div key={item} className="flex items-start gap-4">
+                <span className="text-emerald-400 shrink-0 text-xl mt-0.5">✓</span>
+                <p className="text-neutral-600 text-base leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Legacy State image */}
-      <div className="w-full relative aspect-16/7">
-        <Image src="/images/4bc/legacy-state.webp" alt="4BC Global — Legacy State Documentation" fill sizes="100vw" quality={90} className="object-cover" />
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+        <div className="w-full relative aspect-16/7">
+          <Image src="/images/4bc/legacy-state.webp" alt="4BC Global — Legacy State Documentation" fill sizes="(max-width: 768px) calc(100vw - 64px), (max-width: 1024px) calc(100vw - 256px), calc(100vw - 480px)" quality={90} className="object-cover" />
+        </div>
       </div>
 
       {/* ── 02 WORKFLOW — split layout ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Workflow</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Document-to-Code Acceleration
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               Instead of relying on slow, traditional design handoff phases — spending weeks tweaking shapes on a static canvas — I deployed an AI-accelerated frontend engineering workflow.
             </p>
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               I took the raw strategy documentation and presentation decks directly from 4BC Global. By passing these structural parameters into my engineering environment using Claude, I skipped the concept-art phase entirely and went straight to building live layout components.
             </p>
           </div>
@@ -127,7 +131,7 @@ export default function FourBCGlobalPage() {
       </section>
 
       {/* Pipeline block — full width */}
-      <div className="px-8 md:px-20 lg:px-32 pb-16">
+      <div className="px-8 md:px-30 lg:px-60 pb-16">
         <div className="bg-neutral-50 border border-neutral-100 p-10">
           <p className="text-neutral-400 text-xs tracking-widest uppercase mb-8">Engineering Pipeline</p>
           <div className="flex flex-col md:flex-row flex-wrap items-start md:items-center gap-4">
@@ -145,18 +149,20 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* Workflow Session image */}
-      <div className="w-full relative aspect-16/7">
-        <Image src="/images/4bc/workflow-session.webp" alt="4BC Global — Workflow Session" fill sizes="100vw" quality={90} className="object-cover" />
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+        <div className="w-full relative aspect-16/7">
+          <Image src="/images/4bc/workflow-session.webp" alt="4BC Global — Workflow Session" fill sizes="(max-width: 768px) calc(100vw - 64px), (max-width: 1024px) calc(100vw - 256px), calc(100vw - 480px)" quality={90} className="object-cover" />
+        </div>
       </div>
 
       {/* ── 03 DESIGN SYSTEM ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — Design System</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Visual Identity Modernization
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             To establish immediate corporate authority, I built a disciplined visual identity system from scratch — a tight colour palette anchored in professionalism, paired with a single geometric typeface used at full weight range for maximum hierarchy.
           </p>
         </div>
@@ -212,19 +218,21 @@ export default function FourBCGlobalPage() {
       </section>
 
       {/* Brand Identity image */}
-      <div className="w-full relative aspect-16/7">
-        <Image src="/images/4bc/brand-identity.webp" alt="4BC Global — Brand Identity Assets" fill sizes="100vw" quality={90} className="object-cover" />
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+        <div className="w-full relative aspect-16/7">
+          <Image src="/images/4bc/brand-identity.webp" alt="4BC Global — Brand Identity Assets" fill sizes="(max-width: 768px) calc(100vw - 64px), (max-width: 1024px) calc(100vw - 256px), calc(100vw - 480px)" quality={90} className="object-cover" />
+        </div>
       </div>
 
       {/* ── 04 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             The Interactive Insights Grid
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               The core structural component of the platform completely replaces the legacy slide deck approach — containerizing dense research into scannable, interactive cards.
             </p>
             <div className="flex flex-col gap-4 mt-2">
@@ -274,12 +282,14 @@ export default function FourBCGlobalPage() {
       </section>
 
       {/* Live Platform image */}
-      <div className="w-full relative aspect-16/7">
-        <Image src="/images/4bc/live-platform.webp" alt="4BC Global — Live Platform Screenshots" fill sizes="100vw" quality={90} className="object-cover" />
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+        <div className="w-full relative aspect-16/7">
+          <Image src="/images/4bc/live-platform.webp" alt="4BC Global — Live Platform Screenshots" fill sizes="(max-width: 768px) calc(100vw - 64px), (max-width: 1024px) calc(100vw - 256px), calc(100vw - 480px)" quality={90} className="object-cover" />
+        </div>
       </div>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-16 max-w-3xl">
           From static documents to a premium digital hub — in two weeks
@@ -299,7 +309,7 @@ export default function FourBCGlobalPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

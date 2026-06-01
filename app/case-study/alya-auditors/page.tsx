@@ -111,14 +111,14 @@ export default function AlyaAuditorsPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative bg-black px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0"
           style={{ background: "radial-gradient(ellipse at 30% 60%, #1a1a2e 0%, #000000 65%)" }}
         />
@@ -137,7 +137,7 @@ export default function AlyaAuditorsPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-neutral-50">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead Experience Designer & Frontend Engineer" },
@@ -154,17 +154,17 @@ export default function AlyaAuditorsPage() {
       </div>
 
       {/* ── 01 CHALLENGE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Corporate finance is a high-friction category — by default
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               Alya Auditors is an established corporate finance and professional tax consultancy firm. To scale their market acquisition, they required an energetic, high-impact campaign designed to capture the attention of busy business owners and executive decision-makers.
             </p>
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               Corporate finance, auditing, and tax compliance are traditionally perceived as dense, high-friction, and low-engagement topics. When transitioning these services into a digital marketing environment, traditional pipelines suffer from three distinct operational bottlenecks.
             </p>
           </div>
@@ -215,22 +215,28 @@ export default function AlyaAuditorsPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Campaign Creative Assets</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Campaign Creative Assets</span>
+
+        </div>
+
       </div>
 
       {/* ── 02 PROCESS ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Process</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Strategy-to-Code — no static canvas, no handoff delay
           </h2>
           <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               Instead of letting the campaign pipeline get bogged down in multi-week design-to-developer handoff cycles, I operated at the intersection of layout engineering and conversion design.
             </p>
-            <p className="text-neutral-500 text-lg leading-[1.9]">
+            <p className="text-neutral-700 text-base leading-relaxed">
               The client's marketing team provided foundational content documentation, target audience strategies, and campaign parameters. From there, I bypassed static canvas wireframes and moved immediately into production code layouts.
             </p>
           </div>
@@ -275,18 +281,24 @@ export default function AlyaAuditorsPage() {
       </section>
 
       {/* Full-bleed image — dark */}
-      <div className="w-full aspect-16/7 bg-black flex items-center justify-center border-y border-neutral-100">
-        <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Mobile Landing Interface</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-black flex items-center justify-center">
+
+          <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Mobile Landing Interface</span>
+
+        </div>
+
       </div>
 
       {/* ── 03 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             Engineering intent containers for mobile-first conversion
           </h2>
-          <p className="text-neutral-500 text-lg leading-[1.9] pt-2">
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
             Digital ad traffic is overwhelmingly generated through mobile platforms. The campaign layout had to be explicitly engineered for rapid scannability and friction-free interaction loops — three distinct layers stacked in precise psychological sequence.
           </p>
         </div>
@@ -330,7 +342,7 @@ export default function AlyaAuditorsPage() {
               <div key={block.id} className="border-l-2 border-neutral-200 pl-6 py-2">
                 <p className="text-neutral-300 text-xs tracking-widest uppercase mb-1">{block.tag}</p>
                 <p className="text-neutral-900 text-xl mb-3">{block.title}</p>
-                <p className="text-neutral-500 text-base leading-relaxed">{block.desc}</p>
+                <p className="text-neutral-700 text-base leading-relaxed">{block.desc}</p>
               </div>
             ))}
           </div>
@@ -360,12 +372,18 @@ export default function AlyaAuditorsPage() {
       </section>
 
       {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Live Landing Page & Ad Assets</span>
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Live Landing Page & Ad Assets</span>
+
+        </div>
+
       </div>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-20 lg:px-32 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           A high-performance digital campaign framework delivered at maximum velocity
@@ -394,7 +412,7 @@ export default function AlyaAuditorsPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>
