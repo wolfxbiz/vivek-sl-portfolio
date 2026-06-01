@@ -1,4 +1,13 @@
-import { SiFigma, SiClaude, SiAffinitydesigner } from "react-icons/si";
+import {
+  SiFigma,
+  SiClaude,
+  SiAffinitydesigner,
+  SiAdobephotoshop,
+  SiAdobeaftereffects,
+  SiAdobepremierepro,
+  SiVisualstudiocode,
+} from "react-icons/si";
+import Image from "next/image";
 
 const capabilities = [
   {
@@ -26,12 +35,23 @@ const capabilities = [
 const tools = [
   { label: "Figma", icon: <SiFigma size={16} color="#F24E1E" /> },
   { label: "Affinity Designer", icon: <SiAffinitydesigner size={16} color="#1B72BE" /> },
-  { label: "Adobe Photoshop", icon: null },
-  { label: "Adobe After Effects", icon: null },
-  { label: "Adobe Premiere Pro", icon: null },
-  { label: "VS Code", icon: null },
+  { label: "Adobe Photoshop", icon: <SiAdobephotoshop size={16} color="#31A8FF" /> },
+  { label: "Adobe After Effects", icon: <SiAdobeaftereffects size={16} color="#9999FF" /> },
+  { label: "Adobe Premiere Pro", icon: <SiAdobepremierepro size={16} color="#9999FF" /> },
+  { label: "VS Code", icon: <SiVisualstudiocode size={16} color="#007ACC" /> },
   { label: "Claude Code", icon: <SiClaude size={16} color="#D97757" /> },
-  { label: "Cursor", icon: null },
+  {
+    label: "Cursor",
+    icon: (
+      <Image
+        src="/icons/cursor.svg"
+        alt="Cursor"
+        width={16}
+        height={16}
+        className="opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+      />
+    ),
+  },
 ];
 
 export default function Skills() {
