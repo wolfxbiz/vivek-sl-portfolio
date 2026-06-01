@@ -1,12 +1,3 @@
-import {
-  SiFigma,
-  SiClaude,
-  SiAffinitydesigner,
-  SiAdobephotoshop,
-  SiAdobeaftereffects,
-  SiAdobepremierepro,
-  SiVisualstudiocode,
-} from "react-icons/si";
 import Image from "next/image";
 
 const capabilities = [
@@ -32,26 +23,19 @@ const capabilities = [
   },
 ];
 
+const icon = (src: string, alt: string) => (
+  <Image src={src} alt={alt} width={16} height={16} className="shrink-0" />
+);
+
 const tools = [
-  { label: "Figma", icon: <SiFigma size={16} color="#F24E1E" /> },
-  { label: "Affinity Designer", icon: <SiAffinitydesigner size={16} color="#1B72BE" /> },
-  { label: "Adobe Photoshop", icon: <SiAdobephotoshop size={16} color="#31A8FF" /> },
-  { label: "Adobe After Effects", icon: <SiAdobeaftereffects size={16} color="#9999FF" /> },
-  { label: "Adobe Premiere Pro", icon: <SiAdobepremierepro size={16} color="#9999FF" /> },
-  { label: "VS Code", icon: <SiVisualstudiocode size={16} color="#007ACC" /> },
-  { label: "Claude Code", icon: <SiClaude size={16} color="#D97757" /> },
-  {
-    label: "Cursor",
-    icon: (
-      <Image
-        src="/icons/cursor.svg"
-        alt="Cursor"
-        width={16}
-        height={16}
-        className="opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-      />
-    ),
-  },
+  { label: "Figma",               icon: icon("/icons/figma.svg",          "Figma") },
+  { label: "Affinity Designer",   icon: icon("/icons/affinity.svg",       "Affinity Designer") },
+  { label: "Adobe Photoshop",     icon: icon("/icons/creative-cloud.svg", "Adobe Photoshop") },
+  { label: "Adobe After Effects", icon: icon("/icons/creative-cloud.svg", "Adobe After Effects") },
+  { label: "Adobe Premiere Pro",  icon: icon("/icons/creative-cloud.svg", "Adobe Premiere Pro") },
+  { label: "VS Code",             icon: icon("/icons/vscode.svg",         "VS Code") },
+  { label: "Claude Code",         icon: icon("/icons/claude-code.svg",    "Claude Code") },
+  { label: "Cursor",              icon: icon("/icons/cursor.svg",         "Cursor") },
 ];
 
 export default function Skills() {
