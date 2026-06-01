@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -102,9 +103,9 @@ export default function FourBCGlobalPage() {
         </div>
       </div>
 
-      {/* ── Full-bleed image placeholder ── */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Legacy State Documentation</span>
+      {/* Legacy State image */}
+      <div className="w-full relative aspect-16/7">
+        <Image src="/images/4bc/legacy-state.webp" alt="4BC Global — Legacy State Documentation" fill className="object-cover" />
       </div>
 
       {/* ── 02 WORKFLOW — split layout ── */}
@@ -143,9 +144,9 @@ export default function FourBCGlobalPage() {
         </div>
       </div>
 
-      {/* Full-bleed image */}
-      <div className="w-full aspect-16/7 bg-[#0B132B] flex items-center justify-center border-y border-neutral-100">
-        <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Workflow Session</span>
+      {/* Workflow Session image */}
+      <div className="w-full relative aspect-16/7">
+        <Image src="/images/4bc/workflow-session.webp" alt="4BC Global — Workflow Session" fill className="object-cover" />
       </div>
 
       {/* ── 03 DESIGN SYSTEM — text + tokens ── */}
@@ -180,9 +181,9 @@ export default function FourBCGlobalPage() {
         </div>
       </section>
 
-      {/* Full-bleed brand image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Brand Identity Assets</span>
+      {/* Brand Identity image */}
+      <div className="w-full relative aspect-16/7">
+        <Image src="/images/4bc/brand-identity.webp" alt="4BC Global — Brand Identity Assets" fill className="object-cover" />
       </div>
 
       {/* ── 04 UI ARCHITECTURE ── */}
@@ -242,9 +243,9 @@ export default function FourBCGlobalPage() {
         </div>
       </section>
 
-      {/* Full-bleed UI image */}
-      <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center border-y border-neutral-100">
-        <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Live Platform Screenshots</span>
+      {/* Live Platform image */}
+      <div className="w-full relative aspect-16/7">
+        <Image src="/images/4bc/live-platform.webp" alt="4BC Global — Live Platform Screenshots" fill className="object-cover" />
       </div>
 
       {/* ── 05 RESOLUTION ── */}
