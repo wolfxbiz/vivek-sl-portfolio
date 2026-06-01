@@ -4,38 +4,28 @@ const capabilities = [
   {
     label: "Experience Architecture",
     items: ["User Flows", "Information Architecture", "Wireframing", "Progressive Disclosure"],
-    note: "Paperwurk — 12 flows, 98 screens across 14 personas",
   },
   {
     label: "Interface Systems",
     items: ["Figma Component Libraries", "Responsive Web Design", "Bilingual Layout Design (LTR → RTL)", "Design Systems"],
-    note: "Paperwurk — scalable component library with full RTL parity",
   },
   {
     label: "Conversion & CRO",
     items: ["Landing Page Architecture", "Trust Framework Design", "Lead Capture Optimisation", "Funnel Mapping"],
-    note: "Alya Auditors & Ensurio First — B2B lead generation funnels",
   },
   {
     label: "User Research",
     items: ["Stakeholder Interviews", "Usability Testing", "Competitive Analysis", "Persona Development"],
-    note: "Paperwurk — moderated testing across field agents and first-time founders",
   },
 ];
 
-const icon = (src: string, alt: string) => (
-  <Image src={src} alt={alt} width={16} height={16} className="shrink-0" />
-);
-
 const tools = [
-  { label: "Figma",               icon: icon("/icons/figma.svg",          "Figma") },
-  { label: "Affinity Designer",   icon: icon("/icons/affinity.svg",       "Affinity Designer") },
-  { label: "Adobe Photoshop",     icon: icon("/icons/creative-cloud.svg", "Adobe Photoshop") },
-  { label: "Adobe After Effects", icon: icon("/icons/creative-cloud.svg", "Adobe After Effects") },
-  { label: "Adobe Premiere Pro",  icon: icon("/icons/creative-cloud.svg", "Adobe Premiere Pro") },
-  { label: "VS Code",             icon: icon("/icons/vscode.svg",         "VS Code") },
-  { label: "Claude Code",         icon: icon("/icons/claude-code.svg",    "Claude Code") },
-  { label: "Cursor",              icon: icon("/icons/cursor.svg",         "Cursor") },
+  { label: "Figma",                  src: "/icons/figma.svg" },
+  { label: "Affinity Designer",      src: "/icons/affinity.svg" },
+  { label: "Adobe Creative Cloud",   src: "/icons/creative-cloud.svg" },
+  { label: "VS Code",                src: "/icons/vscode.svg" },
+  { label: "Claude Code",            src: "/icons/claude-code.svg" },
+  { label: "Cursor",                 src: "/icons/cursor.svg" },
 ];
 
 export default function Skills() {
@@ -45,7 +35,8 @@ export default function Skills() {
         Capabilities
       </p>
 
-      <div className="flex flex-col gap-12 mb-20">
+      {/* Capabilities */}
+      <div className="flex flex-col gap-12 mb-24">
         {capabilities.map((g) => (
           <div key={g.label} className="flex flex-col md:flex-row md:gap-20 gap-5">
             <div className="md:w-48 shrink-0">
@@ -67,22 +58,30 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className="border-t border-neutral-100 pt-14">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-10">
+      {/* Tools */}
+      <div className="border-t border-neutral-100 pt-16">
+        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-12">
           Tools
         </p>
-        <div className="flex flex-wrap gap-6">
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-neutral-100">
           {tools.map((tool) => (
             <div
               key={tool.label}
-              className="flex items-center gap-2.5 px-5 py-3 border border-neutral-200 text-neutral-500 text-sm hover:border-black hover:text-black transition-all duration-300 group"
+              className="bg-white flex flex-col items-center justify-center gap-5 py-10 px-6 group hover:bg-neutral-50 transition-colors duration-300"
             >
-                {tool.icon && (
-                <span className="opacity-70 group-hover:opacity-100 transition-opacity duration-300 flex items-center">
-                  {tool.icon}
-                </span>
-              )}
-              <span>{tool.label}</span>
+              <div className="w-12 h-12 flex items-center justify-center">
+                <Image
+                  src={tool.src}
+                  alt={tool.label}
+                  width={48}
+                  height={48}
+                  className="object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+              <span className="text-neutral-400 text-xs tracking-wider text-center leading-snug group-hover:text-neutral-900 transition-colors duration-300">
+                {tool.label}
+              </span>
             </div>
           ))}
         </div>
