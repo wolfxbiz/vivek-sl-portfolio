@@ -76,10 +76,10 @@ export default function Skills() {
                   alt={tool.label}
                   width={48}
                   height={48}
-                  className="object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                  className="object-contain"
                 />
               </div>
-              <span className="text-neutral-400 text-xs tracking-wider text-center leading-snug group-hover:text-neutral-900 transition-colors duration-300">
+              <span className="text-neutral-500 text-xs tracking-wider text-center leading-snug group-hover:text-neutral-900 transition-colors duration-300">
                 {tool.label}
               </span>
             </div>
