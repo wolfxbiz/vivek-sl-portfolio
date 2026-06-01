@@ -111,14 +111,14 @@ export default function TalkOfTheTownPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── editorial teal */}
-      <section className="relative bg-[#11454F] px-8 md:px-16 lg:px-24 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-[#11454F] px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: "radial-gradient(circle at 90% 10%, #BBDCCE 0%, transparent 50%)" }}
         />
@@ -138,7 +138,7 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-16 lg:px-24 py-10 border-b border-neutral-100 bg-[#F5E9CE]/30">
+      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-[#F5E9CE]/30">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead Brand Architect & UI/UX Designer" },
@@ -155,7 +155,7 @@ export default function TalkOfTheTownPage() {
       </div>
 
       {/* ── 01 CHALLENGE ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge & Creative Identity</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -191,7 +191,7 @@ export default function TalkOfTheTownPage() {
       </div>
 
       {/* ── 02 DESIGN PRINCIPLES ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — UI Design Principles</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -230,7 +230,7 @@ export default function TalkOfTheTownPage() {
       </div>
 
       {/* ── 03 PAGE STRUCTURE ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UX Blueprint</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -299,7 +299,7 @@ export default function TalkOfTheTownPage() {
       </div>
 
       {/* ── 04 USER FLOW ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — User Flow Breakdown</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -327,7 +327,7 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24 border-t border-neutral-100">
+      <section className="px-8 md:px-20 lg:px-32 py-24 border-t border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           A first professional project delivered as a fully realized, conversion-driven publishing identity
@@ -359,7 +359,7 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* Footer */}
-      <div className="px-8 md:px-16 lg:px-24 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

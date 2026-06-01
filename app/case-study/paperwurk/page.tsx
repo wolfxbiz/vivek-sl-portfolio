@@ -92,14 +92,14 @@ export default function PaperwurkPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative bg-neutral-900 px-8 md:px-16 lg:px-24 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-neutral-900 px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-30"
           style={{ background: "radial-gradient(ellipse at 70% 50%, #1e3a5f 0%, #0a0a0a 70%)" }}
         />
@@ -115,7 +115,7 @@ export default function PaperwurkPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-16 lg:px-24 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-neutral-50">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead UX Architect & Interface Designer" },
@@ -132,7 +132,7 @@ export default function PaperwurkPage() {
       </div>
 
       {/* ── 01 CHALLENGE ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -175,7 +175,7 @@ export default function PaperwurkPage() {
       </div>
 
       {/* ── 02 PROCESS ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Process</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -229,7 +229,7 @@ export default function PaperwurkPage() {
       </div>
 
       {/* ── 03 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -292,7 +292,7 @@ export default function PaperwurkPage() {
       </div>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-16 max-w-3xl">
           A bulletproof structural blueprint ready for full-scale software development
@@ -308,7 +308,7 @@ export default function PaperwurkPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

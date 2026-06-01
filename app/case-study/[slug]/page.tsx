@@ -27,7 +27,7 @@ export default async function CaseStudyPage({ params }: Props) {
   return (
     <main className="bg-white min-h-screen">
       {/* Back nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-8 border-b border-neutral-100">
+      <div className="px-8 md:px-20 lg:px-32 py-8 border-b border-neutral-100">
         <Link
           href="/"
           className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase"
@@ -37,7 +37,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </div>
 
       {/* Header */}
-      <header className="bg-neutral-900 px-8 md:px-16 lg:px-24 pt-20 pb-16">
+      <header className="bg-neutral-900 px-8 md:px-20 lg:px-32 pt-20 pb-16">
         <p className="text-white/40 text-xs tracking-[0.3em] uppercase mb-6">
           Case Study
         </p>
@@ -50,7 +50,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </header>
 
       {/* Mockup placeholder */}
-      <div className="px-8 md:px-16 lg:px-24 py-16 border-b border-neutral-100">
+      <div className="px-8 md:px-20 lg:px-32 py-16 border-b border-neutral-100">
         <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
           <span className="text-neutral-300 text-xs tracking-widest uppercase">
             Project Mockup
@@ -59,7 +59,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </div>
 
       {/* Sections */}
-      <div className="px-8 md:px-16 lg:px-24 py-4">
+      <div className="px-8 md:px-20 lg:px-32 py-4">
         {cs.sections.map((section) => (
           <section
             key={section.num}
@@ -133,7 +133,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </div>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link
           href="/"
           className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase"

@@ -83,14 +83,14 @@ export default function EnsurioFirstPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative bg-slate-900 px-8 md:px-16 lg:px-24 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-slate-900 px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0"
           style={{ background: "linear-gradient(135deg, #0B132B 0%, #1a2744 50%, #0d1b2a 100%)" }}
         />
@@ -113,7 +113,7 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-16 lg:px-24 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-neutral-50">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead Conversion Experience Architect & Frontend Engineer" },
@@ -130,7 +130,7 @@ export default function EnsurioFirstPage() {
       </div>
 
       {/* ── 01 STRATEGIC CONTEXT ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — Strategic Context</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -185,7 +185,7 @@ export default function EnsurioFirstPage() {
       </div>
 
       {/* ── 02 ARCHITECTURE ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -270,7 +270,7 @@ export default function EnsurioFirstPage() {
       </div>
 
       {/* ── 03 DIAGNOSTIC TOOL ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — The Diagnostic Tool</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -340,7 +340,7 @@ export default function EnsurioFirstPage() {
       </div>
 
       {/* ── 04 SCORED OUTPUT ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — Scored Output & Lead Gate</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -431,7 +431,7 @@ export default function EnsurioFirstPage() {
       </div>
 
       {/* ── 05 EMAIL NURTURE ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Email Nurture Sequence</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -482,7 +482,7 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* ── 06 RESOLUTION ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24 border-t border-neutral-100">
+      <section className="px-8 md:px-20 lg:px-32 py-24 border-t border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">06 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           Passive corporate pages replaced with a live B2B customer acquisition engine
@@ -517,7 +517,7 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

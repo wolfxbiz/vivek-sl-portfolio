@@ -11,7 +11,7 @@ const items = [
 
 export default function Gallery() {
   return (
-    <section className="bg-white px-8 md:px-16 lg:px-24 py-24 border-t border-neutral-100">
+    <section className="bg-white px-8 md:px-20 lg:px-32 py-24 border-t border-neutral-100">
       <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-16">
         Other Work
       </p>

@@ -111,14 +111,14 @@ export default function AlyaAuditorsPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative bg-black px-8 md:px-16 lg:px-24 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-black px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0"
           style={{ background: "radial-gradient(ellipse at 30% 60%, #1a1a2e 0%, #000000 65%)" }}
         />
@@ -137,7 +137,7 @@ export default function AlyaAuditorsPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-16 lg:px-24 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-neutral-50">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead Experience Designer & Frontend Engineer" },
@@ -154,7 +154,7 @@ export default function AlyaAuditorsPage() {
       </div>
 
       {/* ── 01 CHALLENGE ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -220,7 +220,7 @@ export default function AlyaAuditorsPage() {
       </div>
 
       {/* ── 02 PROCESS ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Process</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -280,7 +280,7 @@ export default function AlyaAuditorsPage() {
       </div>
 
       {/* ── 03 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -365,7 +365,7 @@ export default function AlyaAuditorsPage() {
       </div>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           A high-performance digital campaign framework delivered at maximum velocity
@@ -394,7 +394,7 @@ export default function AlyaAuditorsPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

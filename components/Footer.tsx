@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-white px-8 md:px-16 lg:px-24 py-24 border-t border-neutral-100">
+    <footer className="bg-white px-8 md:px-20 lg:px-32 py-24 border-t border-neutral-100">
       <div className="max-w-3xl mb-20">
         <p className="text-neutral-900 text-3xl md:text-4xl leading-snug tracking-tight">
           A designer who thinks like a PM — with the business education to back it up.

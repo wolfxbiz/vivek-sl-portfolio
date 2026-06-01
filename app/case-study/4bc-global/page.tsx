@@ -20,14 +20,14 @@ export default function FourBCGlobalPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* ── HERO ── */}
-      <section className="relative bg-[#0F1320] px-8 md:px-16 lg:px-24 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-[#0F1320] px-8 md:px-20 lg:px-32 pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-neutral-200 opacity-10" />
         <div className="relative">
           <p className="text-white/40 text-xs tracking-[0.3em] uppercase mb-6">Brand / Web Design</p>
@@ -41,7 +41,7 @@ export default function FourBCGlobalPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-16 lg:px-24 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-20 lg:px-32 py-10 border-b border-neutral-100 bg-neutral-50">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { label: "Role", value: "Lead Experience Designer & Frontend Engineer" },
@@ -58,7 +58,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 01 CHALLENGE — text + full-bleed image ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -77,7 +77,7 @@ export default function FourBCGlobalPage() {
 
       {/* Full-bleed comparison block */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100 mb-0">
-        <div className="bg-neutral-50 px-8 md:px-16 lg:px-24 py-16 flex flex-col gap-6">
+        <div className="bg-neutral-50 px-8 md:px-20 lg:px-32 py-16 flex flex-col gap-6">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-2 h-2 rounded-full bg-red-400 shrink-0" />
             <p className="text-neutral-400 text-xs tracking-widest uppercase">Legacy Distribution</p>
@@ -89,7 +89,7 @@ export default function FourBCGlobalPage() {
             </div>
           ))}
         </div>
-        <div className="bg-white px-8 md:px-16 lg:px-24 py-16 flex flex-col gap-6">
+        <div className="bg-white px-8 md:px-20 lg:px-32 py-16 flex flex-col gap-6">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
             <p className="text-neutral-400 text-xs tracking-widest uppercase">Modern Platform Solution</p>
@@ -109,7 +109,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 02 WORKFLOW — split layout ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Workflow</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -127,7 +127,7 @@ export default function FourBCGlobalPage() {
       </section>
 
       {/* Pipeline block — full width */}
-      <div className="px-8 md:px-16 lg:px-24 pb-16">
+      <div className="px-8 md:px-20 lg:px-32 pb-16">
         <div className="bg-neutral-50 border border-neutral-100 p-10">
           <p className="text-neutral-400 text-xs tracking-widest uppercase mb-8">Engineering Pipeline</p>
           <div className="flex flex-col md:flex-row flex-wrap items-start md:items-center gap-4">
@@ -150,7 +150,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 03 DESIGN SYSTEM ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — Design System</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -217,7 +217,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 04 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -279,7 +279,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-16 lg:px-24 py-24">
+      <section className="px-8 md:px-20 lg:px-32 py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-16 max-w-3xl">
           From static documents to a premium digital hub — in two weeks
@@ -299,7 +299,7 @@ export default function FourBCGlobalPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

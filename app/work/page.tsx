@@ -86,14 +86,14 @@ export default function WorkPage() {
     <main className="bg-white min-h-screen">
 
       {/* Back nav */}
-      <div className="px-8 md:px-16 lg:px-24 py-6 border-b border-neutral-100">
+      <div className="px-8 md:px-20 lg:px-32 py-6 border-b border-neutral-100">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← vivek s l
         </Link>
       </div>
 
       {/* Header */}
-      <header className="px-8 md:px-16 lg:px-24 pt-20 pb-16 border-b border-neutral-100">
+      <header className="px-8 md:px-20 lg:px-32 pt-20 pb-16 border-b border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">Selected Work</p>
         <h1 className="text-neutral-900 text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight max-w-3xl">
           Case Studies
@@ -104,13 +104,13 @@ export default function WorkPage() {
       </header>
 
       {/* Case study list */}
-      <div className="px-8 md:px-16 lg:px-24 py-16">
+      <div className="px-8 md:px-20 lg:px-32 py-16">
         <div className="flex flex-col divide-y divide-neutral-100">
           {caseStudies.map((cs, i) => (
             <Link
               key={cs.slug}
               href={`/case-study/${cs.slug}`}
-              className="group flex flex-col md:flex-row gap-8 py-14 hover:bg-neutral-50 transition-colors duration-300 -mx-8 md:-mx-16 lg:-mx-24 px-8 md:px-16 lg:px-24"
+              className="group flex flex-col md:flex-row gap-8 py-14 hover:bg-neutral-50 transition-colors duration-300 -mx-8 md:-mx-16 lg:-mx-24 px-8 md:px-20 lg:px-32"
             >
               {/* Image */}
               <div className="w-full md:w-72 lg:w-80 aspect-video relative overflow-hidden bg-neutral-100 shrink-0">
@@ -156,7 +156,7 @@ export default function WorkPage() {
       </div>
 
       {/* Footer */}
-      <div className="px-8 md:px-16 lg:px-24 py-16 border-t border-neutral-100 flex items-center justify-between">
+      <div className="px-8 md:px-20 lg:px-32 py-16 border-t border-neutral-100 flex items-center justify-between">
         <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>

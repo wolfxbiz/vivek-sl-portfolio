@@ -46,7 +46,7 @@ const education = [
 
 export default function Experience() {
   return (
-    <section className="bg-black px-8 md:px-16 lg:px-24 py-24 border-t border-white/5">
+    <section className="bg-black px-8 md:px-20 lg:px-32 py-24 border-t border-white/5">
       <p className="text-white/30 text-xs tracking-[0.3em] uppercase mb-16">
         Experience
       </p>
