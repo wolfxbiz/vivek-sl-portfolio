@@ -76,6 +76,7 @@ export default function Skills() {
                   alt={tool.label}
                   width={48}
                   height={48}
+                  style={{ width: "48px", height: "48px" }}
                   className="object-contain"
                 />
               </div>
