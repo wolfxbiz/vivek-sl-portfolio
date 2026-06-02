@@ -1,4 +1,6 @@
+import React from "react";
 import Image from "next/image";
+import { SiNextdotjs, SiReact } from "react-icons/si";
 
 const capabilities = [
   {
@@ -19,13 +21,15 @@ const capabilities = [
   },
 ];
 
-const tools = [
-  { label: "Figma",                  src: "/icons/figma.svg" },
-  { label: "Affinity Designer",      src: "/icons/affinity.svg" },
-  { label: "Adobe Creative Cloud",   src: "/icons/creative-cloud.svg" },
-  { label: "VS Code",                src: "/icons/vscode.svg" },
-  { label: "Claude Code",            src: "/icons/claude-code.svg" },
-  { label: "Cursor",                 src: "/icons/cursor.svg" },
+const tools: { label: string; src?: string; icon?: React.ReactNode }[] = [
+  { label: "Figma",                src: "/icons/figma.svg" },
+  { label: "Affinity Designer",   src: "/icons/affinity.svg" },
+  { label: "Adobe Creative Cloud",src: "/icons/creative-cloud.svg" },
+  { label: "VS Code",             src: "/icons/vscode.svg" },
+  { label: "Claude Code",         src: "/icons/claude-code.svg" },
+  { label: "Cursor",              src: "/icons/cursor.svg" },
+  { label: "Next.js",             icon: <SiNextdotjs size={40} color="#000000" /> },
+  { label: "React",               icon: <SiReact size={40} color="#61DAFB" /> },
 ];
 
 export default function Skills() {
@@ -71,14 +75,19 @@ export default function Skills() {
               className="bg-white flex flex-col items-center justify-center gap-5 py-10 px-6 group hover:bg-neutral-50 transition-colors duration-300"
             >
               <div className="w-12 h-12 flex items-center justify-center">
-                <Image
-                  src={tool.src}
-                  alt={tool.label}
-                  width={48}
-                  height={48}
-                  unoptimized style={{ width: "48px", height: "48px" }}
-                  className="object-contain"
-                />
+                {tool.src ? (
+                  <Image
+                    src={tool.src}
+                    alt={tool.label}
+                    width={48}
+                    height={48}
+                    unoptimized
+                    style={{ width: "48px", height: "48px" }}
+                    className="object-contain"
+                  />
+                ) : (
+                  tool.icon
+                )}
               </div>
               <span className="text-neutral-500 text-xs tracking-wider text-center leading-snug group-hover:text-neutral-900 transition-colors duration-300">
                 {tool.label}
