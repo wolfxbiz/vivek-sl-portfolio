@@ -64,7 +64,7 @@ export default function Skills() {
           Tools
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-neutral-100">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-px bg-neutral-100">
           {tools.map((tool) => (
             <div
               key={tool.label}
@@ -76,7 +76,7 @@ export default function Skills() {
                   alt={tool.label}
                   width={48}
                   height={48}
-                  style={{ width: "48px", height: "48px" }}
+                  unoptimized style={{ width: "48px", height: "48px" }}
                   className="object-contain"
                 />
               </div>
