@@ -31,20 +31,25 @@ export default function Hero() {
       {/* Gradient fade — protects text on the right */}
       <div className="hidden md:block absolute inset-0 bg-linear-to-l from-black via-black/90 to-transparent pointer-events-none z-1" />
 
-      {/* Content — right aligned */}
-      <div className="relative z-10 ml-auto text-left max-w-2xl">
-        <p className="text-white/30 text-xs tracking-[0.3em] uppercase mb-8">
-          VIVEK S L — Product-Minded Designer
-        </p>
-        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl leading-[1.15] tracking-tight mb-6">
-          Designing products that ship. Thinking in systems, funnels, and business outcomes.
-        </h1>
-        <p className="text-white/40 text-sm leading-relaxed">
-          UI/UX Designer with an MBA in Marketing & Finance — bridging the gap between
-          interface execution and product strategy. I scope requirements, align stakeholders,
-          map user flows, and ship conversion-driven digital products. Transitioning toward
-          Product Management.
-        </p>
+      {/* Content — starts exactly at the right half */}
+      <div className="relative z-10 flex w-full">
+        {/* Spacer — matches prism width */}
+        <div className="hidden md:block w-1/2 shrink-0" />
+        {/* Text — right half */}
+        <div className="w-full md:w-1/2 md:pl-12">
+          <p className="text-white/30 text-xs tracking-[0.3em] uppercase mb-8">
+            VIVEK S L — Product-Minded Designer
+          </p>
+          <h1 className="text-white text-3xl sm:text-4xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight mb-6">
+            Designing products that ship. Thinking in systems, funnels, and business outcomes.
+          </h1>
+          <p className="text-white/40 text-sm leading-relaxed">
+            UI/UX Designer with an MBA in Marketing & Finance — bridging the gap between
+            interface execution and product strategy. I scope requirements, align stakeholders,
+            map user flows, and ship conversion-driven digital products. Transitioning toward
+            Product Management.
+          </p>
+        </div>
       </div>
     </section>
   );
