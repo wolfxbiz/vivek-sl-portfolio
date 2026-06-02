@@ -28,8 +28,8 @@ const tools: { label: string; src?: string; icon?: React.ReactNode }[] = [
   { label: "VS Code",             src: "/icons/vscode.svg" },
   { label: "Claude Code",         src: "/icons/claude-code.svg" },
   { label: "Cursor",              src: "/icons/cursor.svg" },
-  { label: "Next.js",             icon: <SiNextdotjs size={40} color="#000000" /> },
-  { label: "React",               icon: <SiReact size={40} color="#61DAFB" /> },
+  { label: "Next.js",             icon: <SiNextdotjs size={52} color="#000000" /> },
+  { label: "React",               icon: <SiReact size={52} color="#61DAFB" /> },
 ];
 
 export default function Skills() {
@@ -68,28 +68,28 @@ export default function Skills() {
           Tools
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-px bg-neutral-100">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-neutral-100">
           {tools.map((tool) => (
             <div
               key={tool.label}
-              className="bg-white flex flex-col items-center justify-center gap-5 py-10 px-6 group hover:bg-neutral-50 transition-colors duration-300"
+              className="bg-white flex flex-col items-center justify-center gap-6 py-16 px-8 group hover:bg-neutral-50 transition-colors duration-300"
             >
-              <div className="w-12 h-12 flex items-center justify-center">
+              <div className="w-16 h-16 flex items-center justify-center">
                 {tool.src ? (
                   <Image
                     src={tool.src}
                     alt={tool.label}
-                    width={48}
-                    height={48}
+                    width={64}
+                    height={64}
                     unoptimized
-                    style={{ width: "48px", height: "48px" }}
+                    style={{ width: "64px", height: "64px" }}
                     className="object-contain"
                   />
                 ) : (
                   tool.icon
                 )}
               </div>
-              <span className="text-neutral-500 text-xs tracking-wider text-center leading-snug group-hover:text-neutral-900 transition-colors duration-300">
+              <span className="text-neutral-400 text-sm tracking-wider text-center leading-snug group-hover:text-neutral-900 transition-colors duration-300">
                 {tool.label}
               </span>
             </div>
