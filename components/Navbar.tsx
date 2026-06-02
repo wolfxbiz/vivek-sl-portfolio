@@ -25,9 +25,9 @@ export default function Navbar() {
       }`}>
         <Link
           href="/"
-          className={`text-sm tracking-widest transition-colors duration-500 ${scrolled ? 'text-black' : 'text-white'}`}
+          className={`text-sm tracking-widest font-bold transition-colors duration-500 ${scrolled ? 'text-black' : 'text-white'}`}
         >
-          vivek s l
+          VIVEK S L
         </Link>
 
         {/* Desktop links */}
@@ -120,7 +120,7 @@ export default function Navbar() {
           </a>
         </div>
         <p className="absolute bottom-10 left-8 text-white/20 text-xs tracking-widest uppercase">
-          vivek s l
+          VIVEK S L
         </p>
       </div>
     </>
