@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="hidden md:block absolute inset-0 bg-linear-to-l from-black via-black/90 to-transparent pointer-events-none z-1" />
 
       {/* Content — right aligned */}
-      <div className="relative z-10 ml-auto text-right max-w-2xl">
+      <div className="relative z-10 ml-auto text-left max-w-2xl">
         <p className="text-white/30 text-xs tracking-[0.3em] uppercase mb-8">
           VIVEK S L — Product-Minded Designer
         </p>
