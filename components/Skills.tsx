@@ -28,8 +28,8 @@ const tools: { label: string; src?: string; icon?: React.ReactNode }[] = [
   { label: "VS Code",             src: "/icons/vscode.svg" },
   { label: "Claude Code",         src: "/icons/claude-code.svg" },
   { label: "Cursor",              src: "/icons/cursor.svg" },
-  { label: "Next.js",             icon: <SiNextdotjs size={52} color="#000000" /> },
-  { label: "React",               icon: <SiReact size={52} color="#61DAFB" /> },
+  { label: "Next.js",             icon: <SiNextdotjs size={64} color="#000000" /> },
+  { label: "React",               icon: <SiReact size={64} color="#61DAFB" /> },
 ];
 
 export default function Skills() {
