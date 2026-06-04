@@ -5,61 +5,89 @@ const projects = [
   {
     id: "01",
     slug: "paperwurk",
-    category: "UX Design",
-    title: "Paperwurk: Designing a mobile-aware, bilingual UX ecosystem for a complex three-sided platform",
+    category: "UX Design / Enterprise Platform",
+    title: "Paperwurk",
+    subtitle: "Bilingual three-sided platform UX",
     image: "/images/paperwurk-thumb.webp",
   },
   {
     id: "02",
     slug: "alya-auditors",
     category: "CRO / Lead Generation",
-    title: "Alya Auditors: High-conversion lead generation and CRO funnel for a B2B audit firm",
+    title: "Alya Auditors",
+    subtitle: "B2B audit firm lead funnel",
     image: "/images/alya-auditors-thumb.webp",
   },
   {
     id: "03",
     slug: "4bc-global",
     category: "Brand / Web Design",
-    title: "4BC Global: Corporate redesign and brand architecture for a market research firm",
+    title: "4BC Global",
+    subtitle: "Corporate redesign & brand architecture",
     image: "/images/4bc-global-thumb.webp",
   },
 ];
 
 export default function ProjectGrid() {
   return (
-    <section className="bg-white px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
+    <section className="bg-white border-t border-neutral-100">
 
-      <h2 className="text-neutral-900 text-4xl tracking-tight mb-16">
-        Case Studies
-      </h2>
+      {/* Header */}
+      <div className="px-8 md:px-30 lg:px-60 pt-16 pb-10 flex items-end justify-between">
+        <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight">
+          Case Studies
+        </h2>
+        <Link
+          href="/work"
+          className="text-neutral-400 text-xs tracking-widest uppercase hover:text-black transition-colors duration-300 flex items-center gap-2 pb-1"
+        >
+          All Work →
+        </Link>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
+      {/* Full-width image strip */}
+      <div className="flex w-full" style={{ height: "58vh" }}>
         {projects.map((p, i) => (
-          <article key={p.id} className="flex flex-col group relative">
-            <Link href={`/case-study/${p.slug}`} className="absolute inset-0 z-10" aria-label={p.title} />
-
-            <div className="w-full aspect-4/3 relative overflow-hidden">
-              <Image
-                src={p.image}
-                alt={p.title}
-                fill
-                priority={i === 0}
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </div>
-
-            <div className="flex flex-col gap-3 pt-6">
-              <p className="text-neutral-400 text-sm">
-                {p.category}
-              </p>
-              <h3 className="text-neutral-900 text-base md:text-lg leading-snug tracking-tight group-hover:text-neutral-500 transition-colors duration-300">
-                {p.title}
-              </h3>
-            </div>
-          </article>
+          <Link
+            key={p.id}
+            href={`/case-study/${p.slug}`}
+            className="relative flex-1 overflow-hidden group"
+          >
+            <Image
+              src={p.image}
+              alt={p.title}
+              fill
+              priority={i === 0}
+              sizes="33vw"
+              quality={90}
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            {/* Subtle dark overlay on hover */}
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+            {/* Vertical divider */}
+            {i < projects.length - 1 && (
+              <div className="absolute right-0 top-0 bottom-0 w-px bg-white/20" />
+            )}
+          </Link>
         ))}
       </div>
+
+      {/* Dark label bar */}
+      <div className="flex w-full bg-neutral-900">
+        {projects.map((p, i) => (
+          <Link
+            key={p.id}
+            href={`/case-study/${p.slug}`}
+            className="flex-1 px-8 py-8 flex flex-col gap-2 group hover:bg-neutral-800 transition-colors duration-300 border-r border-white/5 last:border-0"
+          >
+            <p className="text-white/40 text-xs tracking-widest uppercase">{p.category}</p>
+            <p className="text-white text-lg tracking-tight leading-snug mt-1">{p.title}</p>
+            <p className="text-white/40 text-sm leading-snug">{p.subtitle}</p>
+            <p className="text-white/20 text-sm tracking-widest mt-3 group-hover:text-white/60 transition-colors duration-300">→</p>
+          </Link>
+        ))}
+      </div>
+
     </section>
   );
 }
