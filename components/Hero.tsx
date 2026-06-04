@@ -24,6 +24,7 @@ export default function Hero() {
             hoverStrength={1.5}
             inertia={0.04}
             transparent={true}
+            suspendWhenOffscreen={true}
           />
         </div>
       </div>
