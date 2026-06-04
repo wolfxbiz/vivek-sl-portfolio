@@ -113,6 +113,7 @@ export default function Process() {
               loop
               muted
               playsInline
+              preload="metadata"
               className="w-full h-full object-cover"
             />
           </div>

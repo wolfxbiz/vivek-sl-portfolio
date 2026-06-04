@@ -67,8 +67,7 @@ export default function ProjectGrid() {
               fill
               priority={i === 0}
               sizes="(max-width: 768px) 50vw, 25vw"
-              quality={100}
-              unoptimized
+              quality={85}
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
             {/* Subtle dark overlay on hover */}
