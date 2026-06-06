@@ -121,77 +121,80 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "alya-auditors",
-    title: "Alya Auditors",
+    title: "Alya Auditors Nexus",
     subtitle:
-      "Driving Enterprise Lead Generation Through Strategic CRO and Targeted Visual Assets",
+      "Full-Stack Compliance Platform: React SPA with Multi-Stage Audit Readiness Architecture and Idle-Triggered Lead Capture",
     sections: [
       {
         num: "01",
-        title: "The Situation",
+        title: "The Challenge",
         body: [
           {
             type: "paragraph",
-            text: "Alya Auditors is a professional services firm delivering financial auditing and compliance solutions. In the corporate B2B sector, securing high-quality leads is notoriously difficult. The firm needed an optimized digital funnel that could capture the attention of busy business owners, establish immediate institutional trust, and convert traffic into qualified audit leads.",
+            text: "Alya Auditors is a UAE-based audit and compliance firm serving mainland and free zone entities. The core challenge was converting a static brochure site into a full-stack compliance platform that demonstrates audit expertise through the product itself — not just through copy.",
           },
           {
             type: "paragraph",
-            text: "My role on this project was to handle the end-to-end user experience: defining the visual strategy, designing high-energy video advertising concepts, and building conversion-driven landing pages.",
+            text: "Three friction points defined the brief: most audit sites force users to read dense compliance jargon before they understand if they need the service; free consultations convert poorly when users haven't yet identified their own exposure; and high-intent users who don't convert on first visit are rarely recovered. The platform had to solve all three simultaneously.",
           },
         ],
       },
       {
         num: "02",
-        title: "The Tension",
+        title: "Conversion Architecture",
         body: [
           {
             type: "paragraph",
-            text: "Financial and auditing services are heavily dependent on trust, but corporate websites often suffer from 'regulatory fatigue' — they are overly dense, dry, and uninspiring. The core tension was balancing high energy with high credibility.",
+            text: "The core conversion mechanism is a four-stage audit readiness checker built directly into the platform. Unlike a static contact form, the checker progressively surfaces the user's compliance gaps — making the audit need concrete before asking for contact information.",
           },
           {
-            type: "paragraph",
-            text: "If the landing page felt too corporate, it would fail to capture attention from digital ad campaigns. If it felt too flashy, it would lose the professional credibility required for a financial audit firm. The design had to walk a razor-thin line: deliver an energetic, modern elevator pitch while ensuring the interface felt secure, stable, and completely trustworthy.",
+            type: "list",
+            items: [
+              "Stage 01 — Business Profile (100% entry): Jurisdiction, entity type, activity code — frictionless qualification.",
+              "Stage 02 — Compliance Snapshot (76% completion): Trade license status, VAT registration, ESR obligations.",
+              "Stage 03 — Exposure Assessment (60% completion): The inflection point — users answering these questions are actively discovering their risk.",
+              "Stage 04 — Lead Capture (25% conversion): Contact information requested after the user has already engaged with their own compliance state.",
+            ],
           },
         ],
       },
       {
         num: "03",
-        title: "The Journey: Designing for Conversion",
+        title: "Key Decisions",
         body: [
           {
-            type: "paragraph",
-            text: "To maximize Lead Generation, I focused heavily on visual hierarchy and psychological trust triggers. Every design decision was mapped against user drop-off risks.",
+            type: "decision",
+            label: "Idle Popup Strategy",
+            text: "A hasShownIdlePopup flag gates a popup that triggers after 45 seconds of inactivity on compliance-heavy pages. The popup offers a free audit checklist download — a value exchange timed to catch users who are reading carefully rather than bouncing. Once shown, it never shows again, preventing repeat-visit annoyance.",
           },
           {
             type: "decision",
-            label: "Strategic Decision 1 — Direct Elevator Pitch Integration",
-            text: "Users arriving from digital ads decide whether to stay or leave within the first 3 seconds. To counter high bounce rates, I structured the above-the-fold interface around a high-impact header and paired it with energetic video advertising assets. The copy and visuals delivered an instant, clear elevator pitch stating exactly who Alya Auditors is, why they are trusted, and what action the user needs to take next.",
+            label: "State Machine Architecture",
+            text: "The checker uses an explicit state machine rather than conditional rendering. Each stage transition is a deliberate state event — preventing back-navigation corruption and enabling clean analytics on drop-off by stage.",
           },
           {
             type: "decision",
-            label: "Strategic Decision 2 — Frictionless Form Architecture",
-            text: "Every form field added to a landing page drastically reduces conversion rates. I audited the client's information requirements and stripped out unnecessary inputs. The final interface featured a streamlined, highly visible lead capture form placed strategically within the user's scanning path, reducing the cognitive effort required to submit an inquiry.",
-          },
-          {
-            type: "decision",
-            label: "Strategic Decision 3 — High-Contrast Value Cues",
-            text: "Using a deliberate, high-contrast visual hierarchy, I guided the user's eye sequentially through corporate trust elements: client testimonials, professional accreditations, and distinct value propositions. The main call-to-action (CTA) buttons utilized a prominent color strategy, ensuring they remained impossible to miss on both desktop and mobile viewports.",
+            label: "Report Engine",
+            text: "On completion, the platform generates a personalised PDF compliance summary using the user's inputs. This document becomes the deliverable that converts a digital interaction into a physical artefact the user can share with their accountant or board.",
           },
         ],
       },
       {
         num: "04",
-        title: "The Resolution & Outputs",
+        title: "Resolution",
         body: [
           {
             type: "paragraph",
-            text: "The resulting assets delivered a clean, unified, and highly focused acquisition funnel for the client:",
+            text: "Stack: React 18 · TypeScript · Vite · Tailwind CSS · shadcn/ui. Live at accounting.alyaauditors.com.",
           },
           {
             type: "list",
             items: [
-              "Conversion-Engineered Landing Pages: Deployed interfaces built specifically to optimize lead capture and maximize traffic retention.",
-              "Integrated Ad Assets: Produced custom logos and designed targeted social media marketing assets to maintain visual continuity from the ad click straight to the landing page.",
-              "Production-Ready Handoff: Provided clean layout structures that seamlessly transitioned from design files to live deployment.",
+              "A compliance platform that proves expertise through interaction — not brochure copy.",
+              "Four-stage audit readiness checker with progressive disclosure and stage-exit validation.",
+              "Idle-triggered lead capture with one-time flag to prevent annoyance on return visits.",
+              "Personalised compliance report generated on flow completion — a take-away artefact.",
+              "Design system built around Navy #021F4B and Green #7FFA7B for clinical authority with approachability.",
             ],
           },
         ],
@@ -278,96 +281,80 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    slug: "ensurio-first",
-    title: "Ensurio First",
+    slug: "insure-first",
+    title: "Insure First",
     subtitle:
-      "Designing an End-to-End B2B Lead Generation Funnel & Interactive Diagnostic Tool",
+      "Multi-Route B2B Landing Platform for a CBUAE-Licensed, Conflict-Free Insurance Advisory Firm",
     sections: [
       {
         num: "01",
-        title: "The Situation",
+        title: "The Market Tension",
         body: [
           {
             type: "paragraph",
-            text: "Ensurio First is a management consultancy specializing in corporate risk management and insurance optimization. In the B2B consultancy space, traditional lead generation methods — like dry contact forms or vague service pages — fail because cold traffic has no immediate reason to engage or share sensitive business data.",
+            text: "Insure First Risk Management Consultancies (CBUAE License No. 143) operates in a market dominated by direct insurance brokers who earn commission from placing business with insurers. This creates a structural conflict of interest: the advisor is financially incentivised to recommend the insurer that pays the highest commission — not the one that provides the best coverage for the client.",
           },
           {
             type: "paragraph",
-            text: "To bridge this gap, I designed and structured The Growth Funnel System for Turquoic: a comprehensive, connected digital ecosystem designed to turn cold traffic into highly qualified leads. The system spans five distinct, interconnected deliverables: targeted social content, an optimized landing page, an interactive diagnostic tool, value-driven blog content, and an automated email nurture sequence.",
+            text: "Insure First's model is different: they charge for advisory, not placement. Their recommendations are commercially clean. But this distinction only converts if the market understands it — and most SME founders have never considered the difference between a commission-based broker and a conflict-free advisor. The site's primary job was to make this positioning legible before the first scroll.",
           },
         ],
       },
       {
         num: "02",
-        title: "The Tension",
+        title: "Site Architecture",
         body: [
           {
             type: "paragraph",
-            text: "Corporate decision-makers, such as CFOs in the GCC region, are protective of their time and data. They will not fill out a generic 'Get a Quote' form just to be hit with a cold sales pitch. The tension lay in creating an experience that gives value before it asks for information.",
-          },
-          {
-            type: "paragraph",
-            text: "The design had to solve three systemic friction points all at once:",
+            text: "The platform is a three-route architecture, not a single scrollable page. Each route serves a distinct point in the consultative sales cycle:",
           },
           {
             type: "list",
             items: [
-              "No Clear Entry Point: Giving visitors a clear, immediate action rather than a passive scrolling experience.",
-              "No Reason to Stay: Building an interactive asset that provides genuine diagnostic insights before pushing for a sales call.",
-              "No Follow-Up Structure: Capturing, qualifying, and nurturing the lead immediately while user intent is at its peak.",
+              "/ (Home) — Cold traffic: 13-section narrative arc building from problem awareness to trust to conversion.",
+              "/services — Warm traffic: Persona-led service grid for visitors already evaluating the firm.",
+              "/contact — High-intent traffic: Form + FAQ + sticky mobile bar for visitors ready to act.",
             ],
           },
         ],
       },
       {
         num: "03",
-        title: "The Journey: Architecting the 5-Stage Funnel",
+        title: "Key Design Decisions",
         body: [
           {
-            type: "paragraph",
-            text: "To convert analytical B2B decision-makers, the interface design and user experience were meticulously mapped across five core touchpoints:",
+            type: "decision",
+            label: "Sharp Corners Throughout",
+            text: "No border-radius on any primary surface. Corporate financial services audiences associate rounded UI with consumer apps. Sharp corners signal precision, formality, and trust — appropriate for an advisory brand where the purchase decision involves significant financial or legal exposure.",
           },
           {
             type: "decision",
-            label: "Phase 1 — Traffic & Pattern Interrupts (Social Assets)",
-            text: "The funnel begins on LinkedIn, targeting corporate decision-makers. I structured three distinct content formats to drive traffic: a problem-first Paid Ad utilizing a stark, high-contrast teal background to highlight uncomfortable industry statistics; a story-led, trust-building Owner Post for personal networks; and a credential-led Company Post to reinforce brand authority.",
+            label: "Named Founder in Conversion Touchpoints",
+            text: "'Fredrick will review your enquiry' replaces every generic 'a member of our team' line. B2B advisory is a personal trust sale. Naming the advisor converts an anonymous form into a personal commitment.",
           },
           {
             type: "decision",
-            label: "Phase 2 — Above-the-Fold Authority (The Landing Page)",
-            text: "The primary layout rule for the landing page was strict distraction-free conversion: its single job is to get the user to start the diagnostic tool. The architecture features a bold, specific hero promise, a 3-second credibility check via a prominent trust-stats bar, an immediate interactive tool embed above the fold, and a structured framework section to educate the user.",
-          },
-          {
-            type: "decision",
-            label: "Phase 3 — High-Intent Engagement (The 3-Step Interactive Tool)",
-            text: "Rather than facing an intimidating compliance sheet, the visitor engages with a frictionless, 3-step interactive setup. Steps 1 and 2 seamlessly gather company size and active coverage data. Step 3 addresses claims history. No jargon, no friction — just progressive disclosure that builds context.",
-          },
-          {
-            type: "decision",
-            label: "Phase 4 — Psychological Lead Capture (The Scored Output)",
-            text: "The lead capture form is strategically hard-gated at the moment of peak intent — right after the tool calculates their results but before displaying the full report. The result screen displays an urgent, emotional scored output (e.g., 44/100 — Moderate Risk) alongside specific risk flags. This emotional trigger drives the user to input their email to unlock the solution: a free continuity playbook.",
-          },
-          {
-            type: "decision",
-            label: "Phase 5 — Automated Conversion (The Email Nurture)",
-            text: "To prevent leads from going cold, I mapped out a two-part automated email architecture. Email 1 delivers the personalized PDF report instantly, highlighting their single highest-risk flag (e.g., Governance Score: 0). Email 2 follows up three days later with a powerful client story mirroring that exact risk profile, concluding with a single, direct call-to-action to book a consultation.",
+            label: "WhatsApp as Primary Channel",
+            text: "In the UAE, WhatsApp is a primary business communication channel across all segments. The sticky mobile bar offers Call and WhatsApp in parallel — not a consumer concession but market-appropriate channel design.",
           },
         ],
       },
       {
         num: "04",
-        title: "The Resolution & Impact",
+        title: "Resolution",
         body: [
           {
             type: "paragraph",
-            text: "The final delivery package established a robust, unified lead generation engine that seamlessly blends product strategy with interface design:",
+            text: "Stack: React 18 · Vite · Framer Motion · Tailwind CSS · React Router. Live at ensurio-frist.vercel.app.",
           },
           {
             type: "list",
             items: [
-              "A Connected 5-Deliverable Architecture: Fully designed and mapped social assets, landing pages, interactive tool interfaces, multi-category blogs, and automated inbox layouts.",
-              "High-Intent Lead Acquisition: An optimized framework engineered specifically to capture qualified corporate contacts at the absolute peak of user engagement.",
-              "Proven Live System: Built, tested, and actively operational on a live management consultancy business, proving the efficacy of the system layout.",
+              "Three-route site architecture with a distinct buyer journey per route.",
+              "25+ years / 130+ businesses / $40M+ premiums / 98% retention — credibility anchors above the fold.",
+              "13-section homepage narrative arc: problem → empathy → solution → trust → conversion.",
+              "Two-pillar service model (insurance consultancy + management consultancy) for natural upsell.",
+              "Design system: Navy #0D1B4B, Teal #00B899, Plus Jakarta Sans + Inter.",
             ],
           },
         ],

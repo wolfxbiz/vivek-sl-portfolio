@@ -309,9 +309,9 @@ export default function ImexTiresPage() {
 
       </div>
 
-      {/* ── 05 RESOLUTION ── */}
+      {/* ── 04 RESOLUTION ── */}
       <section className="px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
+        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           A global B2B procurement hub built to withstand the demands of international heavy industry
         </h2>
@@ -346,13 +346,25 @@ export default function ImexTiresPage() {
       </section>
 
       {/* Footer */}
-      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
-        <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
-          ← Back to Portfolio
-        </Link>
-        <a href="mailto:vivekshajilekha@gmail.com" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
-          Start a Project
-        </a>
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100">
+        <div className="flex items-center justify-between mb-10">
+          <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
+            ← Back to Portfolio
+          </Link>
+          <a href="mailto:vivekshajilekha@gmail.com" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
+            Start a Project
+          </a>
+        </div>
+        <div className="flex items-center justify-between border-t border-neutral-100 pt-10">
+          <Link href="/case-study/turquoic" className="group flex flex-col gap-1">
+            <p className="text-neutral-300 text-xs tracking-widest uppercase">← Previous</p>
+            <p className="text-neutral-700 text-sm group-hover:text-black transition-colors duration-300">Turquoic</p>
+          </Link>
+          <Link href="/case-study/greek-street-lab" className="group flex flex-col gap-1 text-right">
+            <p className="text-neutral-300 text-xs tracking-widest uppercase">Next →</p>
+            <p className="text-neutral-700 text-sm group-hover:text-black transition-colors duration-300">Greek Street Lab</p>
+          </Link>
+        </div>
       </div>
     </main>
   );

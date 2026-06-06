@@ -4,20 +4,67 @@ import { SiNextdotjs, SiReact } from "react-icons/si";
 
 const capabilities = [
   {
-    label: "Experience Architecture",
-    items: ["User Flows", "Information Architecture", "Wireframing", "Progressive Disclosure"],
+    label: "UX Architecture",
+    items: [
+      "Multi-Tenant System Design",
+      "User Flow Mapping",
+      "Permission-Scoped UX",
+      "Progressive Disclosure",
+      "Compliance UX Patterns",
+      "14-Persona Scale Design",
+    ],
   },
   {
-    label: "Interface Systems",
-    items: ["Figma Component Libraries", "Responsive Web Design", "Bilingual Layout Design (LTR → RTL)", "Design Systems"],
+    label: "Frontend Engineering",
+    items: [
+      "Next.js · React 18 · TypeScript",
+      "Tailwind CSS",
+      "Framer Motion · GSAP",
+      "WebGL / OGL",
+      "Component Architecture",
+      "Production Deployment — Vercel",
+    ],
   },
   {
-    label: "Conversion & CRO",
-    items: ["Landing Page Architecture", "Trust Framework Design", "Lead Capture Optimisation", "Funnel Mapping"],
+    label: "AI & Intelligent Systems",
+    items: [
+      "RAG Pipeline Architecture",
+      "LangChain Agent Orchestration",
+      "Pinecone Vector Search",
+      "OpenAI Integration",
+      "AWS Textract / OCR",
+      "Automated Test Engineering (93%+)",
+    ],
   },
   {
-    label: "User Research",
-    items: ["Stakeholder Interviews", "Usability Testing", "Competitive Analysis", "Persona Development"],
+    label: "Conversion Architecture",
+    items: [
+      "State Machine Flow Design",
+      "Idle-Triggered Lead Capture",
+      "Hard-Gated Conversion Timing",
+      "B2B Trust Framework Design",
+      "Multi-Route Site Architecture",
+    ],
+  },
+  {
+    label: "Brand & Design Systems",
+    items: [
+      "Visual Identity Design",
+      "Colour Token Architecture",
+      "Typography Systems",
+      "Design System Documentation",
+      "Bilingual Layout Design (LTR → RTL)",
+    ],
+  },
+  {
+    label: "UAE & GCC Market",
+    items: [
+      "VAT & ESR Compliance Flows",
+      "CBUAE Regulatory Context",
+      "Free Zone vs. Mainland UX Logic",
+      "Arabic RTL Layout Parity",
+      "MEA Research & Advisory Context",
+    ],
   },
 ];
 
@@ -30,6 +77,7 @@ const tools: { label: string; src?: string; icon?: React.ReactNode }[] = [
   { label: "Cursor",              src: "/icons/cursor.svg" },
   { label: "Next.js",             icon: <SiNextdotjs size={64} color="#000000" /> },
   { label: "React",               icon: <SiReact size={64} color="#61DAFB" /> },
+  { label: "TypeScript",          src: "/icons/typescript.svg" },
 ];
 
 export default function Skills() {

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -377,13 +376,25 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* Footer */}
-      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
-        <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
-          ← Back to Portfolio
-        </Link>
-        <a href="mailto:vivekshajilekha@gmail.com" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
-          Start a Project
-        </a>
+      <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100">
+        <div className="flex items-center justify-between mb-10">
+          <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
+            ← Back to Portfolio
+          </Link>
+          <a href="mailto:vivekshajilekha@gmail.com" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
+            Start a Project
+          </a>
+        </div>
+        <div className="flex items-center justify-between border-t border-neutral-100 pt-10">
+          <Link href="/case-study/4bc-global" className="group flex flex-col gap-1">
+            <p className="text-neutral-300 text-xs tracking-widest uppercase">← Previous</p>
+            <p className="text-neutral-700 text-sm group-hover:text-black transition-colors duration-300">4BC Global</p>
+          </Link>
+          <Link href="/case-study/turquoic" className="group flex flex-col gap-1 text-right">
+            <p className="text-neutral-300 text-xs tracking-widest uppercase">Next →</p>
+            <p className="text-neutral-700 text-sm group-hover:text-black transition-colors duration-300">Turquoic</p>
+          </Link>
+        </div>
       </div>
     </main>
   );
