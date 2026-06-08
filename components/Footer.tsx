@@ -22,7 +22,7 @@ export default function Footer() {
             vivekshajilekha@gmail.com
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/viveksl/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-400 text-sm tracking-wider hover:text-black transition-colors duration-300"

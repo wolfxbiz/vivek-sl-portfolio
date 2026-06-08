@@ -15,14 +15,14 @@ const capabilities = [
     ],
   },
   {
-    label: "Frontend Engineering",
+    label: "AI-Directed Development",
     items: [
-      "Next.js · React 18 · TypeScript",
+      "Next.js · React · TypeScript",
       "Tailwind CSS",
-      "Framer Motion · GSAP",
-      "WebGL / OGL",
+      "Framer Motion · GSAP · WebGL",
       "Component Architecture",
       "Production Deployment — Vercel",
+      "Claude Code · Cursor",
     ],
   },
   {

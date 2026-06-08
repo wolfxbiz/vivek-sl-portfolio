@@ -11,7 +11,7 @@ const disciplines = [
   {
     num: "02",
     title: "Full-Stack Execution",
-    desc: "Design through to production deployment. Not just Figma files delivered to an engineer — actual TypeScript, component architecture, performance pipelines, and Vercel deployments. The same person who drew the wireframe shipped the build.",
+    desc: "Design through to production deployment using AI tooling — Claude Code, Cursor. Not just Figma files handed to an engineer. The same person who drew the wireframe directed, reviewed, and shipped the build. No handoff gap means no fidelity loss.",
     tag: "4BC Global · Alya · Insure First · Turquoic",
     href: null,
   },

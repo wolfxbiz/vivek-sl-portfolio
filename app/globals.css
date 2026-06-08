@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-* {
+/* Exclude Alya embed sections from the global weight reset */
+*:not(.alya-embed, .alya-embed *) {
   font-weight: 400 !important;
 }
 
@@ -14,3 +15,76 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* ── Alya embed shared utilities ─────────────────────────── */
+
+.font-display {
+  font-family: 'PP Neue Montreal', 'Manrope', 'Inter', sans-serif;
+  font-style: normal;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #021F4B;
+}
+
+.ghost-text {
+  color: rgba(2, 31, 75, 0.2);
+  transition: color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.heading-hover:hover .ghost-text {
+  color: #7FFA7B;
+}
+
+.btn-lift {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.btn-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(127, 250, 123, 0.25);
+}
+
+.will-reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.will-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes popup-in {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes question-enter {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.popup-in     { animation: popup-in 0.22s cubic-bezier(0.16, 1, 0.3, 1); }
+.slide-in-right { animation: slide-in-right 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
+.question-enter { animation: question-enter 0.2s ease-out; }
