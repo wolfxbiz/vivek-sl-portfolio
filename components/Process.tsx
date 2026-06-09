@@ -51,7 +51,7 @@ export default function Process() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-white px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
+    <section className="bg-white px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-neutral-100">
 
       {/* Section header */}
       <div className="mb-16 flex flex-col gap-3">

@@ -81,17 +81,19 @@ export default function ProjectGrid() {
       </div>
 
       {/* Dark label bar */}
-      <div className="flex w-full bg-blue-700">
+      <div className="flex flex-col md:flex-row w-full bg-blue-700">
         {projects.map((p, i) => (
           <Link
             key={p.id}
             href={`/case-study/${p.slug}`}
-            className="flex-1 px-8 py-8 flex flex-col gap-2 group hover:bg-blue-600 transition-colors duration-300 border-r border-white/10 last:border-0"
+            className="md:flex-1 px-6 py-5 md:px-8 md:py-8 flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-2 group hover:bg-blue-600 transition-colors duration-300 border-b border-white/10 md:border-b-0 md:border-r last:border-0"
           >
-            <p className="text-white/70 text-sm tracking-widest uppercase">{p.category}</p>
-            <p className="text-white text-lg tracking-tight leading-snug mt-1">{p.title}</p>
-            <p className="text-white/75 text-base leading-snug">{p.subtitle}</p>
-            <p className="text-white/55 text-sm tracking-widest mt-3 group-hover:text-white/90 transition-colors duration-300">→</p>
+            <div className="flex-1 md:flex-none">
+              <p className="text-white/70 text-xs tracking-widest uppercase mb-1 md:mb-0 md:text-sm">{p.category}</p>
+              <p className="text-white text-base md:text-lg tracking-tight leading-snug md:mt-1">{p.title}</p>
+              <p className="text-white/75 text-sm md:text-base leading-snug hidden md:block mt-1">{p.subtitle}</p>
+            </div>
+            <p className="text-white/55 text-lg tracking-widest shrink-0 group-hover:text-white/90 transition-colors duration-300 md:mt-3">→</p>
           </Link>
         ))}
       </div>

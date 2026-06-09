@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const primaryRoles = [
   {
     title: "UI/UX Designer & Web Developer",
@@ -61,7 +63,7 @@ const education = [
 
 export default function Experience() {
   return (
-    <section className="bg-black px-8 md:px-30 lg:px-60 py-24 border-t border-white/5">
+    <section className="bg-black px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-white/5">
 
       {/* Section label */}
       <p className="text-white/65 text-sm tracking-[0.3em] uppercase mb-16">
@@ -90,9 +92,21 @@ export default function Experience() {
               </div>
 
               {/* Title + company */}
-              <div>
-                <p className="text-white text-xl tracking-tight mb-1">{r.title}</p>
-                <p className="text-white/70 text-sm tracking-widest uppercase">{r.company}</p>
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <p className="text-white text-xl tracking-tight mb-1">{r.title}</p>
+                  <p className="text-white/70 text-sm tracking-widest uppercase">{r.company}</p>
+                </div>
+                {r.company === "Turquoic IT Consultancy" && (
+                  <Image
+                    src="/icons/turquoic-logo.svg"
+                    alt="Turquoic"
+                    width={110}
+                    height={20}
+                    unoptimized
+                    className="opacity-80 shrink-0 mt-1"
+                  />
+                )}
               </div>
 
               {/* Bullets */}

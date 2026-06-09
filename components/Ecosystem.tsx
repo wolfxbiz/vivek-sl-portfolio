@@ -47,7 +47,7 @@ const disciplines = [
 
 export default function Ecosystem() {
   return (
-    <section className="bg-white px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
+    <section className="bg-white px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-neutral-100">
       <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-6">
         What Makes This Work Different
       </p>
@@ -65,10 +65,10 @@ export default function Ecosystem() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100">
         {disciplines.map((d) => (
-          <div key={d.num} className="bg-white p-10 flex flex-col gap-4 group">
+          <div key={d.num} className="bg-white p-6 md:p-10 flex flex-col gap-4 group">
             <div className="flex items-start justify-between gap-4">
               <span className="text-neutral-500 text-sm tracking-widest shrink-0 pt-0.5">{d.num}</span>
-              <span className="text-neutral-500 text-sm tracking-wider text-right">{d.tag}</span>
+              <span className="text-neutral-500 text-sm tracking-wider md:text-right">{d.tag}</span>
             </div>
             <p className="text-neutral-900 text-xl leading-snug">{d.title}</p>
             <p className="text-neutral-600 text-base leading-relaxed">{d.desc}</p>

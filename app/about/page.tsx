@@ -66,7 +66,7 @@ export default function AboutPage() {
     <main className="bg-white min-h-screen pt-16">
 
       {/* Hero */}
-      <section className="px-8 md:px-30 lg:px-60 pt-20 pb-24 border-b border-neutral-100">
+      <section className="px-8 md:px-30 lg:px-60 pt-14 md:pt-20 pb-14 md:pb-24 border-b border-neutral-100">
         <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-12">About</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -100,12 +100,12 @@ export default function AboutPage() {
       </section>
 
       {/* What I actually do */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 border-b border-neutral-100">
-        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-16">What I Actually Do</p>
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 border-b border-neutral-100">
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-12 md:mb-16">What I Actually Do</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-100">
 
           {/* UX Architecture */}
-          <div className="bg-white p-10 flex flex-col gap-6">
+          <div className="bg-white p-6 md:p-10 flex flex-col gap-6">
             <div className="flex flex-col gap-3">
               <p className="text-neutral-900 text-xl">UX Architecture</p>
               <p className="text-neutral-600 text-base leading-relaxed">
@@ -120,7 +120,7 @@ export default function AboutPage() {
           </div>
 
           {/* AI-Directed Development */}
-          <div className="bg-white p-10 flex flex-col gap-6">
+          <div className="bg-white p-6 md:p-10 flex flex-col gap-6">
             <div className="flex flex-col gap-3">
               <p className="text-neutral-900 text-xl">AI-Directed Development</p>
               <p className="text-neutral-600 text-base leading-relaxed">
@@ -135,7 +135,7 @@ export default function AboutPage() {
           </div>
 
           {/* AI Systems */}
-          <div className="bg-white p-10 flex flex-col gap-6">
+          <div className="bg-white p-6 md:p-10 flex flex-col gap-6">
             <div className="flex flex-col gap-3">
               <p className="text-neutral-900 text-xl">AI Systems</p>
               <p className="text-neutral-600 text-base leading-relaxed">
@@ -151,11 +151,11 @@ export default function AboutPage() {
       </section>
 
       {/* How I think */}
-      <section className="bg-neutral-50 px-8 md:px-30 lg:px-60 py-24 border-b border-neutral-100">
-        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-16">How I Think</p>
+      <section className="bg-neutral-50 px-8 md:px-30 lg:px-60 py-14 md:py-24 border-b border-neutral-100">
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-12 md:mb-16">How I Think</p>
         <div className="flex flex-col gap-px bg-neutral-200">
           {values.map((v) => (
-            <div key={v.title} className="bg-white p-10 flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+            <div key={v.title} className="bg-white p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-16 items-start">
               <p className="text-neutral-900 text-base md:w-64 shrink-0 leading-snug">{v.title}</p>
               <p className="text-neutral-600 text-base leading-relaxed max-w-2xl">{v.body}</p>
             </div>
@@ -164,8 +164,8 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 border-b border-neutral-100">
-        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-16">Background</p>
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 border-b border-neutral-100">
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-12 md:mb-16">Background</p>
         <div className="flex flex-col">
           {timeline.map((t, i) => (
             <div key={i} className="flex flex-col md:flex-row md:gap-20 py-10 border-b border-neutral-100 last:border-0">
@@ -183,7 +183,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <div className="max-w-2xl">
           <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-8">Currently</p>
           <p className="text-neutral-900 text-3xl md:text-4xl tracking-tight leading-snug mb-12">

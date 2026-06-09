@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-white px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
-      <div className="max-w-3xl mb-20">
+    <footer className="bg-white px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-neutral-100">
+      <div className="max-w-3xl mb-12 md:mb-20">
         <p className="text-neutral-900 text-3xl md:text-4xl leading-snug tracking-tight">
           A designer who thinks like a PM — with the business education to back it up.
           Open to product roles, design leadership, and high-growth teams.

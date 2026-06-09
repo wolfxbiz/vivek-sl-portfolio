@@ -82,7 +82,7 @@ const tools: { label: string; src?: string; icon?: React.ReactNode }[] = [
 
 export default function Skills() {
   return (
-    <section className="bg-white px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
+    <section className="bg-white px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-neutral-100">
       <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-16">
         Capabilities
       </p>
@@ -92,7 +92,7 @@ export default function Skills() {
         {capabilities.map((g) => (
           <div key={g.label} className="flex flex-col md:flex-row md:gap-20 gap-5">
             <div className="md:w-48 shrink-0">
-              <p className="text-neutral-600 text-sm tracking-widest uppercase pt-3">
+              <p className="text-neutral-600 text-sm tracking-wider md:tracking-widest uppercase pt-3">
                 {g.label}
               </p>
             </div>
@@ -120,7 +120,7 @@ export default function Skills() {
           {tools.map((tool) => (
             <div
               key={tool.label}
-              className="bg-white flex flex-col items-center justify-center gap-6 py-16 px-8 group hover:bg-neutral-50 transition-colors duration-300"
+              className="bg-white flex flex-col items-center justify-center gap-4 py-10 px-6 md:py-16 md:px-8 group hover:bg-neutral-50 transition-colors duration-300"
             >
               <div className="w-16 h-16 flex items-center justify-center">
                 {tool.src ? (

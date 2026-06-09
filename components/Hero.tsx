@@ -6,7 +6,7 @@ const Prism = dynamic(() => import('./Prism'), { ssr: false });
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-end px-8 md:px-30 lg:px-60 pb-24 pt-32 bg-black overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-end px-8 md:px-30 lg:px-60 pb-16 md:pb-24 pt-28 md:pt-32 bg-black overflow-hidden">
 
       {/* Prism — left side, desktop only */}
       <div className="hidden md:flex absolute inset-0 justify-start pointer-events-none">
