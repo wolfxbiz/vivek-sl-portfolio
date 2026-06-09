@@ -1,6 +1,8 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { SiTailwindcss, SiFramer, SiGreensock } from "react-icons/si";
 
 export const metadata: Metadata = {
   title: "4BC Global — Vivek S L",
@@ -170,14 +172,7 @@ const designRationale = [
 
 export default function FourBCGlobalPage() {
   return (
-    <main className="bg-white min-h-screen">
-
-      {/* Back nav */}
-      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
-        <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
-          ← vivek s l
-        </Link>
-      </div>
+    <main className="bg-white min-h-screen pt-16">
 
       {/* ── HERO ── */}
       <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
@@ -217,19 +212,38 @@ export default function FourBCGlobalPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-30 lg:px-60 py-12 border-b border-neutral-100">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          {[
-            { label: "Role", value: "Lead Designer & Frontend Engineer" },
-            { label: "Stack", value: "Next.js 14 · TypeScript · Tailwind · Framer Motion · GSAP · OGL" },
-            { label: "Client", value: "4BC Global — MEA Market Research & Advisory" },
-            { label: "Deliverables", value: "Brand Identity · Multi-Route Site · WebGL Hero · Case Study Library" },
-          ].map((item) => (
-            <div key={item.label} className="flex flex-col gap-2">
-              <p className="text-neutral-400 text-xs tracking-widest uppercase">{item.label}</p>
-              <p className="text-neutral-800 text-sm leading-relaxed">{item.value}</p>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Role</p>
+            <p className="text-neutral-900 text-sm leading-relaxed">Lead Designer & Frontend Engineer</p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Stack</p>
+            <div className="flex flex-wrap gap-2">
+              {([
+                { icon: <Image src="/icons/nextjs.svg" width={13} height={13} alt="Next.js" unoptimized />, label: "Next.js 14" },
+                { icon: <Image src="/icons/typescript.svg" width={13} height={13} alt="TypeScript" unoptimized />, label: "TypeScript" },
+                { icon: <SiTailwindcss size={13} color="#06B6D4" />, label: "Tailwind" },
+                { icon: <SiFramer size={13} color="#0055FF" />, label: "Framer Motion" },
+                { icon: <SiGreensock size={13} color="#88CE02" />, label: "GSAP" },
+                { icon: null, label: "OGL/WebGL" },
+              ] as { icon: React.ReactNode; label: string }[]).map((chip) => (
+                <span key={chip.label} className="flex items-center gap-1.5 border border-neutral-200 px-2.5 py-1.5 text-neutral-600 text-xs">
+                  {chip.icon}
+                  {chip.label}
+                </span>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Client</p>
+            <p className="text-neutral-900 text-sm leading-relaxed">4BC Global — MEA Market Research & Advisory</p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Deliverables</p>
+            <p className="text-neutral-900 text-sm leading-relaxed">Brand Identity · Multi-Route Site · WebGL Hero · Case Study Library</p>
+          </div>
         </div>
       </div>
 

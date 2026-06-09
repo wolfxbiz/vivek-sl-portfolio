@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,16 +19,19 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const textColor = scrolled ? 'text-neutral-400 hover:text-black' : 'text-white/50 hover:text-white';
+  // On non-home pages the background is always white — treat as scrolled
+  const light = !isHome || scrolled;
+
+  const textColor = light ? 'text-neutral-600 hover:text-black' : 'text-white/80 hover:text-white';
 
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 border-b transition-all duration-500 ${
-        scrolled ? 'bg-white border-neutral-100' : 'bg-black border-white/10'
+        light ? 'bg-white border-neutral-100' : 'bg-black border-white/10'
       }`}>
         <Link
           href="/"
-          className={`text-sm tracking-widest font-bold transition-colors duration-500 ${scrolled ? 'text-black' : 'text-white'}`}
+          className={`text-sm tracking-widest font-bold transition-colors duration-500 ${light ? 'text-black' : 'text-white'}`}
         >
           VIVEK S L
         </Link>
@@ -57,9 +63,9 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className={`text-sm tracking-wider px-4 py-1.5 border transition-all duration-500 ${
-              scrolled
-                ? 'text-neutral-400 hover:text-black border-neutral-200 hover:border-black'
-                : 'text-white/50 hover:text-white border-white/20 hover:border-white'
+              light
+                ? 'text-neutral-600 hover:text-black border-neutral-300 hover:border-black'
+                : 'text-white/80 hover:text-white border-white/50 hover:border-white'
             }`}
           >
             Resume
@@ -73,13 +79,13 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span className={`block h-px w-full transition-all duration-300 origin-top-left ${
-            scrolled ? 'bg-black' : 'bg-white'
+            light ? 'bg-black' : 'bg-white'
           } ${open ? 'rotate-45 translate-x-px' : ''}`} />
           <span className={`block h-px w-full transition-all duration-300 ${
-            scrolled ? 'bg-black' : 'bg-white'
+            light ? 'bg-black' : 'bg-white'
           } ${open ? 'opacity-0 scale-x-0' : ''}`} />
           <span className={`block h-px w-full transition-all duration-300 origin-bottom-left ${
-            scrolled ? 'bg-black' : 'bg-white'
+            light ? 'bg-black' : 'bg-white'
           } ${open ? '-rotate-45 translate-x-px' : ''}`} />
         </button>
       </nav>
@@ -129,7 +135,7 @@ export default function Navbar() {
             Resume
           </a>
         </div>
-        <p className="absolute bottom-10 left-8 text-white/20 text-xs tracking-widest uppercase">
+        <p className="absolute bottom-10 left-8 text-white/60 text-sm tracking-widest uppercase">
           VIVEK S L
         </p>
       </div>

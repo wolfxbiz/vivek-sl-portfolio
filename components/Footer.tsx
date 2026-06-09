@@ -11,13 +11,13 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-10">
           <a
             href="tel:+918921284894"
-            className="text-neutral-400 text-sm tracking-wider hover:text-black transition-colors duration-300"
+            className="text-neutral-600 text-sm tracking-wider hover:text-black transition-colors duration-300"
           >
             +91 8921284894
           </a>
           <a
             href="mailto:vivekshajilekha@gmail.com"
-            className="text-neutral-400 text-sm tracking-wider hover:text-black transition-colors duration-300"
+            className="text-neutral-600 text-sm tracking-wider hover:text-black transition-colors duration-300"
           >
             vivekshajilekha@gmail.com
           </a>
@@ -25,12 +25,12 @@ export default function Footer() {
             href="https://www.linkedin.com/in/viveksl/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-neutral-400 text-sm tracking-wider hover:text-black transition-colors duration-300"
+            className="text-neutral-600 text-sm tracking-wider hover:text-black transition-colors duration-300"
           >
             LinkedIn
           </a>
         </div>
-        <p className="text-neutral-300 text-sm tracking-wider">
+        <p className="text-neutral-500 text-sm tracking-wider">
           © {new Date().getFullYear()} VIVEK S L
         </p>
       </div>

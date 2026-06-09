@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
 import Process from "@/components/Process";
@@ -12,8 +11,6 @@ const CARD_SHADOW = "0 -12px 40px rgba(0,0,0,0.25), 0 -2px 8px rgba(0,0,0,0.1)";
 export default function Page() {
   return (
     <main>
-      <Navbar />
-
       {/* Hero — sticky, sits behind the card */}
       <div className="sticky top-0" style={{ zIndex: 1 }}>
         <Hero />

@@ -1,5 +1,8 @@
+import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
+import { SiVite, SiTailwindcss, SiFramer, SiReactrouter } from "react-icons/si";
 
 export const metadata: Metadata = {
   title: "Insure First — Vivek S L",
@@ -108,20 +111,20 @@ const metricsTargets = [
 
 export default function EnsurioFirstPage() {
   return (
-    <main className="bg-white min-h-screen">
-
-      {/* Back nav */}
-      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
-        <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
-          ← vivek s l
-        </Link>
-      </div>
+    <main className="bg-white min-h-screen pt-16">
 
       {/* ── HERO ── */}
       <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
+        <Image
+          src="/images/insure-first/businesswoman-handshake.webp"
+          alt="Professional advisory consultation"
+          fill
+          className="object-cover object-center"
+          priority
+        />
         <div
           className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse at 15% 60%, #0D1B4B 0%, #000000 65%)" }}
+          style={{ background: "radial-gradient(ellipse at 15% 60%, rgba(13,27,75,0.85) 0%, rgba(0,0,0,0.88) 65%)" }}
         />
         <div
           className="absolute inset-0 opacity-5"
@@ -158,19 +161,37 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-neutral-50">
+      <div className="px-8 md:px-30 lg:px-60 py-12 border-b border-neutral-100">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          {[
-            { label: "Role", value: "Lead Experience Designer & Frontend Engineer" },
-            { label: "Stack", value: "React 18 · Vite · Framer Motion · Tailwind CSS · React Router" },
-            { label: "Client", value: "Insure First Risk Management Consultancies" },
-            { label: "Deliverables", value: "3-Route Site · Lead Magnets · Form System · Email Nurture" },
-          ].map((item) => (
-            <div key={item.label} className="flex flex-col gap-2">
-              <p className="text-neutral-400 text-xs tracking-widest uppercase">{item.label}</p>
-              <p className="text-neutral-800 text-sm leading-relaxed">{item.value}</p>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Role</p>
+            <p className="text-neutral-900 text-sm leading-relaxed">Lead Experience Designer & Frontend Engineer</p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Stack</p>
+            <div className="flex flex-wrap gap-2">
+              {([
+                { icon: <Image src="/icons/react.svg" width={13} height={13} alt="React" unoptimized />, label: "React 18" },
+                { icon: <SiVite size={13} color="#646CFF" />, label: "Vite" },
+                { icon: <SiFramer size={13} color="#0055FF" />, label: "Framer Motion" },
+                { icon: <SiTailwindcss size={13} color="#06B6D4" />, label: "Tailwind" },
+                { icon: <SiReactrouter size={13} color="#CA4245" />, label: "React Router" },
+              ] as { icon: React.ReactNode; label: string }[]).map((chip) => (
+                <span key={chip.label} className="flex items-center gap-1.5 border border-neutral-200 px-2.5 py-1.5 text-neutral-600 text-xs">
+                  {chip.icon}
+                  {chip.label}
+                </span>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Client</p>
+            <p className="text-neutral-900 text-sm leading-relaxed">Insure First Risk Management Consultancies</p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Deliverables</p>
+            <p className="text-neutral-900 text-sm leading-relaxed">3-Route Site · Lead Magnets · Form System · Email Nurture</p>
+          </div>
         </div>
       </div>
 
@@ -218,11 +239,18 @@ export default function EnsurioFirstPage() {
         </div>
       </section>
 
-      {/* Full-bleed image placeholder */}
+      {/* Homepage screenshot */}
       <div className="px-8 md:px-30 lg:px-60 py-10">
-        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
-          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Homepage Overview</span>
+        <div className="w-full relative overflow-hidden border border-neutral-200">
+          <Image
+            src="/images/insure-first/site-homepage.webp"
+            alt="Insure First homepage — navigation and hero section"
+            width={1920}
+            height={1080}
+            className="w-full h-auto"
+          />
         </div>
+        <p className="text-neutral-400 text-xs tracking-widest uppercase mt-3 text-center">Insure First — Homepage</p>
       </div>
 
       {/* ── 02 INFORMATION ARCHITECTURE ── */}
@@ -238,20 +266,22 @@ export default function EnsurioFirstPage() {
         </div>
 
         {/* Route table */}
-        <div className="border border-neutral-200 divide-y divide-neutral-100 mb-16">
-          <div className="grid grid-cols-4 gap-0 bg-neutral-900 px-8 py-4">
-            {["Route", "Purpose", "Audience", "Structure"].map((h) => (
-              <p key={h} className="text-white/40 text-xs tracking-widest uppercase">{h}</p>
+        <div className="overflow-x-auto mb-16">
+          <div className="border border-neutral-200 divide-y divide-neutral-100 min-w-140">
+            <div className="grid grid-cols-4 gap-0 bg-neutral-900 px-8 py-4">
+              {["Route", "Purpose", "Audience", "Structure"].map((h) => (
+                <p key={h} className="text-white/40 text-xs tracking-widest uppercase">{h}</p>
+              ))}
+            </div>
+            {routes.map((r) => (
+              <div key={r.route} className="grid grid-cols-4 gap-0 bg-white px-8 py-6 items-center">
+                <p className="text-neutral-900 text-sm font-mono">{r.route}</p>
+                <p className="text-neutral-700 text-sm">{r.purpose}</p>
+                <p className="text-neutral-400 text-sm">{r.audience}</p>
+                <p className="text-neutral-400 text-sm">{r.sections}</p>
+              </div>
             ))}
           </div>
-          {routes.map((r) => (
-            <div key={r.route} className="grid grid-cols-4 gap-0 bg-white px-8 py-6 items-center">
-              <p className="text-neutral-900 text-sm font-mono">{r.route}</p>
-              <p className="text-neutral-700 text-sm">{r.purpose}</p>
-              <p className="text-neutral-400 text-sm">{r.audience}</p>
-              <p className="text-neutral-400 text-sm">{r.sections}</p>
-            </div>
-          ))}
         </div>
 
         {/* Homepage 13-section narrative */}
@@ -260,14 +290,16 @@ export default function EnsurioFirstPage() {
           <p className="text-neutral-500 text-sm leading-relaxed mb-8 max-w-2xl">
             The homepage is structured as a long-form scrollable brief — common in high-value B2B services where trust must be earned before a prospect will commit to contact. Each section has a specific role in the narrative arc.
           </p>
-          <div className="border border-neutral-200 divide-y divide-neutral-100">
-            {homepageSections.map((s) => (
-              <div key={s.num} className="flex items-start gap-8 px-8 py-5 bg-white">
-                <span className="text-neutral-300 text-xs tracking-widest shrink-0 pt-0.5">{s.num}</span>
-                <p className="text-neutral-900 text-sm w-32 shrink-0">{s.section}</p>
-                <p className="text-neutral-400 text-sm leading-relaxed">{s.role}</p>
-              </div>
-            ))}
+          <div className="overflow-x-auto">
+            <div className="border border-neutral-200 divide-y divide-neutral-100 min-w-120">
+              {homepageSections.map((s) => (
+                <div key={s.num} className="flex items-start gap-8 px-8 py-5 bg-white">
+                  <span className="text-neutral-300 text-xs tracking-widest shrink-0 pt-0.5">{s.num}</span>
+                  <p className="text-neutral-900 text-sm w-32 shrink-0">{s.section}</p>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{s.role}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -366,11 +398,27 @@ export default function EnsurioFirstPage() {
         </div>
       </section>
 
-      {/* Full-bleed image placeholder */}
+      {/* Insurance Premium Check — process flow */}
       <div className="px-8 md:px-30 lg:px-60 py-10">
-        <div className="w-full aspect-16/7 bg-[#0D1B4B] flex items-center justify-center">
-          <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Services Page & Contact Form</span>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-neutral-100">
+          {[
+            { src: "/images/insure-first/tool-step-1.webp", step: "01", label: "Company Profile", alt: "Step 1 — Industry sector, company size, annual turnover" },
+            { src: "/images/insure-first/tool-step-2.webp", step: "02", label: "Coverage Details", alt: "Step 2 — Annual premium, active policies, cover types held" },
+            { src: "/images/insure-first/tool-step-3.webp", step: "03", label: "Claims History", alt: "Step 3 — Claims filed, last audit, premium trend" },
+            { src: "/images/insure-first/tool-results.webp", step: "→", label: "Risk Assessment", alt: "Results — Risk score, estimated savings, recommendations" },
+          ].map((item) => (
+            <div key={item.step} className="bg-white flex flex-col">
+              <div className="px-4 pt-4 pb-3 border-b border-neutral-100 flex items-baseline gap-2">
+                <span className="text-neutral-300 text-xs tracking-widest">{item.step}</span>
+                <span className="text-neutral-700 text-xs">{item.label}</span>
+              </div>
+              <div className="overflow-hidden">
+                <Image src={item.src} alt={item.alt} width={860} height={900} className="w-full h-auto" />
+              </div>
+            </div>
+          ))}
         </div>
+        <p className="text-neutral-400 text-xs tracking-widest uppercase mt-3 text-center">Insurance Premium Check — Free 3-Step Diagnostic Tool</p>
       </div>
 
       {/* ── 04 DESIGN SYSTEM ── */}
@@ -431,11 +479,24 @@ export default function EnsurioFirstPage() {
         </div>
       </section>
 
-      {/* Full-bleed image placeholder */}
+      {/* Site sections grid */}
       <div className="px-8 md:px-30 lg:px-60 py-10">
-        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
-          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Design System Components</span>
+        <div className="grid grid-cols-2 gap-px bg-neutral-100">
+          {[
+            { src: "/images/insure-first/site-story.webp", label: "Our Story", alt: "From Insure First to Ensurio First — founder narrative and stats" },
+            { src: "/images/insure-first/site-iop.webp", label: "IOP Framework", alt: "Insurance Optimisation Programme — 4-phase structured engagement" },
+            { src: "/images/insure-first/site-solutions.webp", label: "Pain Points & Solutions", alt: "Common pain points mirrored against six-service solution grid" },
+            { src: "/images/insure-first/site-industries.webp", label: "Industries We Serve", alt: "Construction, Manufacturing, Logistics, Hospitality, Aviation, Engineering" },
+          ].map((img) => (
+            <div key={img.src} className="bg-white flex flex-col">
+              <div className="px-4 pt-4 pb-3 border-b border-neutral-100">
+                <span className="text-neutral-500 text-xs tracking-widest uppercase">{img.label}</span>
+              </div>
+              <Image src={img.src} alt={img.alt} width={1440} height={900} className="w-full h-auto" />
+            </div>
+          ))}
         </div>
+        <p className="text-neutral-400 text-xs tracking-widest uppercase mt-3 text-center">Site Sections — Our Story · IOP Framework · Solutions · Industries</p>
       </div>
 
       {/* ── 05 KEY DECISIONS ── */}

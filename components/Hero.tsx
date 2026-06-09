@@ -38,13 +38,13 @@ export default function Hero() {
         <div className="hidden md:block w-1/2 shrink-0" />
         {/* Text — right half */}
         <div className="w-full md:w-1/2 md:pl-12">
-          <p className="text-white/30 text-xs tracking-[0.3em] uppercase mb-8">
+          <p className="text-white/65 text-xs tracking-[0.3em] uppercase mb-8">
             VIVEK S L — Product-Minded Designer
           </p>
           <h1 className="text-white text-3xl sm:text-4xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight mb-6">
             Designing products that ship. Thinking in systems, funnels, and business outcomes.
           </h1>
-          <p className="text-white/40 text-sm leading-relaxed">
+          <p className="text-white/75 text-base leading-relaxed">
             UI/UX Designer with an MBA in Marketing & Finance — bridging the gap between
             interface execution and product strategy. I scope requirements, align stakeholders,
             map user flows, and ship conversion-driven digital products. Transitioning toward

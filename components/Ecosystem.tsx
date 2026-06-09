@@ -48,7 +48,7 @@ const disciplines = [
 export default function Ecosystem() {
   return (
     <section className="bg-white px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
-      <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">
+      <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-6">
         What Makes This Work Different
       </p>
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16">
@@ -57,7 +57,7 @@ export default function Ecosystem() {
         </h2>
         <Link
           href="/work"
-          className="text-neutral-400 text-xs tracking-widest uppercase hover:text-black transition-colors duration-300 flex items-center gap-2 shrink-0 pb-1"
+          className="text-neutral-600 text-sm tracking-widest uppercase hover:text-black transition-colors duration-300 flex items-center gap-2 shrink-0 pb-1"
         >
           All Work →
         </Link>
@@ -67,15 +67,15 @@ export default function Ecosystem() {
         {disciplines.map((d) => (
           <div key={d.num} className="bg-white p-10 flex flex-col gap-4 group">
             <div className="flex items-start justify-between gap-4">
-              <span className="text-neutral-300 text-xs tracking-widest shrink-0 pt-0.5">{d.num}</span>
-              <span className="text-neutral-300 text-xs tracking-wider text-right">{d.tag}</span>
+              <span className="text-neutral-500 text-sm tracking-widest shrink-0 pt-0.5">{d.num}</span>
+              <span className="text-neutral-500 text-sm tracking-wider text-right">{d.tag}</span>
             </div>
             <p className="text-neutral-900 text-xl leading-snug">{d.title}</p>
-            <p className="text-neutral-400 text-sm leading-relaxed">{d.desc}</p>
+            <p className="text-neutral-600 text-base leading-relaxed">{d.desc}</p>
             {d.href && (
               <Link
                 href={d.href}
-                className="text-neutral-400 text-xs tracking-widest uppercase hover:text-black transition-colors duration-300 mt-2 self-start"
+                className="text-neutral-600 text-sm tracking-widest uppercase hover:text-black transition-colors duration-300 mt-2 self-start"
               >
                 Case Study →
               </Link>

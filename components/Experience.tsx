@@ -64,7 +64,7 @@ export default function Experience() {
     <section className="bg-black px-8 md:px-30 lg:px-60 py-24 border-t border-white/5">
 
       {/* Section label */}
-      <p className="text-white/30 text-xs tracking-[0.3em] uppercase mb-16">
+      <p className="text-white/65 text-sm tracking-[0.3em] uppercase mb-16">
         Experience
       </p>
 
@@ -80,9 +80,9 @@ export default function Experience() {
 
               {/* Period + active badge */}
               <div className="flex items-center gap-3">
-                <span className="text-white/35 text-xs tracking-widest">{r.period}</span>
+                <span className="text-white/70 text-sm tracking-widest">{r.period}</span>
                 {r.active && (
-                  <span className="flex items-center gap-1.5 text-white/40 text-xs tracking-widest">
+                  <span className="flex items-center gap-1.5 text-white/70 text-sm tracking-widest">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     Current
                   </span>
@@ -92,7 +92,7 @@ export default function Experience() {
               {/* Title + company */}
               <div>
                 <p className="text-white text-xl tracking-tight mb-1">{r.title}</p>
-                <p className="text-white/35 text-xs tracking-widest uppercase">{r.company}</p>
+                <p className="text-white/70 text-sm tracking-widest uppercase">{r.company}</p>
               </div>
 
               {/* Bullets */}
@@ -100,7 +100,7 @@ export default function Experience() {
                 {r.points.map((pt, j) => (
                   <li key={j} className="flex gap-4 items-start">
                     <span className="mt-2 shrink-0 w-1 h-1 rounded-full bg-white/25 block" />
-                    <p className="text-white/60 text-sm leading-relaxed">{pt}</p>
+                    <p className="text-white/85 text-base leading-relaxed">{pt}</p>
                   </li>
                 ))}
               </ul>
@@ -109,17 +109,17 @@ export default function Experience() {
 
           {/* Earlier roles — compact */}
           <div className="pt-10">
-            <p className="text-white/20 text-xs tracking-[0.3em] uppercase mb-5">Earlier</p>
+            <p className="text-white/60 text-sm tracking-[0.3em] uppercase mb-5">Earlier</p>
             <div className="flex flex-col gap-px bg-white/5">
               {supportingRoles.map((r, i) => (
                 <div key={i} className="bg-black px-6 py-5 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-6 items-start">
                   <div className="sm:col-span-1">
-                    <p className="text-white/50 text-sm leading-snug">{r.title}</p>
-                    <p className="text-white/25 text-xs tracking-widest uppercase mt-1">{r.company}</p>
+                    <p className="text-white/80 text-base leading-snug">{r.title}</p>
+                    <p className="text-white/60 text-sm tracking-widest uppercase mt-1">{r.company}</p>
                   </div>
                   <div className="sm:col-span-2 flex flex-col gap-1">
-                    <p className="text-white/25 text-xs tracking-wider">{r.period}</p>
-                    <p className="text-white/35 text-xs leading-relaxed">{r.note}</p>
+                    <p className="text-white/60 text-sm tracking-wider">{r.period}</p>
+                    <p className="text-white/70 text-sm leading-relaxed">{r.note}</p>
                   </div>
                 </div>
               ))}
@@ -130,16 +130,16 @@ export default function Experience() {
         {/* ── RIGHT: Education (sticky) ── */}
         <div className="lg:col-span-4 lg:col-start-9 lg:sticky lg:top-28 flex flex-col gap-px">
 
-          <p className="text-white/20 text-xs tracking-[0.3em] uppercase mb-5">Education</p>
+          <p className="text-white/60 text-sm tracking-[0.3em] uppercase mb-5">Education</p>
 
           {/* MBA — elevated */}
           <div className="border border-white/10 p-7 flex flex-col gap-3 mb-px">
             <div>
-              <p className="text-white/75 text-base leading-snug">{education[0].degree}</p>
-              <p className="text-white/30 text-xs tracking-widest uppercase mt-1">{education[0].institution}</p>
+              <p className="text-white/90 text-base leading-snug">{education[0].degree}</p>
+              <p className="text-white/65 text-sm tracking-widest uppercase mt-1">{education[0].institution}</p>
             </div>
-            <p className="text-white/30 text-xs tracking-wider">{education[0].period}</p>
-            <p className="text-white/40 text-xs leading-relaxed border-t border-white/8 pt-3 mt-1">
+            <p className="text-white/65 text-sm tracking-wider">{education[0].period}</p>
+            <p className="text-white/75 text-sm leading-relaxed border-t border-white/8 pt-3 mt-1">
               {education[0].note}
             </p>
           </div>
@@ -147,9 +147,9 @@ export default function Experience() {
           {/* BBA + Animation — secondary */}
           {education.slice(1).map((e, i) => (
             <div key={i} className="bg-white/3 px-7 py-5 flex flex-col gap-1.5">
-              <p className="text-white/45 text-sm">{e.degree}</p>
-              <p className="text-white/20 text-xs tracking-widest uppercase">{e.institution}</p>
-              <p className="text-white/20 text-xs tracking-wider mt-0.5">{e.period}</p>
+              <p className="text-white/80 text-base">{e.degree}</p>
+              <p className="text-white/60 text-sm tracking-widest uppercase">{e.institution}</p>
+              <p className="text-white/60 text-sm tracking-wider mt-0.5">{e.period}</p>
             </div>
           ))}
         </div>

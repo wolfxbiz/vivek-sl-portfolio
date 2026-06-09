@@ -1,5 +1,8 @@
+import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
+import { SiVite, SiTailwindcss } from "react-icons/si";
 import AlyaBrowserParallax from "./AlyaBrowserParallax";
 import AlyaCheckerStatic from "./AlyaCheckerStatic";
 import AlyaMobileMockups from "./AlyaMobileMockups";
@@ -158,14 +161,7 @@ const metrics = [
 
 export default function AlyaAuditorsPage() {
   return (
-    <main className="bg-white min-h-screen">
-
-      {/* Back nav — solid white + z-index so mascot tucks behind it */}
-      <div className="relative z-10 bg-white px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
-        <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
-          ← vivek s l
-        </Link>
-      </div>
+    <main className="bg-white min-h-screen pt-16">
 
       {/* ── HERO — Alya landing page style ── */}
       {/* overflow-hidden on mobile only — desktop allows mascot to extend upward */}
@@ -255,19 +251,37 @@ export default function AlyaAuditorsPage() {
       </section>
 
       {/* ── META STRIP ── */}
-      <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-neutral-50">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-          {[
-            { label: "Role", value: "Lead Experience Designer & Frontend Engineer" },
-            { label: "Stack", value: "React 18 · TypeScript · Vite · Tailwind CSS · shadcn/ui" },
-            { label: "Platform", value: "Multi-page Marketing Site + Interactive Lead-Gen Tooling" },
-            { label: "Deliverables", value: "Full Site Build, Audit Checker, Downloadable Report Engine" },
-          ].map((item) => (
-            <div key={item.label} className="flex flex-col gap-2">
-              <p className="text-neutral-400 text-xs tracking-widest uppercase">{item.label}</p>
-              <p className="text-neutral-800 text-sm leading-relaxed">{item.value}</p>
+      <div className="px-8 md:px-30 lg:px-60 py-12 border-b border-neutral-100">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Role</p>
+            <p className="text-neutral-900 text-sm leading-relaxed">Lead Experience Designer & Frontend Engineer</p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Stack</p>
+            <div className="flex flex-wrap gap-2">
+              {([
+                { icon: <Image src="/icons/react.svg" width={13} height={13} alt="React" unoptimized />, label: "React 18" },
+                { icon: <Image src="/icons/typescript.svg" width={13} height={13} alt="TypeScript" unoptimized />, label: "TypeScript" },
+                { icon: <SiVite size={13} color="#646CFF" />, label: "Vite" },
+                { icon: <SiTailwindcss size={13} color="#06B6D4" />, label: "Tailwind" },
+                { icon: null, label: "shadcn/ui" },
+              ] as { icon: React.ReactNode; label: string }[]).map((chip) => (
+                <span key={chip.label} className="flex items-center gap-1.5 border border-neutral-200 px-2.5 py-1.5 text-neutral-600 text-xs">
+                  {chip.icon}
+                  {chip.label}
+                </span>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Platform</p>
+            <p className="text-neutral-900 text-sm leading-relaxed">Multi-page Marketing Site + Interactive Lead-Gen Tooling</p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Deliverables</p>
+            <p className="text-neutral-900 text-sm leading-relaxed">Full Site Build, Audit Checker, Downloadable Report Engine</p>
+          </div>
         </div>
       </div>
 

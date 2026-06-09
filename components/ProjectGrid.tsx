@@ -47,7 +47,7 @@ export default function ProjectGrid() {
         </h2>
         <Link
           href="/work"
-          className="text-neutral-400 text-xs tracking-widest uppercase hover:text-black transition-colors duration-300 flex items-center gap-2 pb-1"
+          className="text-neutral-600 text-sm tracking-widest uppercase hover:text-black transition-colors duration-300 flex items-center gap-2 pb-1"
         >
           All Work →
         </Link>
@@ -88,10 +88,10 @@ export default function ProjectGrid() {
             href={`/case-study/${p.slug}`}
             className="flex-1 px-8 py-8 flex flex-col gap-2 group hover:bg-blue-600 transition-colors duration-300 border-r border-white/10 last:border-0"
           >
-            <p className="text-white/40 text-xs tracking-widest uppercase">{p.category}</p>
+            <p className="text-white/70 text-sm tracking-widest uppercase">{p.category}</p>
             <p className="text-white text-lg tracking-tight leading-snug mt-1">{p.title}</p>
-            <p className="text-white/40 text-sm leading-snug">{p.subtitle}</p>
-            <p className="text-white/20 text-sm tracking-widest mt-3 group-hover:text-white/60 transition-colors duration-300">→</p>
+            <p className="text-white/75 text-base leading-snug">{p.subtitle}</p>
+            <p className="text-white/55 text-sm tracking-widest mt-3 group-hover:text-white/90 transition-colors duration-300">→</p>
           </Link>
         ))}
       </div>

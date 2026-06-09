@@ -83,7 +83,7 @@ const tools: { label: string; src?: string; icon?: React.ReactNode }[] = [
 export default function Skills() {
   return (
     <section className="bg-white px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
-      <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-16">
+      <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-16">
         Capabilities
       </p>
 
@@ -92,7 +92,7 @@ export default function Skills() {
         {capabilities.map((g) => (
           <div key={g.label} className="flex flex-col md:flex-row md:gap-20 gap-5">
             <div className="md:w-48 shrink-0">
-              <p className="text-neutral-300 text-xs tracking-widest uppercase pt-3">
+              <p className="text-neutral-600 text-sm tracking-widest uppercase pt-3">
                 {g.label}
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function Skills() {
               {g.items.map((skill) => (
                 <span
                   key={skill}
-                  className="px-5 py-3 border border-neutral-200 text-neutral-500 text-sm tracking-wide hover:border-black hover:text-black transition-all duration-300"
+                  className="px-5 py-3 border border-neutral-200 text-neutral-700 text-sm tracking-wide hover:border-black hover:text-black transition-all duration-300"
                 >
                   {skill}
                 </span>
@@ -112,7 +112,7 @@ export default function Skills() {
 
       {/* Tools */}
       <div className="border-t border-neutral-100 pt-16">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-12">
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-12">
           Tools
         </p>
 
@@ -137,7 +137,7 @@ export default function Skills() {
                   tool.icon
                 )}
               </div>
-              <span className="text-neutral-400 text-sm tracking-wider text-center leading-snug group-hover:text-neutral-900 transition-colors duration-300">
+              <span className="text-neutral-600 text-sm tracking-wider text-center leading-snug group-hover:text-neutral-900 transition-colors duration-300">
                 {tool.label}
               </span>
             </div>

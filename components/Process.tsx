@@ -55,12 +55,12 @@ export default function Process() {
 
       {/* Section header */}
       <div className="mb-16 flex flex-col gap-3">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase">Process</p>
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase">Process</p>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
             How I Work
           </h2>
-          <p className="text-neutral-400 text-sm leading-relaxed max-w-xs md:text-right">
+          <p className="text-neutral-600 text-base leading-relaxed max-w-xs md:text-right">
             A disciplined end-to-end design process — from raw discovery to live deployment.
           </p>
         </div>
@@ -82,20 +82,20 @@ export default function Process() {
                   className="w-full flex items-center justify-between py-5 text-left focus:outline-none group"
                 >
                   <div className="flex items-center gap-6">
-                    <span className={`text-xs tracking-widest w-6 shrink-0 transition-colors duration-300 ${isOpen ? 'text-neutral-900' : 'text-neutral-300'}`}>
+                    <span className={`text-xs tracking-widest w-6 shrink-0 transition-colors duration-300 ${isOpen ? 'text-neutral-900' : 'text-neutral-500'}`}>
                       {item.number}
                     </span>
-                    <span className={`text-lg md:text-xl tracking-tight transition-colors duration-300 ${isOpen ? 'text-neutral-900' : 'text-neutral-500 group-hover:text-neutral-900'}`}>
+                    <span className={`text-lg md:text-xl tracking-tight transition-colors duration-300 ${isOpen ? 'text-neutral-900' : 'text-neutral-700 group-hover:text-neutral-900'}`}>
                       {item.title}
                     </span>
                   </div>
-                  <span className={`text-lg leading-none transition-all duration-300 shrink-0 ${isOpen ? 'text-neutral-900 rotate-45' : 'text-neutral-300 group-hover:text-neutral-900'}`}>
+                  <span className={`text-lg leading-none transition-all duration-300 shrink-0 ${isOpen ? 'text-neutral-900 rotate-45' : 'text-neutral-500 group-hover:text-neutral-900'}`}>
                     +
                   </span>
                 </button>
 
                 <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-32 pb-5' : 'max-h-0'}`}>
-                  <p className="text-neutral-500 text-sm leading-relaxed max-w-lg">
+                  <p className="text-neutral-600 text-base leading-relaxed max-w-lg">
                     {item.description}
                   </p>
                 </div>

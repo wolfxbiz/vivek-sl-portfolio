@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
+import AboutVideo from "@/components/AboutVideo";
 
 export const metadata: Metadata = {
   title: "About — Vivek S L",
   description:
-    "Product-minded designer and engineer with an MBA in Marketing & Finance. Specialising in UAE/GCC digital products, UX architecture, and full-stack execution.",
+    "Product designer and AI-directed builder with an MBA in Marketing & Finance. I design and ship digital products for UAE/GCC clients using AI tooling — without being a traditional engineer.",
 };
 
 const timeline = [
@@ -61,70 +63,101 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <main className="bg-white min-h-screen">
-
-      {/* Back nav */}
-      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
-        <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
-          ← vivek s l
-        </Link>
-      </div>
+    <main className="bg-white min-h-screen pt-16">
 
       {/* Hero */}
       <section className="px-8 md:px-30 lg:px-60 pt-20 pb-24 border-b border-neutral-100">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-8">About</p>
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-12">About</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <h1 className="text-neutral-900 text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
-            Designer who thinks like a PM. Engineer who ships what he designs.
-          </h1>
-          <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-700 text-base leading-relaxed">
-              I'm Vivek S L — a product-minded designer and front-end engineer based in India, working primarily with UAE and GCC clients. I started in animation and motion design, moved into brand and web work, picked up an MBA in Marketing & Finance, and eventually crossed over into full-stack product design and AI engineering.
-            </p>
-            <p className="text-neutral-700 text-base leading-relaxed">
-              The throughline across all of it: I'm drawn to products where the design problem and the business problem are the same problem. Compliance platforms, B2B SaaS, and conversion-critical landing systems — products where a wrong UX decision has a direct financial or regulatory consequence.
-            </p>
-            <p className="text-neutral-700 text-base leading-relaxed">
-              I'm transitioning toward Product Management. Not because I'm done with design, but because the work I find most interesting already requires both.
-            </p>
+
+          {/* Video — first in DOM so it appears on top when stacked on mobile */}
+          <div className="w-full lg:order-last">
+            <AboutVideo />
           </div>
+
+          {/* Text */}
+          <div className="flex flex-col gap-10 lg:order-first">
+            <h1 className="text-neutral-900 text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
+              Designer who ships. Not by writing code — by knowing exactly what to build.
+            </h1>
+            <div className="flex flex-col gap-6">
+              <p className="text-neutral-700 text-base leading-relaxed">
+                I'm Vivek S L — a product designer and AI-directed builder based in India, working with UAE and GCC clients. I started in animation, moved into brand and web design, picked up an MBA in Marketing & Finance, and eventually figured out how to ship full products without becoming a traditional engineer.
+              </p>
+              <p className="text-neutral-700 text-base leading-relaxed">
+                I don't write code from scratch. I use AI — Claude Code, Cursor — to build what I design. What I bring is the judgment layer: knowing what to build, how it should behave, and whether what came out of the AI actually works. Most people who can design can't ship. I can ship.
+              </p>
+              <p className="text-neutral-700 text-base leading-relaxed">
+                I'm drawn to products where the design problem and the business problem are the same problem — compliance platforms, B2B SaaS, conversion-critical landing systems. Places where a wrong UX call has a direct financial consequence.
+              </p>
+              <p className="text-neutral-700 text-base leading-relaxed">
+                I'm moving toward Product Management because the work I already do — owning outcomes, not just deliverables — is already that job.
+              </p>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* What I actually do */}
       <section className="px-8 md:px-30 lg:px-60 py-24 border-b border-neutral-100">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-16">What I Actually Do</p>
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-16">What I Actually Do</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-100">
-          {[
-            {
-              label: "UX Architecture",
-              body: "Information architecture, user flow mapping, multi-tenant permission systems, and wireframes for complex multi-stakeholder platforms. I work at the structural level before touching any visual layer.",
-            },
-            {
-              label: "AI-Directed Development",
-              body: "I work code-first using AI tooling — Claude Code and Cursor. I direct, review, and ship production builds (Next.js, React, TypeScript, Tailwind, GSAP, WebGL) without being a traditional software engineer. The same person who drew the wireframe owns the deployment.",
-            },
-            {
-              label: "AI Engineering",
-              body: "RAG pipeline architecture, LangChain agent orchestration, Pinecone vector search, AWS Textract OCR. On Paperwurk, I designed the UX architecture and wrote 14,000+ lines of production AI code.",
-            },
-          ].map((item) => (
-            <div key={item.label} className="bg-white p-10 flex flex-col gap-4">
-              <p className="text-neutral-900 text-xl">{item.label}</p>
-              <p className="text-neutral-400 text-sm leading-relaxed">{item.body}</p>
+
+          {/* UX Architecture */}
+          <div className="bg-white p-10 flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
+              <p className="text-neutral-900 text-xl">UX Architecture</p>
+              <p className="text-neutral-600 text-base leading-relaxed">
+                This is the actual work. Information architecture, user flow mapping, multi-stakeholder permission systems, and wireframes that resolve complexity before a single component gets built. I work at the structural level — the part AI can't do without someone who understands what users need and what the business requires.
+              </p>
             </div>
-          ))}
+            <div className="flex items-center gap-4 pt-2 border-t border-neutral-100">
+              {["/icons/figma.svg", "/icons/affinity.svg"].map((src, i) => (
+                <Image key={i} src={src} alt="" width={28} height={28} unoptimized className="object-contain opacity-60 hover:opacity-100 transition-opacity" />
+              ))}
+            </div>
+          </div>
+
+          {/* AI-Directed Development */}
+          <div className="bg-white p-10 flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
+              <p className="text-neutral-900 text-xl">AI-Directed Development</p>
+              <p className="text-neutral-600 text-base leading-relaxed">
+                I use Claude Code and Cursor to ship what I design. I'm not a software engineer — I'm the person who knows what to build, reviews what the AI produces, catches what's wrong, and gets it deployed. The gap between a Figma file and a live product is where most designers stop. I don't.
+              </p>
+            </div>
+            <div className="flex items-center gap-4 pt-2 border-t border-neutral-100">
+              {["/icons/claude-code.svg", "/icons/cursor.svg", "/icons/vscode.svg", "/icons/nextjs.svg", "/icons/react.svg", "/icons/typescript.svg"].map((src, i) => (
+                <Image key={i} src={src} alt="" width={28} height={28} unoptimized className="object-contain opacity-60 hover:opacity-100 transition-opacity" />
+              ))}
+            </div>
+          </div>
+
+          {/* AI Systems */}
+          <div className="bg-white p-10 flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
+              <p className="text-neutral-900 text-xl">AI Systems</p>
+              <p className="text-neutral-600 text-base leading-relaxed">
+                On Paperwurk I designed and directed the build of a full RAG pipeline — LangChain orchestration, Pinecone vector search, AWS Textract OCR, and OpenAI integration. I didn't write every line, but I architected the system, defined the data flow, and owned the output quality. That's the role I play.
+              </p>
+            </div>
+            <div className="flex items-center gap-4 pt-2 border-t border-neutral-100">
+              <span className="text-neutral-500 text-sm tracking-widest uppercase">Icons coming</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* How I think */}
       <section className="bg-neutral-50 px-8 md:px-30 lg:px-60 py-24 border-b border-neutral-100">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-16">How I Think</p>
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-16">How I Think</p>
         <div className="flex flex-col gap-px bg-neutral-200">
           {values.map((v) => (
             <div key={v.title} className="bg-white p-10 flex flex-col md:flex-row gap-8 md:gap-16 items-start">
               <p className="text-neutral-900 text-base md:w-64 shrink-0 leading-snug">{v.title}</p>
-              <p className="text-neutral-400 text-sm leading-relaxed max-w-2xl">{v.body}</p>
+              <p className="text-neutral-600 text-base leading-relaxed max-w-2xl">{v.body}</p>
             </div>
           ))}
         </div>
@@ -132,17 +165,17 @@ export default function AboutPage() {
 
       {/* Timeline */}
       <section className="px-8 md:px-30 lg:px-60 py-24 border-b border-neutral-100">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-16">Background</p>
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-16">Background</p>
         <div className="flex flex-col">
           {timeline.map((t, i) => (
             <div key={i} className="flex flex-col md:flex-row md:gap-20 py-10 border-b border-neutral-100 last:border-0">
               <div className="md:w-40 shrink-0 mb-4 md:mb-0">
-                <p className="text-neutral-300 text-sm tracking-wider">{t.period}</p>
+                <p className="text-neutral-500 text-sm tracking-wider">{t.period}</p>
               </div>
               <div className="flex flex-col gap-2 max-w-2xl">
                 <p className="text-neutral-900 text-lg">{t.title}</p>
-                <p className="text-neutral-400 text-xs tracking-widest uppercase">{t.place}</p>
-                <p className="text-neutral-500 text-sm leading-relaxed mt-1">{t.note}</p>
+                <p className="text-neutral-600 text-sm tracking-widest uppercase">{t.place}</p>
+                <p className="text-neutral-600 text-base leading-relaxed mt-1">{t.note}</p>
               </div>
             </div>
           ))}
@@ -152,7 +185,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="px-8 md:px-30 lg:px-60 py-24">
         <div className="max-w-2xl">
-          <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-8">Currently</p>
+          <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-8">Currently</p>
           <p className="text-neutral-900 text-3xl md:text-4xl tracking-tight leading-snug mb-12">
             Open to product roles, design leadership, and high-growth teams building in the UAE, GCC, or remotely.
           </p>
@@ -167,7 +200,7 @@ export default function AboutPage() {
               href="https://www.linkedin.com/in/viveksl/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 text-sm tracking-widest uppercase border border-neutral-200 px-8 py-4 hover:border-black hover:text-black transition-all duration-300 text-center"
+              className="text-neutral-600 text-sm tracking-widest uppercase border border-neutral-300 px-8 py-4 hover:border-black hover:text-black transition-all duration-300 text-center"
             >
               LinkedIn
             </a>
@@ -175,7 +208,7 @@ export default function AboutPage() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 text-sm tracking-widest uppercase border border-neutral-200 px-8 py-4 hover:border-black hover:text-black transition-all duration-300 text-center"
+              className="text-neutral-600 text-sm tracking-widest uppercase border border-neutral-300 px-8 py-4 hover:border-black hover:text-black transition-all duration-300 text-center"
             >
               Resume
             </a>

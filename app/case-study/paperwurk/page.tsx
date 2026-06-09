@@ -192,14 +192,7 @@ const keyDecisions = [
 
 export default function PaperwurkPage() {
   return (
-    <main className="bg-white min-h-screen">
-
-      {/* Back nav */}
-      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
-        <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
-          ← vivek s l
-        </Link>
-      </div>
+    <main className="bg-white min-h-screen pt-16">
 
       {/* ── HERO ── */}
       <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">

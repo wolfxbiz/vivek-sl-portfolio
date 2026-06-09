@@ -83,22 +83,15 @@ const caseStudies: {
 
 export default function WorkPage() {
   return (
-    <main className="bg-white min-h-screen">
-
-      {/* Back nav */}
-      <div className="px-8 md:px-30 lg:px-60 py-6 border-b border-neutral-100">
-        <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
-          ← vivek s l
-        </Link>
-      </div>
+    <main className="bg-white min-h-screen pt-16">
 
       {/* Header */}
       <header className="px-8 md:px-30 lg:px-60 pt-20 pb-16 border-b border-neutral-100">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">Selected Work</p>
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-6">Selected Work</p>
         <h1 className="text-neutral-900 text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight max-w-3xl">
           Case Studies
         </h1>
-        <p className="text-neutral-400 text-lg leading-relaxed max-w-xl mt-6">
+        <p className="text-neutral-600 text-lg leading-relaxed max-w-xl mt-6">
           End-to-end design and engineering work across enterprise platforms, B2B funnels, and brand systems.
         </p>
       </header>
@@ -127,26 +120,26 @@ export default function WorkPage() {
               {/* Content */}
               <div className="flex flex-col justify-center gap-4 flex-1">
                 <div className="flex items-center gap-4">
-                  <span className="text-neutral-300 text-xs tracking-widest">0{i + 1}</span>
-                  <p className="text-neutral-400 text-xs tracking-wider uppercase">{cs.category}</p>
+                  <span className="text-neutral-500 text-sm tracking-widest">0{i + 1}</span>
+                  <p className="text-neutral-600 text-sm tracking-wider uppercase">{cs.category}</p>
                 </div>
                 <h2 className="text-neutral-900 text-2xl md:text-3xl tracking-tight leading-snug group-hover:text-neutral-600 transition-colors duration-300">
                   {cs.title}
                 </h2>
-                <p className="text-neutral-400 text-base leading-relaxed max-w-xl">
+                <p className="text-neutral-600 text-base leading-relaxed max-w-xl">
                   {cs.subtitle}
                 </p>
                 <div className="flex flex-wrap gap-2 mt-2">
                   {cs.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 border border-neutral-100 text-neutral-400 text-xs tracking-wider"
+                      className="px-3 py-1 border border-neutral-200 text-neutral-600 text-xs tracking-wider"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <p className="text-neutral-400 text-sm tracking-wider group-hover:text-black transition-colors duration-300 mt-2">
+                <p className="text-neutral-600 text-sm tracking-wider group-hover:text-black transition-colors duration-300 mt-2">
                   Read Case Study →
                 </p>
               </div>
@@ -157,10 +150,10 @@ export default function WorkPage() {
 
       {/* Footer */}
       <div className="px-8 md:px-30 lg:px-60 py-16 border-t border-neutral-100 flex items-center justify-between">
-        <Link href="/" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
+        <Link href="/" className="text-neutral-600 text-sm tracking-widest hover:text-black transition-colors duration-300 uppercase">
           ← Back to Portfolio
         </Link>
-        <a href="mailto:vivekshajilekha@gmail.com" className="text-neutral-400 text-xs tracking-widest hover:text-black transition-colors duration-300 uppercase">
+        <a href="mailto:vivekshajilekha@gmail.com" className="text-neutral-600 text-sm tracking-widest hover:text-black transition-colors duration-300 uppercase">
           Start a Project
         </a>
       </div>
