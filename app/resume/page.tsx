@@ -138,7 +138,7 @@ export default function ResumePage() {
               <ProjectEntry
                 name="Alya Auditors — Audit Readiness Platform"
                 tags="CRO · Conversion Design"
-                description="Designed a multi-stage compliance checker and lead capture flow for a UAE audit firm — conversion architecture, trust signal placement, and funnel optimisation throughout."
+                description="Designed a multi-stage compliance checker and lead capture flow for a UAE audit firm — optimizing the conversion architecture and trust signal placement to reduce drop-off across the conversion funnel."
               />
               <ProjectEntry
                 name="4BC Global — MEA Research Firm Platform"
@@ -148,7 +148,7 @@ export default function ResumePage() {
               <ProjectEntry
                 name="Insure First — Insurance Advisory Platform"
                 tags="Landing Page · CRO · B2B"
-                description="Multi-route landing platform for a CBUAE-licensed insurance advisory firm — conversion-focused UX balancing regulatory context with lead generation for UAE and GCC audiences."
+                description="Multi-route landing platform for a CBUAE-licensed insurance advisory firm — engineering a conversion-focused UX structured to maximize qualified lead capture while balancing strict regulatory contexts for UAE and GCC audiences."
               />
             </div>
           </section>
