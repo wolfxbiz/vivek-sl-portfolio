@@ -58,10 +58,8 @@ export default function Navbar() {
           >
             Email
           </a>
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/resume"
             className={`text-sm tracking-wider px-4 py-1.5 border transition-all duration-500 ${
               light
                 ? 'text-neutral-600 hover:text-black border-neutral-300 hover:border-black'
@@ -69,7 +67,7 @@ export default function Navbar() {
             }`}
           >
             Resume
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -125,15 +123,13 @@ export default function Navbar() {
           >
             Email
           </a>
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/resume"
             onClick={() => setOpen(false)}
             className="text-white text-5xl tracking-tight hover:text-white/40 transition-colors duration-300"
           >
             Resume
-          </a>
+          </Link>
         </div>
         <p className="absolute bottom-10 left-8 text-white/60 text-sm tracking-widest uppercase">
           VIVEK S L
