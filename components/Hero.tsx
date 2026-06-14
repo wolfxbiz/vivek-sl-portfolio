@@ -1,10 +1,28 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { useRef, useEffect } from 'react';
 
 const Prism = dynamic(() => import('./Prism'), { ssr: false });
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const start = () => { video.currentTime = 0.4; };
+    const loop = () => { video.currentTime = 0.4; video.play(); };
+
+    video.addEventListener('loadedmetadata', start);
+    video.addEventListener('ended', loop);
+    return () => {
+      video.removeEventListener('loadedmetadata', start);
+      video.removeEventListener('ended', loop);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col justify-end px-8 md:px-30 lg:px-60 pb-16 md:pb-24 pt-28 md:pt-32 bg-black overflow-hidden">
 
@@ -38,6 +56,20 @@ export default function Hero() {
         <div className="hidden md:block w-1/2 shrink-0" />
         {/* Text — right half */}
         <div className="w-full md:w-1/2 md:pl-12">
+
+          {/* Hero video — in flow, above text */}
+          <div className="w-full aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden mb-6 md:mb-8">
+            <video
+              ref={videoRef}
+              autoPlay
+              muted
+              playsInline
+              className="w-full h-full object-cover object-center"
+            >
+              <source src="/videos/hero.webm" type="video/webm" />
+            </video>
+          </div>
+
           <p className="text-white/65 text-xs tracking-[0.3em] uppercase mb-8">
             VIVEK S L — Product-Minded Designer
           </p>

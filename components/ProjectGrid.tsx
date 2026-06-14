@@ -5,34 +5,26 @@ const projects = [
   {
     id: "01",
     slug: "paperwurk",
-    category: "SaaS Platform / UX Architecture / AI",
     title: "Paperwurk",
-    subtitle: "Multi-tenant B2B compliance platform — 14 personas, 110+ screens, AI document intelligence",
-    image: "/images/cs-1.jpg",
+    image: "/images/cover-paperwurk.png",
   },
   {
     id: "02",
     slug: "alya-auditors",
-    category: "Full-Stack / Compliance Platform / CRO",
     title: "Alya Auditors",
-    subtitle: "Audit readiness SPA with 4-stage interactive checker and idle-triggered lead capture",
-    image: "/images/cs-2.jpg",
+    image: "/images/cover-alya.png",
   },
   {
     id: "03",
     slug: "4bc-global",
-    category: "Brand Identity / Web Platform / MEA",
     title: "4BC Global",
-    subtitle: "Premium digital platform for a specialist MEA market research firm — WebGL, GSAP, 30+ case studies",
-    image: "/images/cs-3.jpg",
+    image: "/images/cover-4bc.png",
   },
   {
     id: "04",
     slug: "insure-first",
-    category: "B2B / Insurance Advisory / CRO",
     title: "Insure First",
-    subtitle: "Multi-route landing platform for a CBUAE-licensed, conflict-free insurance advisory firm",
-    image: "/images/cs-4.jpg",
+    image: "/images/cover-insure.png",
   },
 ];
 
@@ -53,49 +45,26 @@ export default function ProjectGrid() {
         </Link>
       </div>
 
-      {/* Full-width image strip */}
-      <div className="flex w-full" style={{ height: "58vh" }}>
-        {projects.map((p, i) => (
-          <Link
-            key={p.id}
-            href={`/case-study/${p.slug}`}
-            className="relative flex-1 overflow-hidden group"
-          >
-            <Image
-              src={p.image}
-              alt={p.title}
-              fill
-              priority={i === 0}
-              sizes="(max-width: 768px) 50vw, 25vw"
-              quality={85}
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            {/* Subtle dark overlay on hover */}
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
-            {/* Vertical divider */}
-            {i < projects.length - 1 && (
-              <div className="absolute right-0 top-0 bottom-0 w-px bg-white/20" />
-            )}
-          </Link>
-        ))}
-      </div>
-
-      {/* Dark label bar */}
-      <div className="flex flex-col md:flex-row w-full bg-blue-700">
-        {projects.map((p, i) => (
-          <Link
-            key={p.id}
-            href={`/case-study/${p.slug}`}
-            className="md:flex-1 px-6 py-5 md:px-8 md:py-8 flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-2 group hover:bg-blue-600 transition-colors duration-300 border-b border-white/10 md:border-b-0 md:border-r last:border-0"
-          >
-            <div className="flex-1 md:flex-none">
-              <p className="text-white/70 text-xs tracking-widest uppercase mb-1 md:mb-0 md:text-sm">{p.category}</p>
-              <p className="text-white text-base md:text-lg tracking-tight leading-snug md:mt-1">{p.title}</p>
-              <p className="text-white/75 text-sm md:text-base leading-snug hidden md:block mt-1">{p.subtitle}</p>
-            </div>
-            <p className="text-white/55 text-lg tracking-widest shrink-0 group-hover:text-white/90 transition-colors duration-300 md:mt-3">→</p>
-          </Link>
-        ))}
+      {/* Card grid */}
+      <div className="px-8 md:px-30 lg:px-60 pb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          {projects.map((p) => (
+            <Link
+              key={p.id}
+              href={`/case-study/${p.slug}`}
+              className="group relative overflow-hidden rounded-xl"
+            >
+              <Image
+                src={p.image}
+                alt={p.title}
+                width={687}
+                height={1372}
+                quality={85}
+                className="w-full h-auto group-hover:scale-[1.03] transition-transform duration-500"
+              />
+            </Link>
+          ))}
+        </div>
       </div>
 
     </section>
