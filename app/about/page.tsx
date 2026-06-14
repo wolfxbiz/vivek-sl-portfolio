@@ -35,7 +35,7 @@ const timeline = [
     note: "Formalised the business lens. Concepts like market positioning, unit economics, and funnel strategy became tools I could apply directly in product design.",
   },
   {
-    period: "2025 – Present",
+    period: "Jun 2024 – Jun 2026",
     title: "UI/UX Designer & Web Developer",
     place: "Turquoic IT Consultancy",
     note: "End-to-end product design for UAE and GCC clients — from discovery through to production deployment.",

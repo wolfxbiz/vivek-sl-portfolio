@@ -1,6 +1,14 @@
 "use client";
 
+import { useEffect } from "react";
+import { MapPin, Phone, Mail, Globe } from "lucide-react";
+
 export default function ResumePage() {
+  useEffect(() => {
+    const prev = document.title;
+    document.title = "Vivek_SL_UI_UX_Growth_Designer";
+    return () => { document.title = prev; };
+  }, []);
   return (
     <>
       <style>{`
@@ -9,9 +17,12 @@ export default function ResumePage() {
           nav { display: none !important; }
           body { background: white !important; color: black !important; }
           .resume-root { padding-top: 0 !important; }
-          @page { margin: 0.65in 0.75in; size: A4; }
+          @page { margin: 0.6in 0.75in; size: A4; }
           a { color: inherit !important; text-decoration: none !important; }
           .resume-bullet-icon { color: #021F4B !important; }
+          .job-entry { break-inside: avoid; page-break-inside: avoid; }
+          .project-entry { break-inside: avoid; page-break-inside: avoid; }
+          .ref-entry { break-inside: avoid; page-break-inside: avoid; }
         }
       `}</style>
 
@@ -43,65 +54,56 @@ export default function ResumePage() {
           </div>
 
           {/* ── Header ─────────────────────────────────────────── */}
-          <header className="mb-8">
+          <header className="mb-4">
             <h1 className="text-5xl font-semibold tracking-tight text-[#021F4B] mb-1">
               Vivek S L
             </h1>
-            <p className="text-sm text-neutral-600 mb-4">
+            <p className="text-xs text-neutral-500 mb-3">
               UI/UX Designer &amp; Marketing Strategist — Targeting Brand Strategy, CRO &amp; Marketing Design Roles
             </p>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-neutral-500">
-              <span>India — Open to UAE / GCC / Remote</span>
-              <span className="text-neutral-300 hidden sm:inline">·</span>
-              <a href="tel:+918921284894" className="hover:text-[#021F4B] transition-colors">+91 8921284894</a>
-              <span className="text-neutral-300 hidden sm:inline">·</span>
-              <a href="mailto:vivekshajilekha@gmail.com" className="hover:text-[#021F4B] transition-colors">vivekshajilekha@gmail.com</a>
-              <span className="text-neutral-300 hidden sm:inline">·</span>
-              <a href="https://linkedin.com/in/viveksl" target="_blank" rel="noopener noreferrer" className="hover:text-[#021F4B] transition-colors">linkedin.com/in/viveksl</a>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              <ContactItem icon={<MapPin size={12} />} text="India — Open to UAE / GCC / Remote" />
+              <ContactItem icon={<Phone size={12} />} href="tel:+918921284894" text="+91 8921284894" />
+              <ContactItem icon={<Mail size={12} />} href="mailto:vivekshajilekha@gmail.com" text="vivekshajilekha@gmail.com" />
+              <ContactItem icon={<LinkedInIcon />} href="https://linkedin.com/in/viveksl" text="linkedin.com/in/viveksl" />
+              <ContactItem icon={<Globe size={12} />} href="https://viveksl.com" text="viveksl.com" />
             </div>
-            <div className="mt-5 h-0.5 bg-[#021F4B]" />
+            <div className="mt-4 h-0.5 bg-[#021F4B]" />
           </header>
 
           {/* ── Profile ─────────────────────────────────────────── */}
-          <section className="mb-8">
+          <section className="mb-4">
             <SectionLabel>Profile</SectionLabel>
-            <p className="text-sm text-neutral-700 leading-relaxed mt-3">
-              My path into marketing design begins with a Diploma in Advanced Animation — training in visual
-              communication, motion, and how design earns attention. Six years of freelance work across brand
-              identity, social media content, and marketing creatives built the commercial instinct that follows:
-              every visual element is ultimately a conversion decision.
+            <p className="text-xs text-neutral-700 leading-relaxed mt-2">
+              Animation training and six years of freelance brand and content design built the visual foundation.
+              That practice evolved into UI/UX design and CRO — delivering landing pages, SaaS platforms, and lead
+              generation systems for 10+ UAE and GCC clients where visual craft and conversion architecture work together.
             </p>
-            <p className="text-sm text-neutral-700 leading-relaxed mt-2">
-              That instinct led into UI/UX design and frontend development, and a focused practice around CRO —
-              designing landing pages, SaaS platforms, and lead generation systems for UAE and GCC clients where
-              visual craft and conversion architecture work together. I see advertising and the web as the opening
-              chapter of a product&apos;s marketing lifecycle, and design every touchpoint with that full arc in mind.
-            </p>
-            <p className="text-sm text-neutral-700 leading-relaxed mt-2">
-              An MBA in Marketing &amp; Finance anchors this practice in strategy — consumer behaviour, funnel design,
-              brand positioning, and market context. Targeting roles where design execution, marketing thinking,
-              and conversion strategy converge.
+            <p className="text-xs text-neutral-700 leading-relaxed mt-1.5">
+              An MBA in Marketing &amp; Finance adds the strategic layer — consumer behaviour, funnel design, brand
+              positioning, and market context. Targeting roles where design execution, marketing thinking, and
+              conversion strategy converge.
             </p>
           </section>
 
           {/* ── Work Experience ─────────────────────────────────── */}
-          <section className="mb-8">
+          <section className="mb-4">
             <SectionLabel>Work Experience</SectionLabel>
 
-            <div className="mt-4 space-y-6">
+            <div className="mt-3 space-y-3">
               <JobEntry
-                title="UI/UX & Graphic Designer"
+                title="UI/UX Designer & Graphic Designer"
                 company="Turquoic IT Consultancy"
-                period="Feb 2025 – Present"
+                period="Jun 2024 – Jun 2026"
                 bullets={[
-                  "Design conversion-focused landing pages, product interfaces, and digital experiences for client projects across UAE and GCC markets.",
-                  "Build brand identity systems and marketing creatives aligned with client acquisition and retention goals.",
-                  "Produce wireframes, user flows, and screen designs for web and SaaS products — from brief through to development handoff.",
-                  "Collaborate with stakeholders to align UX decisions with business objectives, campaign performance, and CRO outcomes.",
+                  "Designed conversion-focused landing pages, product interfaces, and digital experiences for 10+ clients across UAE and GCC markets.",
+                  "Built brand identity systems and marketing creatives aligned with client acquisition and retention goals.",
+                  "Produced wireframes, user flows, and screen designs for web and SaaS products — from brief through to development handoff.",
+                  "Collaborated with stakeholders to align UX decisions with business objectives, campaign performance, and CRO outcomes.",
                 ]}
               />
               <JobEntry
-                title="Freelance Creative Professional"
+                title="Freelance UI/UX & Brand Designer"
                 company="Independent"
                 period="2018 – 2024"
                 bullets={[
@@ -110,15 +112,6 @@ export default function ResumePage() {
                   "Produced marketing creatives and video content for client campaigns, with increasing focus on conversion and audience growth metrics.",
                   "Designed landing pages and digital assets with lead generation as a primary brief — an early entry point into CRO thinking.",
                   "Managed full client lifecycle independently — discovery, scoping, design iteration, and delivery.",
-                ]}
-              />
-              <JobEntry
-                title="Jewelry Consultant Intern"
-                company="CaratLane by Tanishq"
-                period="Oct 2024 – Jan 2025"
-                bullets={[
-                  "Observed high-involvement retail marketing firsthand — in-store campaign execution, customer engagement mechanics, and purchase psychology.",
-                  "Contributed to marketing promotions and brand visibility initiatives in a consumer-facing environment.",
                 ]}
               />
               <JobEntry
@@ -133,10 +126,10 @@ export default function ResumePage() {
           </section>
 
           {/* ── Design Projects ─────────────────────────────────── */}
-          <section className="mb-8">
+          <section className="mb-4">
             <SectionLabel>Design Projects</SectionLabel>
 
-            <div className="mt-4 space-y-4">
+            <div className="mt-3 space-y-3">
               <ProjectEntry
                 name="Paperwurk — B2B Compliance SaaS Platform"
                 tags="UX Design · Information Architecture"
@@ -161,7 +154,7 @@ export default function ResumePage() {
           </section>
 
           {/* ── Skills ──────────────────────────────────────────── */}
-          <section className="mb-8">
+          <section className="mb-4">
             <SectionLabel>Skills</SectionLabel>
 
             <div className="mt-4 grid grid-cols-2 gap-x-8 gap-y-4">
@@ -192,13 +185,42 @@ export default function ResumePage() {
           </section>
 
           {/* ── Education ───────────────────────────────────────── */}
-          <section>
+          <section className="mb-8">
             <SectionLabel>Education</SectionLabel>
 
-            <div className="mt-4 space-y-3">
-              <EduEntry degree="MBA — Marketing & Finance" institution="Amity University" period="2022 – 2024" />
-              <EduEntry degree="BBA — Business Administration" institution="Amity University" period="2019 – 2022" />
+            <div className="mt-3 space-y-2">
+              <EduEntry degree="MBA — Marketing & Finance" institution="Amity University, Noida" period="2022 – 2024" />
+              <EduEntry degree="BBA — Business Administration" institution="Amity University, Noida" period="2019 – 2022" />
               <EduEntry degree="Diploma in Advanced Animation" institution="Cavalier Animation, Trivandrum" period="2016 – 2018" />
+            </div>
+          </section>
+
+          {/* ── References ──────────────────────────────────────── */}
+          <section>
+            <SectionLabel>References</SectionLabel>
+
+            <div className="mt-3 space-y-2">
+              <div className="ref-entry">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-sm font-semibold text-[#0a0a0a]">Cristus Cleetus</span>
+                  <a href="mailto:cristus@turquoic.com" className="text-xs text-neutral-500 hover:text-[#021F4B] transition-colors">cristus@turquoic.com</a>
+                </div>
+                <p className="text-xs text-neutral-500 italic">Founder &amp; Principal Consultant, Turquoic Consulting FZC</p>
+              </div>
+              <div className="ref-entry">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-sm font-semibold text-[#0a0a0a]">Dr. Liya Rajesh</span>
+                  <a href="mailto:lrajesh@kch.amity.edu" className="text-xs text-neutral-500 hover:text-[#021F4B] transition-colors">lrajesh@kch.amity.edu</a>
+                </div>
+                <p className="text-xs text-neutral-500 italic">Assistant Professor, Amity Global Business School Kochi</p>
+              </div>
+              <div className="ref-entry">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-sm font-semibold text-[#0a0a0a]">Dr. Ranjith Somasundaran C</span>
+                  <a href="mailto:rschakkambath@kch.amity.edu" className="text-xs text-neutral-500 hover:text-[#021F4B] transition-colors">rschakkambath@kch.amity.edu</a>
+                </div>
+                <p className="text-xs text-neutral-500 italic">Assistant Professor, Amity Global Business School Kochi</p>
+              </div>
             </div>
           </section>
 
@@ -209,6 +231,28 @@ export default function ResumePage() {
 }
 
 /* ── Sub-components ───────────────────────────────────────── */
+
+function LinkedInIcon() {
+  return (
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
+
+function ContactItem({ icon, text, href }: { icon: React.ReactNode; text: string; href?: string }) {
+  const inner = (
+    <span className="flex items-center gap-1.5 text-xs text-neutral-500">
+      <span className="text-[#021F4B] shrink-0">{icon}</span>
+      {text}
+    </span>
+  );
+  return href ? (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-[#021F4B] transition-colors">
+      {inner}
+    </a>
+  ) : inner;
+}
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -234,7 +278,7 @@ function JobEntry({
   bullets: string[];
 }) {
   return (
-    <div>
+    <div className="job-entry">
       <div className="flex items-baseline justify-between gap-4">
         <span className="text-sm font-semibold text-[#0a0a0a]">{title}</span>
         <span className="text-xs text-neutral-400 whitespace-nowrap shrink-0">{period}</span>
@@ -243,7 +287,7 @@ function JobEntry({
       <ul className="space-y-1">
         {bullets.map((b, i) => (
           <li key={i} className="text-xs text-neutral-700 leading-relaxed flex gap-2">
-            <span className="resume-bullet-icon text-[#7FFA7B] mt-0.75 shrink-0">▸</span>
+            <span className="resume-bullet-icon text-[#7FFA7B] mt-0.75 shrink-0">•</span>
             <span>{b}</span>
           </li>
         ))}
@@ -262,7 +306,7 @@ function ProjectEntry({
   description: string;
 }) {
   return (
-    <div className="pl-4 border-l border-neutral-100">
+    <div className="project-entry pl-4 border-l border-neutral-100">
       <div className="flex items-baseline justify-between gap-4 mb-1">
         <span className="text-sm font-semibold text-[#0a0a0a]">{name}</span>
         <span className="text-[10px] text-[#021F4B] tracking-wide whitespace-nowrap shrink-0">{tags}</span>

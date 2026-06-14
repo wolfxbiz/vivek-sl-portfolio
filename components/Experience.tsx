@@ -4,8 +4,8 @@ const primaryRoles = [
   {
     title: "UI/UX Designer & Web Developer",
     company: "Turquoic IT Consultancy",
-    period: "Feb 2025 — Present",
-    active: true,
+    period: "Jun 2024 — Jun 2026",
+    active: false,
     points: [
       "Owned end-to-end product design for client platforms — from discovery and user research through to developer handoff and QA review.",
       "Defined information architecture, user flows, and wireframes for multi-stakeholder digital products across UAE and GCC markets.",
@@ -25,12 +25,6 @@ const primaryRoles = [
 ];
 
 const supportingRoles = [
-  {
-    title: "Jewelry Consultant Intern",
-    company: "CaratLane by Tanishq",
-    period: "Oct 2024 — Jan 2025",
-    note: "Consumer behaviour and purchase psychology in high-involvement retail scenarios.",
-  },
   {
     title: "Customer Relations Intern",
     company: "Bharti Airtel Limited",
