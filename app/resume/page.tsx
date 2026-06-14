@@ -39,7 +39,7 @@ export default function ResumePage() {
         </span>
       </div>
 
-      <div className="resume-root bg-white text-[#0a0a0a] min-h-screen pt-24 pb-20">
+      <div className="resume-root bg-white text-[#0a0a0a] min-h-screen print:min-h-0 pt-24 pb-20 print:pb-4">
         <div className="max-w-[780px] mx-auto px-8">
 
           {/* ── Top action bar ──────────────────────────────────── */}
