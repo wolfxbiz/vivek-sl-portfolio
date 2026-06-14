@@ -148,9 +148,19 @@ export default function Experience() {
 
           {/* MBA — elevated */}
           <div className="border border-white/10 p-7 flex flex-col gap-3 mb-px">
-            <div>
-              <p className="text-white/90 text-base leading-snug">{education[0].degree}</p>
-              <p className="text-white/65 text-sm tracking-widest uppercase mt-1">{education[0].institution}</p>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-white/90 text-base leading-snug">{education[0].degree}</p>
+                <p className="text-white/65 text-sm tracking-widest uppercase mt-1">{education[0].institution}</p>
+              </div>
+              <Image
+                src="/icons/amity.svg"
+                alt="Amity University"
+                width={48}
+                height={48}
+                unoptimized
+                className="opacity-80 shrink-0"
+              />
             </div>
             <p className="text-white/65 text-sm tracking-wider">{education[0].period}</p>
             <p className="text-white/75 text-sm leading-relaxed border-t border-white/8 pt-3 mt-1">
@@ -161,8 +171,22 @@ export default function Experience() {
           {/* BBA + Animation — secondary */}
           {education.slice(1).map((e, i) => (
             <div key={i} className="bg-white/3 px-7 py-5 flex flex-col gap-1.5">
-              <p className="text-white/80 text-base">{e.degree}</p>
-              <p className="text-white/60 text-sm tracking-widest uppercase">{e.institution}</p>
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-white/80 text-base">{e.degree}</p>
+                  <p className="text-white/60 text-sm tracking-widest uppercase">{e.institution}</p>
+                </div>
+                {e.institution === "Amity University" && (
+                  <Image
+                    src="/icons/amity.svg"
+                    alt="Amity University"
+                    width={36}
+                    height={36}
+                    unoptimized
+                    className="opacity-60 shrink-0"
+                  />
+                )}
+              </div>
               <p className="text-white/60 text-sm tracking-wider mt-0.5">{e.period}</p>
             </div>
           ))}

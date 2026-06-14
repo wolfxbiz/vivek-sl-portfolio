@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { SiVite, SiTailwindcss } from "react-icons/si";
 import AlyaBrowserParallax from "./AlyaBrowserParallax";
 import AlyaCheckerStatic from "./AlyaCheckerStatic";
 import AlyaMobileMockups from "./AlyaMobileMockups";
@@ -263,9 +262,9 @@ export default function AlyaAuditorsPage() {
               {([
                 { icon: <Image src="/icons/react.svg" width={13} height={13} alt="React" unoptimized />, label: "React 18" },
                 { icon: <Image src="/icons/typescript.svg" width={13} height={13} alt="TypeScript" unoptimized />, label: "TypeScript" },
-                { icon: <SiVite size={13} color="#646CFF" />, label: "Vite" },
-                { icon: <SiTailwindcss size={13} color="#06B6D4" />, label: "Tailwind" },
-                { icon: null, label: "shadcn/ui" },
+                { icon: <Image src="/icons/vite.svg" width={13} height={13} alt="Vite" unoptimized />, label: "Vite" },
+                { icon: <Image src="/icons/tailwind.svg" width={13} height={13} alt="Tailwind CSS" unoptimized />, label: "Tailwind" },
+                { icon: <Image src="/icons/shadcn.svg" width={13} height={13} alt="shadcn/ui" unoptimized />, label: "shadcn/ui" },
               ] as { icon: React.ReactNode; label: string }[]).map((chip) => (
                 <span key={chip.label} className="flex items-center gap-1.5 border border-neutral-200 px-2.5 py-1.5 text-neutral-600 text-xs">
                   {chip.icon}

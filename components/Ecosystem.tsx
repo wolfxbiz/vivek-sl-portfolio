@@ -17,8 +17,8 @@ const disciplines = [
   },
   {
     num: "03",
-    title: "UX Architecture + AI Engineering",
-    desc: "On Paperwurk, the same person designed 110+ screen UX architecture across 14 personas and wrote 14,000+ lines of production AI code — RAG pipelines, LangChain agents, Pinecone vector search, 265+ automated tests at 93%+ coverage. Design intent baked into the intelligence layer from day one.",
+    title: "UX Architecture at Scale",
+    desc: "On Paperwurk, 110+ screen UX architecture was designed across 14 personas — four workspace types, a scoped data model, and 12 end-to-end flows specified before a single line of application code. Design intent baked into the system from day one.",
     tag: "Paperwurk",
     href: "/case-study/paperwurk",
   },

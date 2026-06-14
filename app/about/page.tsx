@@ -134,19 +134,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* AI Systems */}
-          <div className="bg-white p-6 md:p-10 flex flex-col gap-6">
-            <div className="flex flex-col gap-3">
-              <p className="text-neutral-900 text-xl">AI Systems</p>
-              <p className="text-neutral-600 text-base leading-relaxed">
-                On Paperwurk I designed and directed the build of a full RAG pipeline — LangChain orchestration, Pinecone vector search, AWS Textract OCR, and OpenAI integration. I didn't write every line, but I architected the system, defined the data flow, and owned the output quality. That's the role I play.
-              </p>
-            </div>
-            <div className="flex items-center gap-4 pt-2 border-t border-neutral-100">
-              <span className="text-neutral-500 text-sm tracking-widest uppercase">Icons coming</span>
-            </div>
-          </div>
-
         </div>
       </section>
 

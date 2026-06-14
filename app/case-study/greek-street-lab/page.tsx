@@ -101,7 +101,7 @@ export default function GreekStreetLabPage() {
     <main className="bg-white min-h-screen pt-16">
 
       {/* ── HERO ── */}
-      <section className="relative bg-neutral-900 px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-neutral-900 px-8 md:px-30 lg:px-60 pt-14 md:pt-20 pb-12 md:pb-16 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{ background: "radial-gradient(ellipse at 60% 40%, #2d1f0e 0%, #0a0a0a 70%)" }}
@@ -141,7 +141,7 @@ export default function GreekStreetLabPage() {
       </div>
 
       {/* ── 01 THE CHALLENGE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -187,7 +187,7 @@ export default function GreekStreetLabPage() {
       </div>
 
       {/* ── 02 THE PROCESS ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Process</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -245,7 +245,7 @@ export default function GreekStreetLabPage() {
       </div>
 
       {/* ── 03 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -334,7 +334,7 @@ export default function GreekStreetLabPage() {
       </div>
 
       {/* ── 04 RESOLUTION ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           A digital storefront that sells with visuals before a word is read

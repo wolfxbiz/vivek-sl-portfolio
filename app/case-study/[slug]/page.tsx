@@ -28,7 +28,7 @@ export default async function CaseStudyPage({ params }: Props) {
     <main className="bg-white min-h-screen pt-16">
 
       {/* Header */}
-      <header className="bg-neutral-900 px-8 md:px-30 lg:px-60 pt-20 pb-16">
+      <header className="bg-neutral-900 px-8 md:px-30 lg:px-60 pt-14 md:pt-20 pb-12 md:pb-16">
         <p className="text-white/40 text-xs tracking-[0.3em] uppercase mb-6">
           Case Study
         </p>

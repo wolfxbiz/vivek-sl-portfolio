@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Paperwurk — Vivek S L",
   description:
-    "Multi-Tenant B2B SaaS Platform for UAE Business Compliance — 14 Personas, 110+ Screens, Scoped Data Architecture, AI Document Intelligence",
+    "A multi-tenant B2B SaaS platform for UAE business compliance — designed so 14 different people can share one product and each feel it was built just for them.",
 };
 
 const workspaces = [
@@ -53,141 +53,77 @@ const workspaces = [
 ];
 
 const designPrinciples = [
-  { id: "01", title: "Role-First Rendering", desc: "Each user sees only what their role permits. A PRO agent never sees VAT filing. A staff member never sees the supplier marketplace. No cognitive overhead from irrelevant modules." },
-  { id: "02", title: "Context Continuity", desc: "Users who hold multiple roles (a founder who is also an affiliate) switch workspaces without losing orientation. The platform remembers where they were." },
-  { id: "03", title: "Compliance as UX", desc: "Deadlines, renewals, and regulatory events are surfaced proactively on the founder dashboard — not buried in settings. The compliance calendar is a first-class product feature." },
-  { id: "04", title: "Progressive Disclosure", desc: "Complex workflows (business setup, visa processing) are broken into guided sequential steps. Only the next required step is shown, reducing the perceived complexity of 15–20 screen journeys." },
-  { id: "05", title: "Scoped Collaboration", desc: "Service providers see precisely the data they need for their engagement — nothing more, nothing less. Access is granted implicitly by engagement type and managed automatically." },
+  { id: "01", title: "Show only what matters", desc: "A PRO agent should never see VAT filing. A staff member should never see the supplier marketplace. Keeping irrelevant things invisible isn't a permission problem — it's a clarity problem." },
+  { id: "02", title: "Don't make users manage access", desc: "When a founder hires a new accountant, access to the right documents should just happen. The system knows the relationship; it shouldn't ask the user to configure it." },
+  { id: "03", title: "Compliance lives on the dashboard", desc: "Renewal deadlines and regulatory events belong at the top of the founder's day — not buried three levels deep in a settings menu. If it's urgent, the product should make it feel urgent." },
+  { id: "04", title: "Break big journeys into small steps", desc: "Setting up a UAE business involves a lot of decisions. Showing every field at once is overwhelming. Progressive disclosure lets users focus on one thing at a time without losing sight of where they are." },
+  { id: "05", title: "Every workspace feels purpose-built", desc: "A supplier shouldn't feel like they're using a client's tool with parts hidden. Their workspace looks and behaves like software made for exactly what they do." },
 ];
 
 const keyFlows = [
   {
     num: "01",
-    title: "Business Setup — Founder",
+    title: "First-time Setup — Founder",
     steps: [
-      "Account creation and email verification",
-      "Business profile (jurisdiction: mainland vs. free zone)",
-      "Compliance profile setup (VAT status, industry, employee count)",
-      "First service engagement (optional — browse supplier marketplace)",
-      "Dashboard activation with pre-populated compliance calendar",
+      "Choose jurisdiction: mainland or free zone — shapes everything that follows",
+      "Set compliance profile: VAT status, industry, headcount",
+      "Review the compliance calendar, pre-populated from the business profile",
+      "Optionally browse the supplier marketplace to engage a first service provider",
     ],
-    note: "Progressive disclosure — only the next required step shown throughout a 15–20 screen journey.",
+    note: "The goal was to get a founder to their first meaningful moment — a populated compliance calendar — without overwhelming them. Every screen asks for exactly one thing.",
   },
   {
     num: "02",
-    title: "Document Upload + OCR",
+    title: "Engaging a Supplier",
     steps: [
-      "User uploads a document (passport, visa, trade license)",
-      "AWS Textract extracts key fields automatically",
-      "AI classifies the document type",
-      "System pre-fills metadata (expiry date, document number, holder)",
-      "User reviews, confirms — document added to vault with version control",
+      "Founder browses marketplace, filtered by service type and jurisdiction",
+      "Sends a scoped quote request — supplier only sees what's relevant",
+      "Supplier reviews, submits a proposal with timeline",
+      "Founder accepts — access is automatically scoped to the engagement",
+      "Supplier delivers via a dedicated task view; founder tracks progress",
+      "Engagement closes — supplier access is revoked automatically",
     ],
-    note: "~80% reduction in manual data entry for routine compliance documents.",
+    note: "The founder never touches an access settings screen. Neither does the supplier. The platform manages the whole handshake.",
   },
   {
     num: "03",
-    title: "Service Engagement — Client → Supplier",
-    steps: [
-      "Founder browses marketplace (filtered by service type, rating, jurisdiction)",
-      "Sends a quote request with scope definition",
-      "Supplier reviews client profile — scoped to engagement-relevant data only",
-      "Supplier submits proposal with pricing and timeline",
-      "Founder accepts — engagement created, data access scoped automatically",
-      "Supplier delivers via task interface; client tracks progress",
-      "Engagement closes — access is revoked automatically",
-    ],
-    note: "Suppliers never need broad account access — the system handles grant and revoke at engagement boundaries.",
-  },
-  {
-    num: "04",
     title: "Compliance Calendar",
     steps: [
-      "All deadlines aggregated from business profile, documents, and active engagements",
+      "All deadlines pulled from the business profile, documents, and active engagements",
       "Events colour-coded by type — VAT, trade license, visa, ESR",
-      "Overdue items surface at the top of the dashboard as red alerts",
-      "Each item links to a guided resolution workflow",
+      "Overdue items rise to the top of the dashboard as red alerts",
+      "Each alert links directly into a guided resolution workflow",
     ],
-    note: "\"Renew Trade License\" triggers a pre-filled service request directly from the alert.",
+    note: "\"Renew Trade License\" doesn't take you to a help article — it opens a pre-filled service request with one tap.",
   },
-];
-
-const permissionLayers = [
-  { layer: "Workspace Permissions", controls: "What a role can do within their own workspace" },
-  { layer: "Engagement Permissions", controls: "What a supplier can access for a specific engagement" },
-  { layer: "Document Permissions", controls: "Which specific documents are shared" },
-];
-
-const scopedAccessExample = [
-  { supplier: "ProVisa (visa services)", sees: "Employee passports, visa copies, medical certificates" },
-  { supplier: "TaxPro (accounting)", sees: "Financial statements, VAT documents, invoices" },
-  { supplier: "AttestCo (attestation)", sees: "Two specific documents shared for a one-time task only" },
-];
-
-const techStack = [
-  { layer: "Multi-tenancy", tech: "PostgreSQL with Row-Level Security — workspace data isolation" },
-  { layer: "Document Intelligence", tech: "AWS Textract (OCR) + AI classification" },
-  { layer: "AI / LLM", tech: "OpenAI (LLM) · Pinecone (vector search) · LangChain (agent orchestration)" },
-  { layer: "Workflow Automation", tech: "n8n — compliance reminders, onboarding sequences, supplier notifications" },
-  { layer: "Authentication", tech: "Ory Kratos (identity) + Ory Keto (permissions)" },
-  { layer: "Payments", tech: "Stripe — subscriptions, invoicing, marketplace payouts" },
-  { layer: "Communications", tech: "SendGrid (email) · Twilio (SMS) · Firebase (push)" },
-  { layer: "Mobile", tech: "Flutter — 6 persona-specific apps" },
-];
-
-const revenueStreams = [
-  {
-    stream: "Client Subscription",
-    model: "Monthly / annual SaaS tiered by team size, document storage, active engagements, and advanced features",
-    range: "AED 300–800 / month",
-  },
-  {
-    stream: "Supplier Subscription",
-    model: "Marketplace listing and lead access, tiered by active engagements, CRM and analytics features, white-label config",
-    range: "AED 500–2,000 / month",
-  },
-  {
-    stream: "Affiliate Commissions",
-    model: "Percentage of subscription revenue for referred clients. Agency affiliates earn a network override on sub-affiliates. Attribution tracked from first click through conversion.",
-    range: "Recurring SaaS commission",
-  },
-];
-
-const marketNumbers = [
-  { metric: "200,000+", label: "Active UAE businesses" },
-  { metric: "~180,000", label: "Businesses requiring VAT compliance" },
-  { metric: "~150,000", label: "Businesses employing non-UAE nationals" },
-  { metric: "AED 30–80K", label: "Avg. annual compliance spend per SME" },
-];
-
-const competitiveAdvantages = [
-  { title: "Regulatory Moat", desc: "Built specifically for UAE compliance (VAT, ESR, trade licenses, DMCC). Generic document or CRM tools cannot replicate this depth without years of local domain knowledge." },
-  { title: "Network Effects", desc: "More suppliers → more client choice. More clients → more supplier leads. Both sides improve with scale." },
-  { title: "Switching Cost", desc: "Once a client's compliance calendar, documents, and supplier relationships live in Paperwurk, migration cost is high. The platform becomes the business's operational backbone." },
-  { title: "AI Flywheel", desc: "Document intelligence, Paperbot, and automation reduce manual overhead — creating a flywheel where the platform gets more useful the more documents a client stores." },
-];
-
-const deliverables = [
-  { num: "14", label: "Detailed user personas" },
-  { num: "100+", label: "User scenarios across all roles" },
-  { num: "12", label: "End-to-end flows with screen-by-screen specs" },
-  { num: "110+", label: "Screen specifications" },
-  { num: "95+", label: "Architecture and flow diagrams" },
-  { num: "90+", label: "API endpoints identified" },
-];
-
-const aiDeliverables = [
-  { num: "14,000+", label: "Lines of production-ready AI module code" },
-  { num: "265+", label: "Automated tests" },
-  { num: "93%+", label: "Average test coverage" },
-  { num: "6", label: "Independent AI modules" },
 ];
 
 const keyDecisions = [
-  { title: "Scoped Access Over Open Access", desc: "Defaulting to minimal data exposure required more engineering effort but created a fundamentally safer and more trustworthy product. Clients are more willing to engage multiple suppliers when they know each sees only their slice." },
-  { title: "Role-First UI Over Feature-First UI", desc: "Organising the interface around who the user is — rather than what features exist — reduced cognitive load dramatically. The navigation itself is a permission system." },
-  { title: "Compliance as a Product Feature", desc: "Making the compliance calendar the centrepiece of the founder experience (not a buried admin screen) reframes the product from 'document tool' to 'business operating system.'" },
-  { title: "AI as Accelerator, Not Replacement", desc: "Paperbot and document intelligence reduce friction in existing workflows rather than replacing them. Users remain in control; the AI handles data extraction, document classification, and deadline calculation." },
+  {
+    title: "Navigation is the permission system",
+    desc: "Instead of showing everything and graying out what a role can't access, we show only what they can. The navigation itself reflects who you are. A PRO agent logs in and sees a PRO agent's tool — nothing more, nothing less.",
+  },
+  {
+    title: "Access should be invisible",
+    desc: "The hardest UX problem on this project wasn't designing screens — it was designing a model where a client could work with three suppliers simultaneously, each seeing completely different data, without anyone ever configuring it. We solved it by tying access to engagement type, not manual grants.",
+  },
+  {
+    title: "The compliance calendar is the product",
+    desc: "Every other feature in the platform flows into or out of the compliance calendar. Making it the centrepiece of the founder dashboard — not a utility tucked into settings — changed how the whole product felt. It went from 'document storage with reminders' to 'your business, on track.'",
+  },
+  {
+    title: "Assume the user won't read the instructions",
+    desc: "Visa processing, business setup, supplier onboarding — these are long, consequential flows. We designed each one as if the user would start it without any prior knowledge. Every step has one clear action. The system explains itself through context, not tooltips.",
+  },
+];
+
+const deliverables = [
+  { num: "14", label: "User personas, fully detailed" },
+  { num: "100+", label: "User scenarios across all roles" },
+  { num: "12", label: "End-to-end flows, screen by screen" },
+  { num: "110+", label: "Screen specifications" },
+  { num: "95+", label: "Flow and architecture diagrams" },
+  { num: "90+", label: "API endpoints identified and mapped" },
 ];
 
 export default function PaperwurkPage() {
@@ -195,7 +131,7 @@ export default function PaperwurkPage() {
     <main className="bg-white min-h-screen pt-16">
 
       {/* ── HERO ── */}
-      <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-14 md:pt-20 pb-12 md:pb-16 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{ background: "radial-gradient(ellipse at 20% 60%, #1e3a5f 0%, #000000 65%)" }}
@@ -205,17 +141,17 @@ export default function PaperwurkPage() {
           style={{ backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)", backgroundSize: "80px 80px" }}
         />
         <div className="relative">
-          <p className="text-white/40 text-xs tracking-[0.3em] uppercase mb-6">SaaS Platform / UX Architecture / AI Integration</p>
+          <p className="text-white/40 text-xs tracking-[0.3em] uppercase mb-6">UX Design · B2B SaaS · UAE Market</p>
           <h1 className="text-white text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight max-w-4xl mb-6">
             Paperwurk
           </h1>
           <p className="text-white/50 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
-            Multi-tenant B2B SaaS platform centralising UAE business compliance, HR/immigration, and service provider engagement into a single role-aware workspace — connecting clients, suppliers, affiliates, and platform administrators.
+            UAE business compliance is legally mandated and deeply fragmented. Paperwurk brings clients, service providers, and administrators into one platform — and makes each of them feel like they're using software built just for them.
           </p>
           <div className="flex flex-wrap gap-3">
             <span className="inline-flex items-center gap-2 border border-white/15 text-white/50 text-xs tracking-widest uppercase px-4 py-2">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shrink-0" />
-              Architecture Complete · Development in Progress
+              Design Complete · Development in Progress
             </span>
             <span className="border border-white/15 text-white/50 text-xs tracking-widest uppercase px-4 py-2">
               UAE & GCC Market
@@ -226,12 +162,11 @@ export default function PaperwurkPage() {
 
       {/* ── META STRIP ── */}
       <div className="px-8 md:px-30 lg:px-60 py-10 border-b border-neutral-100 bg-neutral-50">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
           {[
-            { label: "Role", value: "Lead UX Architect & AI Module Engineer" },
-            { label: "Platform", value: "Multi-tenant B2B SaaS — 4 workspace types, 14 personas" },
-            { label: "Design Deliverables", value: "110+ screens · 12 flows · 95+ diagrams · 90+ API endpoints mapped" },
-            { label: "AI Deliverables", value: "14,000+ lines · 265+ tests · 93%+ coverage · 6 AI modules" },
+            { label: "Role", value: "Lead UX Designer & Architect" },
+            { label: "Scope", value: "4 workspace types · 14 personas · end-to-end product design" },
+            { label: "Deliverables", value: "110+ screens · 12 flows · 95+ diagrams" },
           ].map((item) => (
             <div key={item.label} className="flex flex-col gap-2">
               <p className="text-neutral-400 text-xs tracking-widest uppercase">{item.label}</p>
@@ -241,49 +176,35 @@ export default function PaperwurkPage() {
         </div>
       </div>
 
-      {/* ── 01 PROBLEM ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      {/* ── 01 THE PROBLEM ── */}
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Problem</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
-            UAE compliance is legally mandated. The tooling doesn't exist.
+            Running a business in the UAE means juggling five compliance systems that don't talk to each other.
           </h2>
           <div className="flex flex-col gap-6 pt-2">
             <p className="text-neutral-700 text-base leading-relaxed">
-              UAE businesses face a uniquely fragmented operational environment. Trade licenses, VAT filings, ESR reports, and visa renewals each involve separate government portals and deadlines. Companies engage separate PRO agents, accountants, legal advisors, and compliance consultants with no unified coordination layer. The cost of non-compliance is direct and steep: fines, license suspension, and visa cancellations.
+              Trade licenses, VAT filings, visa renewals, Emirates IDs, ESR reports — each one lives in a different government portal with its own deadline and process. Founders deal with this by spreading their compliance across spreadsheets, email threads, WhatsApp chains, and whoever their PRO agent is this month.
             </p>
             <p className="text-neutral-700 text-base leading-relaxed">
-              Available tooling is either enterprise-grade (too expensive, too complex) or non-existent for SMEs. Founders manage compliance calendars in spreadsheets, documents in email threads, and supplier relationships through WhatsApp.
+              Missing a deadline isn't just an inconvenience — it's fines, suspended licenses, cancelled visas. The stakes are real, but the tooling isn't. SMEs are too small for enterprise software and too complex for anything off-the-shelf.
             </p>
           </div>
         </div>
 
-        {/* Problem points */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100">
           {[
-            { title: "Regulatory Complexity", desc: "Trade licenses, VAT filings, ESR reports, and visa renewals each involve separate government portals and deadlines — no single view exists." },
-            { title: "Fragmented Service Providers", desc: "Companies engage separate PRO agents, accountants, legal advisors, and compliance consultants with no unified coordination layer." },
-            { title: "Information Silos", desc: "Each service provider works with copies of documents, creating version drift, duplication, and security exposure." },
-            { title: "No Single Source of Truth", desc: "Founders manage compliance calendars in spreadsheets, documents in email threads, and relationships through WhatsApp." },
+            { title: "No single calendar", desc: "VAT, trade license, visa — three separate systems, three separate renewal cycles. Founders piece it together manually or miss things entirely." },
+            { title: "No shared source of truth", desc: "Every service provider gets a different version of the same document. Things fall out of sync. Nobody knows which passport copy is current." },
+            { title: "Trust is fragile", desc: "Founders are uncomfortable sharing sensitive financial or immigration documents with new suppliers. But they have to, to get anything done." },
+            { title: "Processes that feel longer than they are", desc: "Business setup, visa processing, service engagement — these are manageable steps presented as overwhelming walls of requirements." },
           ].map((p) => (
             <div key={p.title} className="bg-white p-10 flex flex-col gap-3">
               <p className="text-neutral-900 text-xl">{p.title}</p>
               <p className="text-neutral-400 text-base leading-relaxed">{p.desc}</p>
             </div>
           ))}
-        </div>
-
-        {/* Market numbers */}
-        <div>
-          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">Market Opportunity — UAE</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-neutral-100">
-            {marketNumbers.map((m) => (
-              <div key={m.label} className="bg-white p-8 flex flex-col gap-3">
-                <p className="text-neutral-900 text-3xl tracking-tight">{m.metric}</p>
-                <p className="text-neutral-400 text-sm leading-relaxed">{m.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -294,26 +215,26 @@ export default function PaperwurkPage() {
         </div>
       </div>
 
-      {/* ── 02 WORKSPACE ARCHITECTURE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 bg-neutral-50">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — Workspace Architecture</p>
+      {/* ── 02 DESIGNING FOR 14 PEOPLE ── */}
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 bg-neutral-50">
+        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — Designing for Everyone at Once</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
-            Four independent workspaces. Fourteen distinct personas. One platform.
+            14 people. One platform. Each one should feel like it was built for them.
           </h2>
           <div className="flex flex-col gap-6 pt-2">
             <p className="text-neutral-700 text-base leading-relaxed">
-              The core design challenge: making a deeply complex, permission-layered system feel simple for each individual user. Every persona should feel as if the product was built specifically for them, even though they share the same platform.
+              The founding insight was that this couldn't be designed as one product with role-based restrictions bolted on. A compliance supplier doesn't want to use a "client compliance tool with parts turned off." They want their own tool — one that looks and feels like it was made for delivering services, not managing a business.
             </p>
             <p className="text-neutral-700 text-base leading-relaxed">
-              Navigation is role-gated within each workspace. The workspaces are independent but interoperable — a supplier's workspace looks like a clean, purpose-built tool for their service, while the client sees a unified view of all engagements with granular control.
+              So we designed four distinct workspaces that share infrastructure but feel independent. The client experience, the supplier experience, the affiliate experience, the admin experience — each one was designed as if it were a standalone product.
             </p>
           </div>
         </div>
 
         {/* Design principles */}
         <div className="mb-16">
-          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">Five Design Principles</p>
+          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">The Five Design Principles Behind Every Decision</p>
           <div className="flex flex-col gap-px bg-neutral-200">
             {designPrinciples.map((p) => (
               <div key={p.id} className="bg-white px-10 py-6 flex gap-8 items-start">
@@ -327,7 +248,7 @@ export default function PaperwurkPage() {
 
         {/* Workspace + persona grid */}
         <div>
-          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">Workspace & Role Map</p>
+          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">The Four Workspaces</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200">
             {workspaces.map((ws) => (
               <div key={ws.label} className={`${ws.color} p-8 flex flex-col gap-5`}>
@@ -346,52 +267,35 @@ export default function PaperwurkPage() {
         </div>
       </section>
 
-      {/* ── 03 SCOPED DATA MODEL ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — The Core UX Innovation</p>
+      {/* ── 03 THE ACCESS PROBLEM ── */}
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
+        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — The Hardest Part</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
-            Scoped data sharing — suppliers see their slice, clients see everything
+            Three suppliers. Three completely different views of the same client. Zero configuration screens.
           </h2>
           <div className="flex flex-col gap-6 pt-2">
             <p className="text-neutral-700 text-base leading-relaxed">
-              The most technically and experientially complex challenge: a single client company may simultaneously engage three suppliers, each needing access to entirely different documents. Neither client nor supplier should ever face a complex access control screen.
+              A UAE business might simultaneously engage a visa processing firm, an accounting firm, and an attestation service. Each one needs access to entirely different documents. The visa firm shouldn't see VAT records. The accountant shouldn't see passports.
             </p>
             <p className="text-neutral-700 text-base leading-relaxed">
-              The solution is a three-layer permission model where access is granted implicitly by engagement type and managed automatically. Suppliers never need to be granted broad account access — the system handles it at engagement creation and revokes it on close.
+              The challenge wasn't the access control logic — it was designing a system where neither the client nor the supplier ever faces a screen that says "configure permissions." The right access should just appear, automatically, based on what the engagement is.
             </p>
           </div>
-        </div>
-
-        {/* Permission layer table */}
-        <div className="border border-neutral-200 divide-y divide-neutral-100 mb-12">
-          <div className="grid grid-cols-2 bg-neutral-900 px-8 py-4">
-            {["Permission Layer", "What It Controls"].map((h) => (
-              <p key={h} className="text-white/40 text-xs tracking-widest uppercase">{h}</p>
-            ))}
-          </div>
-          {permissionLayers.map((l) => (
-            <div key={l.layer} className="grid grid-cols-2 bg-white px-8 py-5 items-center">
-              <p className="text-neutral-900 text-sm">{l.layer}</p>
-              <p className="text-neutral-500 text-sm">{l.controls}</p>
-            </div>
-          ))}
         </div>
 
         {/* Scoped access visual diagram */}
         <div>
-          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">Example — One Client, Three Simultaneous Engagements</p>
+          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">How It Works — One Client, Three Active Suppliers</p>
 
-          {/* Client document vault - top */}
-          <div className="bg-neutral-900 px-8 py-6 mb-0 flex items-center justify-between">
+          <div className="bg-neutral-900 px-8 py-6 flex items-center justify-between">
             <div>
-              <p className="text-white/40 text-xs tracking-widest uppercase mb-1">Client Document Vault</p>
-              <p className="text-white text-base">All business documents in one place</p>
+              <p className="text-white/40 text-xs tracking-widest uppercase mb-1">The Client's Document Vault</p>
+              <p className="text-white text-base">Everything in one place — the founder sees it all</p>
             </div>
-            <p className="text-white/30 text-xs">Founder sees everything</p>
+            <p className="text-white/30 text-xs hidden md:block">Full view</p>
           </div>
 
-          {/* Document rows - the "full" vault */}
           <div className="border-l border-r border-neutral-200 grid grid-cols-3 gap-px bg-neutral-200">
             {[
               { label: "Passports & Visas", color: "bg-blue-50 border-blue-100", accent: "bg-blue-400" },
@@ -405,7 +309,6 @@ export default function PaperwurkPage() {
             ))}
           </div>
 
-          {/* Connector lines visual */}
           <div className="grid grid-cols-3 gap-px bg-neutral-200 border border-neutral-200">
             {[
               { color: "border-blue-300", bg: "bg-blue-50" },
@@ -418,7 +321,6 @@ export default function PaperwurkPage() {
             ))}
           </div>
 
-          {/* Three supplier cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200">
             {[
               {
@@ -480,7 +382,7 @@ export default function PaperwurkPage() {
           </div>
 
           <p className="text-neutral-400 text-sm leading-relaxed mt-4 max-w-2xl">
-            Neither the client nor any supplier ever sees a complex access control screen. Access is granted implicitly by engagement type, scoped automatically at creation, and revoked on close.
+            Access is tied to the engagement, not configured by the user. When a supplier is engaged, they get exactly what they need. When the engagement closes, access disappears. The client never touches a permissions panel.
           </p>
         </div>
       </section>
@@ -488,25 +390,25 @@ export default function PaperwurkPage() {
       {/* Full-bleed placeholder */}
       <div className="px-8 md:px-30 lg:px-60 py-10">
         <div className="w-full aspect-16/7 bg-neutral-900 flex items-center justify-center">
-          <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Scoped Data Model & Flow Diagrams</span>
+          <span className="text-white/20 text-xs tracking-widest uppercase">Project Image — Flow Diagrams & Screen Spreads</span>
         </div>
       </div>
 
-      {/* ── 04 KEY UX FLOWS ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 bg-neutral-50">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — Key UX Flows</p>
+      {/* ── 04 KEY FLOWS ── */}
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 bg-neutral-50">
+        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — The Flows That Matter</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
-            12 end-to-end flows. Every step, every state, every branch specified.
+            Every journey mapped before a single screen was drawn.
           </h2>
           <p className="text-neutral-700 text-base leading-relaxed pt-2">
-            Four critical flows define the platform's core value proposition. Each was manually validated — every branch, decision diamond, and transition state — before entering wireframe software. These are the ones that required the deepest design thinking.
+            12 end-to-end flows were fully validated — every branch, every decision point, every edge case — before entering Figma. Three of them shaped the product more than any other.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200">
-          {keyFlows.map((flow) => (
-            <div key={flow.num} className="bg-white p-10 flex flex-col gap-6">
+          {keyFlows.map((flow, i) => (
+            <div key={flow.num} className={`bg-white p-10 flex flex-col gap-6${i === keyFlows.length - 1 && keyFlows.length % 2 !== 0 ? " md:col-span-2" : ""}`}>
               <div>
                 <p className="text-neutral-300 text-xs tracking-widest mb-1">{flow.num}</p>
                 <p className="text-neutral-900 text-xl">{flow.title}</p>
@@ -525,149 +427,15 @@ export default function PaperwurkPage() {
         </div>
       </section>
 
-      {/* ── 05 PAPERBOT AI ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — AI Layer — Paperbot</p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
-          <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
-            An embedded AI assistant that knows your compliance state — not generic chatbot answers
-          </h2>
-          <div className="flex flex-col gap-6 pt-2">
-            <p className="text-neutral-700 text-base leading-relaxed">
-              Paperbot is accessible from any workspace. It uses a RAG (Retrieval-Augmented Generation) architecture backed by Pinecone, giving context-aware answers about the user's actual business — not generic compliance FAQs. It doesn't replace the UI — it accelerates it, reducing time to find information or trigger a workflow.
-            </p>
-          </div>
-        </div>
-
-        {/* What Paperbot answers */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100 mb-16">
-          {[
-            { q: "\"When does my trade license expire?\"", tag: "Document status" },
-            { q: "\"What are my VAT filing deadlines this quarter?\"", tag: "Compliance requirements" },
-            { q: "\"Which supplier handles DMCC visa applications?\"", tag: "Service recommendations" },
-            { q: "\"How do I add a new employee?\"", tag: "Workflow guidance" },
-          ].map((item) => (
-            <div key={item.q} className="bg-white p-8 flex items-start gap-5">
-              <div className="flex flex-col gap-2 flex-1">
-                <p className="text-neutral-900 text-base">{item.q}</p>
-                <p className="text-neutral-400 text-xs tracking-wider">{item.tag}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* AI tech stack */}
-        <div className="bg-neutral-900 p-10">
-          <p className="text-white/30 text-xs tracking-widest uppercase mb-6">AI Architecture</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { label: "OpenAI", role: "LLM — natural language understanding and generation" },
-              { label: "Pinecone", role: "Vector database — semantic search over compliance documents and workflows" },
-              { label: "LangChain", role: "Agent orchestration — chaining retrieval, context injection, and response generation" },
-            ].map((t) => (
-              <div key={t.label} className="flex flex-col gap-2 border-l border-white/10 pl-5">
-                <p className="text-white text-base">{t.label}</p>
-                <p className="text-white/40 text-sm leading-relaxed">{t.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Full-bleed placeholder */}
-      <div className="px-8 md:px-30 lg:px-60 py-10">
-        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
-          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Wireframe Spread & Screen Inventory</span>
-        </div>
-      </div>
-
-      {/* ── 06 TECH ARCHITECTURE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 bg-neutral-50">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">06 — Technical Architecture</p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
-          <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
-            Built to support a 24-engineer team across six independent modules
-          </h2>
-          <p className="text-neutral-700 text-base leading-relaxed pt-2">
-            Multi-tenant PostgreSQL with Row-Level Security ensures workspace data isolation at the database layer. Service-oriented backend with independently deployable modules enables parallel development without bottlenecks. Six Flutter apps deliver persona-specific mobile experiences.
-          </p>
-        </div>
-
-        <div className="border border-neutral-200 divide-y divide-neutral-100 mb-16">
-          <div className="grid grid-cols-3 bg-neutral-900 px-8 py-4">
-            {["Layer", "Technology", ""].map((h, i) => (
-              <p key={i} className="text-white/40 text-xs tracking-widest uppercase">{h}</p>
-            ))}
-          </div>
-          {techStack.map((t) => (
-            <div key={t.layer} className="grid grid-cols-3 bg-white px-8 py-5 items-start">
-              <p className="text-neutral-400 text-sm">{t.layer}</p>
-              <p className="text-neutral-900 text-sm col-span-2 leading-relaxed">{t.tech}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Design system callout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200">
-          {[
-            { title: "Component Library", detail: "Material UI (MUI) with custom theming" },
-            { title: "Dark Mode", detail: "Supported across all workspaces" },
-            { title: "Accessibility", detail: "WCAG 2.1 AA compliance target" },
-          ].map((d) => (
-            <div key={d.title} className="bg-white p-8 flex flex-col gap-2">
-              <p className="text-neutral-900 text-base">{d.title}</p>
-              <p className="text-neutral-400 text-sm">{d.detail}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── 07 BUSINESS MODEL ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">07 — Business Model</p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
-          <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
-            Multi-sided marketplace with compliance-driven retention on every side
-          </h2>
-          <p className="text-neutral-700 text-base leading-relaxed pt-2">
-            Three revenue streams, aligned incentives, and a structural demand advantage: compliance is legally mandated in the UAE, not discretionary. Clients cannot stop filing VAT or renewing visas — anchoring recurring usage to legal obligation rather than habit or preference.
-          </p>
-        </div>
-
-        {/* Revenue streams */}
-        <div className="flex flex-col gap-px bg-neutral-100 mb-16">
-          {revenueStreams.map((r) => (
-            <div key={r.stream} className="bg-white p-10 flex items-start gap-10">
-              <div className="w-48 shrink-0">
-                <p className="text-neutral-900 text-base">{r.stream}</p>
-                <p className="text-neutral-400 text-sm mt-2 font-mono">{r.range}</p>
-              </div>
-              <div className="w-px bg-neutral-100 self-stretch shrink-0" />
-              <p className="text-neutral-500 text-sm leading-relaxed">{r.model}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Competitive advantages */}
-        <div>
-          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">Competitive Advantages</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100">
-            {competitiveAdvantages.map((a) => (
-              <div key={a.title} className="bg-white p-10 flex flex-col gap-3">
-                <p className="text-neutral-900 text-xl">{a.title}</p>
-                <p className="text-neutral-400 text-base leading-relaxed">{a.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 08 KEY DECISIONS ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 bg-neutral-50">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">08 — Key Design Decisions</p>
-        <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-16 max-w-3xl">
-          Four decisions that define what kind of product Paperwurk is
+      {/* ── 05 DECISIONS ── */}
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
+        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Design Decisions</p>
+        <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
+          The choices that shaped what this product is.
         </h2>
+        <p className="text-neutral-400 text-lg leading-relaxed mb-16 max-w-2xl">
+          Every product has a handful of decisions that define its character. These are Paperwurk's.
+        </p>
         <div className="flex flex-col gap-px bg-neutral-200">
           {keyDecisions.map((d, i) => (
             <div key={d.title} className="bg-white p-10 flex gap-10 items-start">
@@ -681,74 +449,56 @@ export default function PaperwurkPage() {
         </div>
       </section>
 
-      {/* ── 09 RESOLUTION ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
-        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">09 — Resolution</p>
-        <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
-          An operating system for UAE businesses — not a compliance tool
-        </h2>
-        <p className="text-neutral-400 text-lg leading-relaxed mb-16 max-w-2xl">
-          Paperwurk makes regulatory complexity invisible and supplier collaboration frictionless. Every deliverable below was designed and built before a single line of the full-stack application.
-        </p>
+      {/* Full-bleed placeholder */}
+      <div className="px-8 md:px-30 lg:px-60 py-10">
+        <div className="w-full aspect-16/7 bg-neutral-100 flex items-center justify-center">
+          <span className="text-neutral-300 text-xs tracking-widest uppercase">Project Image — Screen Inventory</span>
+        </div>
+      </div>
 
-        {/* Design deliverables */}
-        <div className="mb-12">
-          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">Design Phase Deliverables</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-neutral-100">
-            {deliverables.map((d) => (
-              <div key={d.label} className="bg-white p-8 flex flex-col gap-2">
-                <p className="text-neutral-900 text-3xl tracking-tight">{d.num}</p>
-                <p className="text-neutral-400 text-sm leading-relaxed">{d.label}</p>
-              </div>
-            ))}
-          </div>
+      {/* ── 06 OUTCOME ── */}
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 bg-neutral-50">
+        <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">06 — What Was Delivered</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
+          <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
+            A complete design system, ready for a team to build from.
+          </h2>
+          <p className="text-neutral-700 text-base leading-relaxed pt-2">
+            The entire UX was resolved before development began — every screen, every flow, every state. A 24-engineer team has a design foundation they can build against without waiting on design decisions mid-sprint.
+          </p>
         </div>
 
-        {/* AI deliverables */}
-        <div className="mb-16">
-          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">AI Module Deliverables</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-neutral-100">
-            {aiDeliverables.map((d) => (
-              <div key={d.label} className="bg-white p-8 flex flex-col gap-2">
-                <p className="text-neutral-900 text-3xl tracking-tight">{d.num}</p>
-                <p className="text-neutral-400 text-sm leading-relaxed">{d.label}</p>
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-neutral-100 mb-16">
+          {deliverables.map((d) => (
+            <div key={d.label} className="bg-white p-8 flex flex-col gap-2">
+              <p className="text-neutral-900 text-3xl tracking-tight">{d.num}</p>
+              <p className="text-neutral-400 text-sm leading-relaxed">{d.label}</p>
+            </div>
+          ))}
         </div>
 
-        {/* Projected impact */}
+        {/* What changed */}
         <div className="mb-16">
-          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">Projected Post-Launch Impact</p>
+          <p className="text-neutral-400 text-xs tracking-widest uppercase mb-6">What the Design Changes for Users</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-100">
             {[
-              { pct: "80%", label: "Reduction in manual document data entry", driver: "OCR automation via AWS Textract" },
-              { pct: "~0", label: "Compliance deadline miss rate", driver: "Automated calendar + proactive reminders" },
-              { pct: "60%", label: "Reduction in time-to-engage a new supplier", driver: "Marketplace + automatic scoped sharing" },
-              { pct: "↓", label: "Supplier delivery friction", driver: "Removal of document access back-and-forth" },
-            ].map((item) => (
-              <div key={item.label} className="bg-white p-8 flex gap-6 items-start">
-                <p className="text-neutral-900 text-3xl tracking-tight shrink-0 w-16">{item.pct}</p>
-                <div>
-                  <p className="text-neutral-700 text-sm">{item.label}</p>
-                  <p className="text-neutral-400 text-xs mt-1">{item.driver}</p>
+              { before: "Compliance deadlines tracked in a spreadsheet", after: "A live calendar on the dashboard, pre-populated from the business profile" },
+              { before: "Sending documents to suppliers over WhatsApp", after: "Suppliers get exactly what they need, automatically, when an engagement starts" },
+              { before: "Starting a new service relationship from scratch every time", after: "A marketplace with scoped, trustable data sharing built in" },
+              { before: "Complex onboarding that feels overwhelming", after: "A guided setup that shows one decision at a time" },
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-8 flex flex-col gap-4">
+                <div className="flex flex-col gap-1.5">
+                  <p className="text-neutral-300 text-xs tracking-widest uppercase">Before</p>
+                  <p className="text-neutral-500 text-sm leading-relaxed">{item.before}</p>
+                </div>
+                <div className="w-full h-px bg-neutral-100" />
+                <div className="flex flex-col gap-1.5">
+                  <p className="text-neutral-400 text-xs tracking-widest uppercase">After</p>
+                  <p className="text-neutral-900 text-sm leading-relaxed">{item.after}</p>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Dual-role callout */}
-        <div className="border border-neutral-200 p-10 md:p-12 mb-10 flex flex-col md:flex-row gap-8 items-start">
-          <div className="w-1 h-16 bg-neutral-900 shrink-0 hidden md:block" />
-          <div>
-            <p className="text-neutral-400 text-xs tracking-widest uppercase mb-4">One Person. Both Halves.</p>
-            <p className="text-neutral-900 text-xl md:text-2xl leading-snug tracking-tight mb-4">
-              The same person who designed the 110+ screen UX architecture also wrote 14,000+ lines of production AI code with 265+ automated tests at 93%+ coverage.
-            </p>
-            <p className="text-neutral-500 text-sm leading-relaxed max-w-2xl">
-              This is unusual. Most platforms have separate design and engineering teams — and the gap between them is where details fall apart. On Paperwurk, the architect of the user experience is also the engineer who built the intelligence layer, which means every AI capability was designed with UX intent baked in from the start, not integrated as an afterthought.
-            </p>
           </div>
         </div>
 
@@ -756,7 +506,7 @@ export default function PaperwurkPage() {
         <div className="bg-black p-10 md:p-16 max-w-3xl">
           <p className="text-white/30 text-xs tracking-widest uppercase mb-6">Status</p>
           <p className="text-white text-2xl md:text-3xl leading-snug tracking-tight">
-            Architecture and AI modules complete. Full-stack development in progress. The hardest design problems have been solved — the ones that can't be patched in later.
+            Design complete. Development in progress. The hardest problems — the ones that determine what kind of product this is — were solved before a line of code was written.
           </p>
         </div>
       </section>

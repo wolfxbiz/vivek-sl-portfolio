@@ -17,11 +17,11 @@ const caseStudies: {
 }[] = [
   {
     slug: "paperwurk",
-    category: "SaaS Platform / UX Architecture / AI Engineering",
+    category: "SaaS Platform / UX Architecture",
     title: "Paperwurk",
-    subtitle: "Multi-Tenant B2B SaaS Platform for UAE Business Compliance — 14 Personas, 110+ Screens, Scoped Data Architecture, and 14,000+ Lines of Production AI Code",
+    subtitle: "Multi-Tenant B2B SaaS Platform for UAE Business Compliance — 14 Personas, 110+ Screens, Scoped Data Architecture",
     image: "/images/paperwurk-thumb.webp",
-    tags: ["UX Architecture", "AI Engineering", "Multi-tenant SaaS", "RAG / LangChain"],
+    tags: ["UX Architecture", "Multi-tenant SaaS", "Permission-Scoped UX"],
   },
   {
     slug: "alya-auditors",

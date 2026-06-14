@@ -70,7 +70,7 @@ export default function TurquoicPage() {
     <main className="bg-white min-h-screen pt-16">
 
       {/* ── HERO ── sharp matte black */}
-      <section className="relative bg-neutral-950 px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-neutral-950 px-8 md:px-30 lg:px-60 pt-14 md:pt-20 pb-12 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-20"
           style={{ backgroundImage: "linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg, #ffffff08 1px, transparent 1px)", backgroundSize: "60px 60px" }}
         />
@@ -110,7 +110,7 @@ export default function TurquoicPage() {
       </div>
 
       {/* ── 01 CHALLENGE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -160,7 +160,7 @@ export default function TurquoicPage() {
       </div>
 
       {/* ── 02 PROCESS ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — The Process</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -215,7 +215,7 @@ export default function TurquoicPage() {
       </div>
 
       {/* ── 03 UI ARCHITECTURE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UI Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -285,7 +285,7 @@ export default function TurquoicPage() {
       </div>
 
       {/* ── 04 RESOLUTION ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           Turquoic's digital presence now reflects the engineering standard of the product inside it

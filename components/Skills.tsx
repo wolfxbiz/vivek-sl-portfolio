@@ -1,6 +1,4 @@
-import React from "react";
 import Image from "next/image";
-import { SiNextdotjs, SiReact } from "react-icons/si";
 
 const capabilities = [
   {
@@ -23,17 +21,6 @@ const capabilities = [
       "Component Architecture",
       "Production Deployment — Vercel",
       "Claude Code · Cursor",
-    ],
-  },
-  {
-    label: "AI & Intelligent Systems",
-    items: [
-      "RAG Pipeline Architecture",
-      "LangChain Agent Orchestration",
-      "Pinecone Vector Search",
-      "OpenAI Integration",
-      "AWS Textract / OCR",
-      "Automated Test Engineering (93%+)",
     ],
   },
   {
@@ -68,16 +55,47 @@ const capabilities = [
   },
 ];
 
-const tools: { label: string; src?: string; icon?: React.ReactNode }[] = [
-  { label: "Figma",                src: "/icons/figma.svg" },
-  { label: "Affinity Designer",   src: "/icons/affinity.svg" },
-  { label: "Adobe Creative Cloud",src: "/icons/creative-cloud.svg" },
-  { label: "VS Code",             src: "/icons/vscode.svg" },
-  { label: "Claude Code",         src: "/icons/claude-code.svg" },
-  { label: "Cursor",              src: "/icons/cursor.svg" },
-  { label: "Next.js",             icon: <SiNextdotjs size={64} color="#000000" /> },
-  { label: "React",               icon: <SiReact size={64} color="#61DAFB" /> },
-  { label: "TypeScript",          src: "/icons/typescript.svg" },
+const toolGroups: { label: string; tools: { label: string; src: string }[] }[] = [
+  {
+    label: "Design & Creative",
+    tools: [
+      { label: "Figma",                src: "/icons/figma.svg" },
+      { label: "Affinity Designer",    src: "/icons/affinity.svg" },
+      { label: "Adobe Creative Cloud", src: "/icons/creative-cloud.svg" },
+    ],
+  },
+  {
+    label: "IDE & AI",
+    tools: [
+      { label: "VS Code",     src: "/icons/vscode.svg" },
+      { label: "Claude Code", src: "/icons/claude-code.svg" },
+      { label: "Cursor",      src: "/icons/cursor.svg" },
+    ],
+  },
+  {
+    label: "Framework & Language",
+    tools: [
+      { label: "Next.js",    src: "/icons/nextjs.svg" },
+      { label: "React",      src: "/icons/react.svg" },
+      { label: "TypeScript", src: "/icons/typescript.svg" },
+      { label: "Vite",       src: "/icons/vite.svg" },
+    ],
+  },
+  {
+    label: "Styling & Deployment",
+    tools: [
+      { label: "Tailwind CSS", src: "/icons/tailwind.svg" },
+      { label: "shadcn/ui",    src: "/icons/shadcn.svg" },
+      { label: "Vercel",       src: "/icons/vercel.svg" },
+    ],
+  },
+  {
+    label: "Motion & Animation",
+    tools: [
+      { label: "Framer Motion", src: "/icons/framer-motion.svg" },
+      { label: "GSAP",          src: "/icons/gsap.svg" },
+    ],
+  },
 ];
 
 export default function Skills() {
@@ -112,34 +130,44 @@ export default function Skills() {
 
       {/* Tools */}
       <div className="border-t border-neutral-100 pt-16">
-        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-12">
+        <p className="text-neutral-600 text-sm tracking-[0.3em] uppercase mb-14">
           Tools
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-neutral-100">
-          {tools.map((tool) => (
-            <div
-              key={tool.label}
-              className="bg-white flex flex-col items-center justify-center gap-4 py-10 px-6 md:py-16 md:px-8 group hover:bg-neutral-50 transition-colors duration-300"
-            >
-              <div className="w-16 h-16 flex items-center justify-center">
-                {tool.src ? (
-                  <Image
-                    src={tool.src}
-                    alt={tool.label}
-                    width={64}
-                    height={64}
-                    unoptimized
-                    style={{ width: "64px", height: "64px" }}
-                    className="object-contain"
-                  />
-                ) : (
-                  tool.icon
-                )}
+        <div className="flex flex-col gap-px bg-neutral-100">
+          {toolGroups.map((group) => (
+            <div key={group.label} className="flex gap-px">
+
+              {/* Category label — left column */}
+              <div className="bg-white w-36 md:w-44 shrink-0 flex items-center px-5 md:px-7 py-8">
+                <p className="text-neutral-400 text-[9px] md:text-[10px] tracking-[0.3em] uppercase leading-relaxed">
+                  {group.label}
+                </p>
               </div>
-              <span className="text-neutral-600 text-sm tracking-wider text-center leading-snug group-hover:text-neutral-900 transition-colors duration-300">
-                {tool.label}
-              </span>
+
+              {/* Tiles — fill remaining width equally */}
+              {group.tools.map((tool) => (
+                <div
+                  key={tool.label}
+                  className="bg-white flex-1 min-w-0 flex flex-col items-center justify-center gap-3 md:gap-4 py-8 md:py-12 px-3 group hover:bg-neutral-50 transition-colors duration-300"
+                >
+                  <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                    <Image
+                      src={tool.src}
+                      alt={tool.label}
+                      width={48}
+                      height={48}
+                      unoptimized
+                      style={{ width: "100%", height: "100%" }}
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-neutral-600 text-[10px] md:text-xs tracking-wider text-center leading-snug group-hover:text-neutral-900 transition-colors duration-300">
+                    {tool.label}
+                  </span>
+                </div>
+              ))}
+
             </div>
           ))}
         </div>

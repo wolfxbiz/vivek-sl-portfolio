@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { SiVite, SiTailwindcss, SiFramer, SiReactrouter } from "react-icons/si";
+import { SiReactrouter } from "react-icons/si";
 
 export const metadata: Metadata = {
   title: "Insure First — Vivek S L",
@@ -114,7 +114,7 @@ export default function EnsurioFirstPage() {
     <main className="bg-white min-h-screen pt-16">
 
       {/* ── HERO ── */}
-      <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-14 md:pt-20 pb-12 md:pb-16 overflow-hidden">
         <Image
           src="/images/insure-first/businesswoman-handshake.webp"
           alt="Professional advisory consultation"
@@ -172,9 +172,9 @@ export default function EnsurioFirstPage() {
             <div className="flex flex-wrap gap-2">
               {([
                 { icon: <Image src="/icons/react.svg" width={13} height={13} alt="React" unoptimized />, label: "React 18" },
-                { icon: <SiVite size={13} color="#646CFF" />, label: "Vite" },
-                { icon: <SiFramer size={13} color="#0055FF" />, label: "Framer Motion" },
-                { icon: <SiTailwindcss size={13} color="#06B6D4" />, label: "Tailwind" },
+                { icon: <Image src="/icons/vite.svg" width={13} height={13} alt="Vite" unoptimized />, label: "Vite" },
+                { icon: <Image src="/icons/framer-motion.svg" width={13} height={13} alt="Framer Motion" unoptimized />, label: "Framer Motion" },
+                { icon: <Image src="/icons/tailwind.svg" width={13} height={13} alt="Tailwind CSS" unoptimized />, label: "Tailwind" },
                 { icon: <SiReactrouter size={13} color="#CA4245" />, label: "React Router" },
               ] as { icon: React.ReactNode; label: string }[]).map((chip) => (
                 <span key={chip.label} className="flex items-center gap-1.5 border border-neutral-200 px-2.5 py-1.5 text-neutral-600 text-xs">
@@ -196,7 +196,7 @@ export default function EnsurioFirstPage() {
       </div>
 
       {/* ── 01 MARKET POSITIONING ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — Market Positioning</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -254,7 +254,7 @@ export default function EnsurioFirstPage() {
       </div>
 
       {/* ── 02 INFORMATION ARCHITECTURE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 bg-neutral-50">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 bg-neutral-50">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — Information Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -305,7 +305,7 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* ── 03 UX DESIGN ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UX Design</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -422,7 +422,7 @@ export default function EnsurioFirstPage() {
       </div>
 
       {/* ── 04 DESIGN SYSTEM ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 bg-neutral-50">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 bg-neutral-50">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — Design System</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -500,7 +500,7 @@ export default function EnsurioFirstPage() {
       </div>
 
       {/* ── 05 KEY DECISIONS ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Key Decisions</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -525,7 +525,7 @@ export default function EnsurioFirstPage() {
       </section>
 
       {/* ── 06 RESOLUTION ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">06 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           A complete lead acquisition platform for a business with a story worth telling

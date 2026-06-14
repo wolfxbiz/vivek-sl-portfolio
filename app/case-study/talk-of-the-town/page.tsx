@@ -110,7 +110,7 @@ export default function TalkOfTheTownPage() {
     <main className="bg-white min-h-screen pt-16">
 
       {/* ── HERO ── editorial teal */}
-      <section className="relative bg-[#11454F] px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-[#11454F] px-8 md:px-30 lg:px-60 pt-14 md:pt-20 pb-12 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: "radial-gradient(circle at 90% 10%, #BBDCCE 0%, transparent 50%)" }}
         />
@@ -147,7 +147,7 @@ export default function TalkOfTheTownPage() {
       </div>
 
       {/* ── 01 CHALLENGE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — The Challenge & Creative Identity</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -189,7 +189,7 @@ export default function TalkOfTheTownPage() {
       </div>
 
       {/* ── 02 DESIGN PRINCIPLES ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — UI Design Principles</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -234,7 +234,7 @@ export default function TalkOfTheTownPage() {
       </div>
 
       {/* ── 03 PAGE STRUCTURE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — UX Blueprint</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -309,7 +309,7 @@ export default function TalkOfTheTownPage() {
       </div>
 
       {/* ── 04 USER FLOW ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — User Flow Breakdown</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -337,7 +337,7 @@ export default function TalkOfTheTownPage() {
       </section>
 
       {/* ── 05 RESOLUTION ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           A first professional project delivered as a fully realized, conversion-driven publishing identity

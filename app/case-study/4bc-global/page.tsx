@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { SiTailwindcss, SiFramer, SiGreensock } from "react-icons/si";
 
 export const metadata: Metadata = {
   title: "4BC Global — Vivek S L",
@@ -175,7 +174,7 @@ export default function FourBCGlobalPage() {
     <main className="bg-white min-h-screen pt-16">
 
       {/* ── HERO ── */}
-      <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-14 md:pt-20 pb-12 md:pb-16 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{ background: "radial-gradient(ellipse at 25% 50%, #2B4A8C 0%, #7D2B5E 40%, #000000 75%)" }}
@@ -224,9 +223,9 @@ export default function FourBCGlobalPage() {
               {([
                 { icon: <Image src="/icons/nextjs.svg" width={13} height={13} alt="Next.js" unoptimized />, label: "Next.js 14" },
                 { icon: <Image src="/icons/typescript.svg" width={13} height={13} alt="TypeScript" unoptimized />, label: "TypeScript" },
-                { icon: <SiTailwindcss size={13} color="#06B6D4" />, label: "Tailwind" },
-                { icon: <SiFramer size={13} color="#0055FF" />, label: "Framer Motion" },
-                { icon: <SiGreensock size={13} color="#88CE02" />, label: "GSAP" },
+                { icon: <Image src="/icons/tailwind.svg" width={13} height={13} alt="Tailwind CSS" unoptimized />, label: "Tailwind" },
+                { icon: <Image src="/icons/framer-motion.svg" width={13} height={13} alt="Framer Motion" unoptimized />, label: "Framer Motion" },
+                { icon: <Image src="/icons/gsap.svg" width={13} height={13} alt="GSAP" unoptimized />, label: "GSAP" },
                 { icon: null, label: "OGL/WebGL" },
               ] as { icon: React.ReactNode; label: string }[]).map((chip) => (
                 <span key={chip.label} className="flex items-center gap-1.5 border border-neutral-200 px-2.5 py-1.5 text-neutral-600 text-xs">
@@ -248,7 +247,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 01 BUSINESS OVERVIEW ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">01 — Business Overview</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -308,7 +307,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 02 SERVICE ARCHITECTURE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 bg-neutral-50">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 bg-neutral-50">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">02 — Service Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -359,7 +358,7 @@ export default function FourBCGlobalPage() {
       </section>
 
       {/* ── 03 DESIGN SYSTEM ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">03 — Design System</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -447,7 +446,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 04 UX & NAVIGATION ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 bg-neutral-50">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 bg-neutral-50">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">04 — UX & Navigation</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -459,19 +458,21 @@ export default function FourBCGlobalPage() {
         </div>
 
         {/* Navigation routes */}
-        <div className="border border-neutral-200 divide-y divide-neutral-100 mb-16">
-          <div className="grid grid-cols-3 gap-0 bg-neutral-900 px-8 py-4">
-            {["Route", "Intent", "Primary Audience"].map((h) => (
-              <p key={h} className="text-white/40 text-xs tracking-widest uppercase">{h}</p>
+        <div className="overflow-x-auto mb-16">
+          <div className="min-w-120 border border-neutral-200 divide-y divide-neutral-100">
+            <div className="grid grid-cols-3 gap-0 bg-neutral-900 px-8 py-4">
+              {["Route", "Intent", "Primary Audience"].map((h) => (
+                <p key={h} className="text-white/40 text-xs tracking-widest uppercase">{h}</p>
+              ))}
+            </div>
+            {navRoutes.map((r) => (
+              <div key={r.route} className="grid grid-cols-3 gap-0 bg-white px-8 py-5 items-center">
+                <p className="text-neutral-900 text-sm">{r.route}</p>
+                <p className="text-neutral-500 text-sm">{r.intent}</p>
+                <p className="text-neutral-400 text-sm">{r.audience}</p>
+              </div>
             ))}
           </div>
-          {navRoutes.map((r) => (
-            <div key={r.route} className="grid grid-cols-3 gap-0 bg-white px-8 py-5 items-center">
-              <p className="text-neutral-900 text-sm">{r.route}</p>
-              <p className="text-neutral-500 text-sm">{r.intent}</p>
-              <p className="text-neutral-400 text-sm">{r.audience}</p>
-            </div>
-          ))}
         </div>
 
         {/* Interaction patterns */}
@@ -499,7 +500,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 05 TECHNICAL ARCHITECTURE ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">05 — Technical Architecture</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
           <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight">
@@ -511,7 +512,8 @@ export default function FourBCGlobalPage() {
         </div>
 
         {/* Stack table */}
-        <div className="border border-neutral-200 divide-y divide-neutral-100 mb-16">
+        <div className="overflow-x-auto mb-16">
+          <div className="min-w-120 border border-neutral-200 divide-y divide-neutral-100">
           <div className="grid grid-cols-3 bg-neutral-900 px-8 py-4">
             {["Layer", "Technology", "Version"].map((h) => (
               <p key={h} className="text-white/40 text-xs tracking-widest uppercase">{h}</p>
@@ -524,6 +526,7 @@ export default function FourBCGlobalPage() {
               <p className="text-neutral-400 text-sm font-mono">{t.version}</p>
             </div>
           ))}
+          </div>
         </div>
 
         {/* Architecture decisions */}
@@ -548,7 +551,7 @@ export default function FourBCGlobalPage() {
       </div>
 
       {/* ── 06 RESOLUTION ── */}
-      <section className="px-8 md:px-30 lg:px-60 py-24 border-t border-neutral-100">
+      <section className="px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-neutral-100">
         <p className="text-neutral-400 text-xs tracking-[0.3em] uppercase mb-6">06 — Resolution</p>
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight leading-tight mb-4 max-w-3xl">
           Every design decision mapped to a business conversion rationale
