@@ -61,8 +61,8 @@ export default function ResumePage() {
             <p className="text-xs text-neutral-500 mb-3">
               UI/UX Designer &amp; Marketing Strategist — Targeting Brand Strategy, CRO &amp; Marketing Design Roles
             </p>
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
-              <ContactItem icon={<MapPin size={12} />} text="India — Open to UAE / GCC / Remote" />
+            <div className="flex flex-wrap gap-x-4 gap-y-1">
+              <ContactItem icon={<MapPin size={12} />} text="India · Open to UAE / GCC / Remote" />
               <ContactItem icon={<Phone size={12} />} href="tel:+918921284894" text="+91 8921284894" />
               <ContactItem icon={<Mail size={12} />} href="mailto:vivekshajilekha@gmail.com" text="vivekshajilekha@gmail.com" />
               <ContactItem icon={<LinkedInIcon />} href="https://linkedin.com/in/viveksl" text="linkedin.com/in/viveksl" />
@@ -74,12 +74,12 @@ export default function ResumePage() {
           {/* ── Profile ─────────────────────────────────────────── */}
           <section className="mb-4">
             <SectionLabel>Profile</SectionLabel>
-            <p className="text-xs text-neutral-700 leading-relaxed mt-2">
+            <p className="text-xs text-neutral-700 leading-normal mt-2">
               Animation training and six years of freelance brand and content design built the visual foundation.
               That practice evolved into UI/UX design and CRO — delivering landing pages, SaaS platforms, and lead
               generation systems for 10+ UAE and GCC clients where visual craft and conversion architecture work together.
             </p>
-            <p className="text-xs text-neutral-700 leading-relaxed mt-1.5">
+            <p className="text-xs text-neutral-700 leading-normal mt-1">
               An MBA in Marketing &amp; Finance adds the strategic layer — consumer behaviour, funnel design, brand
               positioning, and market context. Targeting roles where design execution, marketing thinking, and
               conversion strategy converge.
