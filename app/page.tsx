@@ -3,7 +3,7 @@ import ProjectGrid from "@/components/ProjectGrid";
 import Process from "@/components/Process";
 import Ecosystem from "@/components/Ecosystem";
 import Experience from "@/components/Experience";
-import Skills from "@/components/Skills";
+import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
 
 const CARD_SHADOW = "0 -12px 40px rgba(0,0,0,0.25), 0 -2px 8px rgba(0,0,0,0.1)";
@@ -25,7 +25,7 @@ export default function Page() {
         <Process />
         <Ecosystem />
         <Experience />
-        <Skills />
+        <AboutSection />
         <Footer />
       </div>
     </main>

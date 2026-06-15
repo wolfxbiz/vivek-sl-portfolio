@@ -41,9 +41,6 @@ export default function Navbar() {
           <Link href="/work" className={`text-sm tracking-wider transition-colors duration-500 ${textColor}`}>
             Work
           </Link>
-          <Link href="/about" className={`text-sm tracking-wider transition-colors duration-500 ${textColor}`}>
-            About
-          </Link>
           <a
             href="https://www.linkedin.com/in/viveksl/"
             target="_blank"
@@ -99,13 +96,6 @@ export default function Navbar() {
             className="text-white text-5xl tracking-tight hover:text-white/40 transition-colors duration-300"
           >
             Work
-          </Link>
-          <Link
-            href="/about"
-            onClick={() => setOpen(false)}
-            className="text-white text-5xl tracking-tight hover:text-white/40 transition-colors duration-300"
-          >
-            About
           </Link>
           <a
             href="https://www.linkedin.com/in/viveksl/"
