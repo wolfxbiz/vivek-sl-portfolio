@@ -37,16 +37,10 @@ export default function ProjectGrid() {
     <section className="bg-white border-t border-neutral-100">
 
       {/* Header */}
-      <div className="px-8 md:px-30 lg:px-60 pt-16 pb-10 flex items-end justify-between">
+      <div className="px-8 md:px-30 lg:px-60 pt-16 pb-10">
         <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight">
           Case Studies
         </h2>
-        <Link
-          href="/work"
-          className="text-neutral-600 text-sm tracking-widest uppercase hover:text-black transition-colors duration-300 flex items-center gap-2 pb-1"
-        >
-          All Work →
-        </Link>
       </div>
 
       {/* Card grid */}

@@ -1,8 +1,6 @@
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
 import Process from "@/components/Process";
-import Ecosystem from "@/components/Ecosystem";
-import Experience from "@/components/Experience";
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
 
@@ -23,8 +21,6 @@ export default function Page() {
       >
         <ProjectGrid />
         <Process />
-        <Ecosystem />
-        <Experience />
         <AboutSection />
         <Footer />
       </div>

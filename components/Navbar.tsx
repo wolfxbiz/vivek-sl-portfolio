@@ -19,8 +19,8 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // On non-home pages the background is always white — treat as scrolled
-  const light = !isHome || scrolled;
+  // Non-home pages get a white navbar; home page stays black always
+  const light = !isHome;
 
   const textColor = light ? 'text-neutral-600 hover:text-black' : 'text-white/80 hover:text-white';
 
@@ -38,9 +38,6 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/work" className={`text-sm tracking-wider transition-colors duration-500 ${textColor}`}>
-            Work
-          </Link>
           <a
             href="https://www.linkedin.com/in/viveksl/"
             target="_blank"
@@ -90,13 +87,6 @@ export default function Navbar() {
         open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
         <div className="flex flex-col gap-10">
-          <Link
-            href="/work"
-            onClick={() => setOpen(false)}
-            className="text-white text-5xl tracking-tight hover:text-white/40 transition-colors duration-300"
-          >
-            Work
-          </Link>
           <a
             href="https://www.linkedin.com/in/viveksl/"
             target="_blank"
