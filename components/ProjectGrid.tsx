@@ -7,24 +7,28 @@ const projects = [
     slug: "paperwurk",
     title: "Paperwurk",
     image: "/images/cover-paperwurk.png",
+    hover: "/images/hover-paperwurk.png",
   },
   {
     id: "02",
     slug: "alya-auditors",
     title: "Alya Auditors",
     image: "/images/cover-alya.png",
+    hover: "/images/hover-alya.png",
   },
   {
     id: "03",
     slug: "4bc-global",
     title: "4BC Global",
     image: "/images/cover-4bc.png",
+    hover: "/images/hover-4bc.png",
   },
   {
     id: "04",
     slug: "insure-first",
     title: "Insure First",
     image: "/images/cover-insure.png",
+    hover: "/images/hover-insure.png",
   },
 ];
 
@@ -54,13 +58,22 @@ export default function ProjectGrid() {
               href={`/case-study/${p.slug}`}
               className="group relative overflow-hidden rounded-xl"
             >
+              {/* Base image */}
               <Image
                 src={p.image}
                 alt={p.title}
                 width={687}
                 height={1372}
                 quality={85}
-                className="w-full h-auto group-hover:scale-[1.03] transition-transform duration-500"
+                className="w-full h-auto"
+              />
+              {/* Hover image — fades in on top */}
+              <Image
+                src={p.hover}
+                alt=""
+                fill
+                quality={85}
+                className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               />
             </Link>
           ))}
