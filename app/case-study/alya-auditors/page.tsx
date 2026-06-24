@@ -697,9 +697,9 @@ export default function AlyaAuditorsPage() {
             <p className="text-neutral-300 text-xs tracking-widest uppercase">← Previous</p>
             <p className="text-neutral-700 text-sm group-hover:text-black transition-colors duration-300">Paperwurk</p>
           </Link>
-          <Link href="/case-study/insure-first" className="group flex flex-col gap-1 text-right">
+          <Link href="/case-study/4bc-global" className="group flex flex-col gap-1 text-right">
             <p className="text-neutral-300 text-xs tracking-widest uppercase">Next →</p>
-            <p className="text-neutral-700 text-sm group-hover:text-black transition-colors duration-300">Insure First</p>
+            <p className="text-neutral-700 text-sm group-hover:text-black transition-colors duration-300">4BC Global</p>
           </Link>
         </div>
       </div>

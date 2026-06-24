@@ -5,33 +5,40 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
+  const hasDarkHero = pathname.startsWith('/case-study/paperwurk');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > window.innerHeight - 80);
+    setPastHero(false);
+    const check = () => {
+      if (hasDarkHero) setPastHero(window.scrollY > 300);
       if (window.scrollY > 50) setOpen(false);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    check();
+    window.addEventListener('scroll', check, { passive: true });
+    return () => window.removeEventListener('scroll', check);
+  }, [pathname, hasDarkHero]);
 
-  // Non-home pages get a white navbar; home page stays black always
-  const light = !isHome;
+  const showTransparent = hasDarkHero && !pastHero;
+  const dark = isHome || showTransparent;
 
-  const textColor = light ? 'text-neutral-600 hover:text-black' : 'text-white/80 hover:text-white';
+  const navBg = isHome
+    ? 'bg-black border-white/10'
+    : showTransparent
+    ? 'bg-transparent border-transparent'
+    : 'bg-white border-neutral-100';
+
+  const textColor = dark ? 'text-white/80 hover:text-white' : 'text-neutral-600 hover:text-black';
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 border-b transition-all duration-500 ${
-        light ? 'bg-white border-neutral-100' : 'bg-black border-white/10'
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 border-b transition-all duration-500 ${navBg}`}>
         <Link
           href="/"
-          className={`text-sm tracking-widest font-bold transition-colors duration-500 ${light ? 'text-black' : 'text-white'}`}
+          className={`text-sm tracking-widest font-bold transition-colors duration-500 ${dark ? 'text-white' : 'text-black'}`}
         >
           VIVEK S L
         </Link>
@@ -52,16 +59,18 @@ export default function Navbar() {
           >
             Email
           </a>
-          <Link
-            href="/resume"
+          <a
+            href="/Vivek_SL_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`text-sm tracking-wider px-4 py-1.5 border transition-all duration-500 ${
-              light
-                ? 'text-neutral-600 hover:text-black border-neutral-300 hover:border-black'
-                : 'text-white/80 hover:text-white border-white/50 hover:border-white'
+              dark
+                ? 'text-white/80 hover:text-white border-white/50 hover:border-white'
+                : 'text-neutral-600 hover:text-black border-neutral-300 hover:border-black'
             }`}
           >
             Resume
-          </Link>
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -71,13 +80,13 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span className={`block h-px w-full transition-all duration-300 origin-top-left ${
-            light ? 'bg-black' : 'bg-white'
+            dark ? 'bg-white' : 'bg-black'
           } ${open ? 'rotate-45 translate-x-px' : ''}`} />
           <span className={`block h-px w-full transition-all duration-300 ${
-            light ? 'bg-black' : 'bg-white'
+            dark ? 'bg-white' : 'bg-black'
           } ${open ? 'opacity-0 scale-x-0' : ''}`} />
           <span className={`block h-px w-full transition-all duration-300 origin-bottom-left ${
-            light ? 'bg-black' : 'bg-white'
+            dark ? 'bg-white' : 'bg-black'
           } ${open ? '-rotate-45 translate-x-px' : ''}`} />
         </button>
       </nav>
@@ -103,13 +112,15 @@ export default function Navbar() {
           >
             Email
           </a>
-          <Link
-            href="/resume"
+          <a
+            href="/Vivek_SL_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="text-white text-5xl tracking-tight hover:text-white/40 transition-colors duration-300"
           >
             Resume
-          </Link>
+          </a>
         </div>
         <p className="absolute bottom-10 left-8 text-white/60 text-sm tracking-widest uppercase">
           VIVEK S L

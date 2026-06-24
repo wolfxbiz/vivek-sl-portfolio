@@ -567,13 +567,13 @@ export default function EnsurioFirstPage() {
           </a>
         </div>
         <div className="flex items-center justify-between border-t border-neutral-100 pt-10">
-          <Link href="/case-study/alya-auditors" className="group flex flex-col gap-1">
+          <Link href="/case-study/4bc-global" className="group flex flex-col gap-1">
             <p className="text-neutral-300 text-xs tracking-widest uppercase">← Previous</p>
-            <p className="text-neutral-700 text-sm group-hover:text-black transition-colors duration-300">Alya Auditors</p>
-          </Link>
-          <Link href="/case-study/4bc-global" className="group flex flex-col gap-1 text-right">
-            <p className="text-neutral-300 text-xs tracking-widest uppercase">Next →</p>
             <p className="text-neutral-700 text-sm group-hover:text-black transition-colors duration-300">4BC Global</p>
+          </Link>
+          <Link href="/case-study/paperwurk" className="group flex flex-col gap-1 text-right">
+            <p className="text-neutral-300 text-xs tracking-widest uppercase">Next →</p>
+            <p className="text-neutral-700 text-sm group-hover:text-black transition-colors duration-300">Paperwurk</p>
           </Link>
         </div>
       </div>
