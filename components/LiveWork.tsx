@@ -12,7 +12,7 @@ const sites = [
     market: "UAE · IT Consultancy",
     color: "#00C2CB",
     num: "01",
-    preview: "/images/previews/turquoic.jpg",
+    preview: "/images/previews/turquoic.webp",
   },
   {
     name: "4BC Global",
@@ -23,7 +23,7 @@ const sites = [
     color: "#C9A84C",
     num: "02",
     caseStudy: "/case-study/4bc-global",
-    preview: "/images/previews/4bc-global.jpg",
+    preview: "/images/previews/4bc-global.webp",
   },
   {
     name: "ALYA Auditors",
@@ -34,7 +34,7 @@ const sites = [
     color: "#7FFA7B",
     num: "03",
     caseStudy: "/case-study/alya-auditors",
-    preview: "/images/previews/alya-auditors.jpg",
+    preview: "/images/previews/alya-auditors.webp",
   },
   {
     name: "Insure First",
@@ -45,7 +45,7 @@ const sites = [
     color: "#3B82F6",
     num: "04",
     caseStudy: "/case-study/insure-first",
-    preview: "/images/previews/insure-first.jpg",
+    preview: "/images/previews/insure-first.webp",
   },
   {
     name: "Planet Blue Marine",
@@ -55,7 +55,7 @@ const sites = [
     market: "UAE · Marine Services",
     color: "#06B6D4",
     num: "05",
-    preview: "/images/previews/planet-blue.jpg",
+    preview: "/images/previews/planet-blue.webp",
   },
   {
     name: "Arco Angola",
@@ -65,7 +65,7 @@ const sites = [
     market: "Angola · Industrial Certification",
     color: "#E85D26",
     num: "06",
-    preview: "/images/previews/arco-angola.jpg",
+    preview: "/images/previews/arco-angola.webp",
   },
 ];
 
