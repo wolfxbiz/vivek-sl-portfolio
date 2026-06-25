@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://viveksl.com/sitemap.xml",
+    sitemap: "https://www.viveksl.com/sitemap.xml",
   };
 }
