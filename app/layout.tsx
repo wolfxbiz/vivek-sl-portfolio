@@ -12,9 +12,52 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Vivek S L — UI/UX Designer & Creative Content Strategist",
+  metadataBase: new URL("https://viveksl.com"),
+  title: {
+    default: "Vivek S L — UI/UX Designer & Growth Strategist",
+    template: "%s — Vivek S L",
+  },
   description:
-    "Merging UI/UX architecture with strategic content marketing and business growth.",
+    "UI/UX designer and growth strategist with 6+ years building conversion-focused products, brand systems, and SaaS platforms for UAE and GCC clients.",
+  keywords: [
+    "UI UX designer",
+    "UX designer UAE",
+    "product designer",
+    "conversion rate optimisation",
+    "landing page design",
+    "SaaS design",
+    "brand identity designer",
+    "Vivek SL",
+  ],
+  authors: [{ name: "Vivek S L", url: "https://viveksl.com" }],
+  creator: "Vivek S L",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://viveksl.com",
+    siteName: "Vivek S L",
+    title: "Vivek S L — UI/UX Designer & Growth Strategist",
+    description:
+      "UI/UX designer and growth strategist with 6+ years building conversion-focused products, brand systems, and SaaS platforms for UAE and GCC clients.",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vivek S L — UI/UX Designer & Growth Strategist",
+    description:
+      "UI/UX designer and growth strategist with 6+ years building conversion-focused products, brand systems, and SaaS platforms for UAE and GCC clients.",
+    creator: "@viveksl",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({
