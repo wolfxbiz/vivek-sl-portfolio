@@ -46,16 +46,6 @@ const sites = [
     num: "04",
     preview: "/images/previews/arco-angola.jpg",
   },
-  {
-    name: "Tott Books",
-    url: "https://tottbooks.com",
-    domain: "tottbooks.com",
-    role: "E-commerce · UI Design",
-    market: "E-commerce · Publishing",
-    color: "#A259FF",
-    num: "05",
-    preview: "/images/previews/tott-books.jpg",
-  },
 ];
 
 export default function LiveWork() {
