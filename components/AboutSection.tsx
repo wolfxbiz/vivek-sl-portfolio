@@ -11,12 +11,12 @@ const capabilities = [
 
 const tools = [
   { label: "Figma",       src: "/icons/figma.svg" },
-  { label: "Adobe CC",    src: "/icons/creative-cloud.svg" },
-  { label: "VS Code",     src: "/icons/vscode.svg" },
-  { label: "Claude Code", src: "/icons/claude-code.svg" },
-  { label: "React",       src: "/icons/react.svg" },
-  { label: "TypeScript",  src: "/icons/typescript.svg" },
-  { label: "Tailwind CSS",src: "/icons/tailwind.svg" },
+  { label: "Adobe CC",    src: "/icons/creative-cloud.webp" },
+  { label: "VS Code",     src: "/icons/vscode.webp" },
+  { label: "Claude Code", src: "/icons/claude-code.webp" },
+  { label: "React",       src: "/icons/react.webp" },
+  { label: "TypeScript",  src: "/icons/typescript.webp" },
+  { label: "Tailwind CSS",src: "/icons/tailwind.webp" },
 ];
 
 export default function AboutSection() {

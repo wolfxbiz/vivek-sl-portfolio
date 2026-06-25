@@ -58,7 +58,8 @@ export default function ProjectGrid() {
                 alt={p.title}
                 width={687}
                 height={1372}
-                quality={85}
+                quality={75}
+                sizes="(max-width: 768px) 45vw, 25vw"
                 className="w-full h-auto"
               />
               {/* Hover image — fades in on top */}
@@ -66,7 +67,8 @@ export default function ProjectGrid() {
                 src={p.hover}
                 alt=""
                 fill
-                quality={85}
+                quality={75}
+                sizes="(max-width: 768px) 45vw, 25vw"
                 className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               />
             </Link>

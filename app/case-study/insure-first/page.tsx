@@ -171,10 +171,10 @@ export default function EnsurioFirstPage() {
             <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Stack</p>
             <div className="flex flex-wrap gap-2">
               {([
-                { icon: <Image src="/icons/react.svg" width={13} height={13} alt="React" unoptimized />, label: "React 18" },
-                { icon: <Image src="/icons/vite.svg" width={13} height={13} alt="Vite" unoptimized />, label: "Vite" },
-                { icon: <Image src="/icons/framer-motion.svg" width={13} height={13} alt="Framer Motion" unoptimized />, label: "Framer Motion" },
-                { icon: <Image src="/icons/tailwind.svg" width={13} height={13} alt="Tailwind CSS" unoptimized />, label: "Tailwind" },
+                { icon: <Image src="/icons/react.webp" width={13} height={13} alt="React" unoptimized />, label: "React 18" },
+                { icon: <Image src="/icons/vite.webp" width={13} height={13} alt="Vite" unoptimized />, label: "Vite" },
+                { icon: <Image src="/icons/framer-motion.webp" width={13} height={13} alt="Framer Motion" unoptimized />, label: "Framer Motion" },
+                { icon: <Image src="/icons/tailwind.webp" width={13} height={13} alt="Tailwind CSS" unoptimized />, label: "Tailwind" },
                 { icon: <SiReactrouter size={13} color="#CA4245" />, label: "React Router" },
               ] as { icon: React.ReactNode; label: string }[]).map((chip) => (
                 <span key={chip.label} className="flex items-center gap-1.5 border border-neutral-200 px-2.5 py-1.5 text-neutral-600 text-xs">

@@ -1,9 +1,47 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+
 const projects = [
   { id: "251633181", title: "Project 01" },
   { id: "227337443", title: "Project 02" },
   { id: "251641991", title: "Yathra — Creative Direction & AI Visual Production" },
   { id: "251598949", title: "Project 04" },
 ];
+
+function LazyIframe({ id, title }: { id: string; title: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [load, setLoad] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setLoad(true); obs.disconnect(); } },
+      { rootMargin: '200px' }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="relative w-full" style={{ paddingBottom: '78.2%' }}>
+      {load ? (
+        <iframe
+          src={`https://www.behance.net/embed/project/${id}?ilo0=1`}
+          title={title}
+          allowFullScreen
+          allow="clipboard-write"
+          referrerPolicy="strict-origin-when-cross-origin"
+          className="absolute inset-0 w-full h-full rounded-xl border border-white/8"
+          style={{ colorScheme: 'normal' }}
+        />
+      ) : (
+        <div className="absolute inset-0 rounded-xl border border-white/8 bg-white/[0.03] animate-pulse" />
+      )}
+    </div>
+  );
+}
 
 export default function BehanceSection() {
   return (
@@ -28,17 +66,7 @@ export default function BehanceSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((p) => (
-          <div key={p.id} className="relative w-full" style={{ paddingBottom: "78.2%" }}>
-            <iframe
-              src={`https://www.behance.net/embed/project/${p.id}?ilo0=1`}
-              title={p.title}
-              allowFullScreen
-              allow="clipboard-write"
-              referrerPolicy="strict-origin-when-cross-origin"
-              className="absolute inset-0 w-full h-full rounded-xl border border-white/8"
-              style={{ colorScheme: "normal" }}
-            />
-          </div>
+          <LazyIframe key={p.id} id={p.id} title={p.title} />
         ))}
       </div>
 

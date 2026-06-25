@@ -221,11 +221,11 @@ export default function FourBCGlobalPage() {
             <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Stack</p>
             <div className="flex flex-wrap gap-2">
               {([
-                { icon: <Image src="/icons/nextjs.svg" width={13} height={13} alt="Next.js" unoptimized />, label: "Next.js 14" },
-                { icon: <Image src="/icons/typescript.svg" width={13} height={13} alt="TypeScript" unoptimized />, label: "TypeScript" },
-                { icon: <Image src="/icons/tailwind.svg" width={13} height={13} alt="Tailwind CSS" unoptimized />, label: "Tailwind" },
-                { icon: <Image src="/icons/framer-motion.svg" width={13} height={13} alt="Framer Motion" unoptimized />, label: "Framer Motion" },
-                { icon: <Image src="/icons/gsap.svg" width={13} height={13} alt="GSAP" unoptimized />, label: "GSAP" },
+                { icon: <Image src="/icons/nextjs.webp" width={13} height={13} alt="Next.js" unoptimized />, label: "Next.js 14" },
+                { icon: <Image src="/icons/typescript.webp" width={13} height={13} alt="TypeScript" unoptimized />, label: "TypeScript" },
+                { icon: <Image src="/icons/tailwind.webp" width={13} height={13} alt="Tailwind CSS" unoptimized />, label: "Tailwind" },
+                { icon: <Image src="/icons/framer-motion.webp" width={13} height={13} alt="Framer Motion" unoptimized />, label: "Framer Motion" },
+                { icon: <Image src="/icons/gsap.webp" width={13} height={13} alt="GSAP" unoptimized />, label: "GSAP" },
                 { icon: null, label: "OGL/WebGL" },
               ] as { icon: React.ReactNode; label: string }[]).map((chip) => (
                 <span key={chip.label} className="flex items-center gap-1.5 border border-neutral-200 px-2.5 py-1.5 text-neutral-600 text-xs">

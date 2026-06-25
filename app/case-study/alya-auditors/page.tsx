@@ -260,11 +260,11 @@ export default function AlyaAuditorsPage() {
             <p className="text-neutral-400 text-[10px] tracking-[0.25em] uppercase">Stack</p>
             <div className="flex flex-wrap gap-2">
               {([
-                { icon: <Image src="/icons/react.svg" width={13} height={13} alt="React" unoptimized />, label: "React 18" },
-                { icon: <Image src="/icons/typescript.svg" width={13} height={13} alt="TypeScript" unoptimized />, label: "TypeScript" },
-                { icon: <Image src="/icons/vite.svg" width={13} height={13} alt="Vite" unoptimized />, label: "Vite" },
-                { icon: <Image src="/icons/tailwind.svg" width={13} height={13} alt="Tailwind CSS" unoptimized />, label: "Tailwind" },
-                { icon: <Image src="/icons/shadcn.svg" width={13} height={13} alt="shadcn/ui" unoptimized />, label: "shadcn/ui" },
+                { icon: <Image src="/icons/react.webp" width={13} height={13} alt="React" unoptimized />, label: "React 18" },
+                { icon: <Image src="/icons/typescript.webp" width={13} height={13} alt="TypeScript" unoptimized />, label: "TypeScript" },
+                { icon: <Image src="/icons/vite.webp" width={13} height={13} alt="Vite" unoptimized />, label: "Vite" },
+                { icon: <Image src="/icons/tailwind.webp" width={13} height={13} alt="Tailwind CSS" unoptimized />, label: "Tailwind" },
+                { icon: <Image src="/icons/shadcn.webp" width={13} height={13} alt="shadcn/ui" unoptimized />, label: "shadcn/ui" },
               ] as { icon: React.ReactNode; label: string }[]).map((chip) => (
                 <span key={chip.label} className="flex items-center gap-1.5 border border-neutral-200 px-2.5 py-1.5 text-neutral-600 text-xs">
                   {chip.icon}
