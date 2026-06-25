@@ -12,7 +12,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.viveksl.com"),
+  metadataBase: new URL("https://viveksl.com"),
   title: {
     default: "Vivek S L — UI/UX Designer & Growth Strategist",
     template: "%s — Vivek S L",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     "brand identity designer",
     "Vivek SL",
   ],
-  authors: [{ name: "Vivek S L", url: "https://www.viveksl.com" }],
+  authors: [{ name: "Vivek S L", url: "https://viveksl.com" }],
   creator: "Vivek S L",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
-    url: "https://www.viveksl.com",
+    url: "https://viveksl.com",
     siteName: "Vivek S L",
     title: "Vivek S L — UI/UX Designer & Growth Strategist",
     description:
