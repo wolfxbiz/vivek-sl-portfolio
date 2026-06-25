@@ -42,6 +42,14 @@ export const metadata: Metadata = {
     description:
       "UI/UX designer and growth strategist with 6+ years building conversion-focused products, brand systems, and SaaS platforms for UAE and GCC clients.",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Vivek S L — UI/UX Designer & Growth Strategist",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -49,6 +57,7 @@ export const metadata: Metadata = {
     description:
       "UI/UX designer and growth strategist with 6+ years building conversion-focused products, brand systems, and SaaS platforms for UAE and GCC clients.",
     creator: "@viveksl",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
