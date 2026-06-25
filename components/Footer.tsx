@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Footer() {
   return (
     <footer className="bg-black">
@@ -55,8 +53,23 @@ export default function Footer() {
               linkedin.com/in/viveksl<span className="hidden md:inline"> ↗</span>
             </span>
           </a>
-          <Link
-            href="/resume"
+          <a
+            href="https://www.behance.net/viveksl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between py-5 border-b border-white/8 hover:border-[#FF4D00]/30 transition-all duration-300"
+          >
+            <span className="text-white/35 text-[10px] tracking-[0.35em] uppercase group-hover:text-white/60 transition-colors duration-300">
+              Behance
+            </span>
+            <span className="text-white/75 text-sm md:text-base tracking-wide group-hover:text-[#FF4D00] transition-colors duration-300">
+              behance.net/viveksl<span className="hidden md:inline"> ↗</span>
+            </span>
+          </a>
+          <a
+            href="/Vivek_SL_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex items-center justify-between py-5 border-b border-white/8 hover:border-[#FF4D00]/30 transition-all duration-300"
           >
             <span className="text-white/35 text-[10px] tracking-[0.35em] uppercase group-hover:text-white/60 transition-colors duration-300">
@@ -65,7 +78,7 @@ export default function Footer() {
             <span className="text-white/75 text-sm md:text-base tracking-wide group-hover:text-[#FF4D00] transition-colors duration-300">
               Download PDF<span className="hidden md:inline"> ↗</span>
             </span>
-          </Link>
+          </a>
         </div>
       </div>
 
