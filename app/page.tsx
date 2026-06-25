@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
 import Process from "@/components/Process";
 import AboutSection from "@/components/AboutSection";
+import BehanceSection from "@/components/BehanceSection";
 import Footer from "@/components/Footer";
 
 const CARD_SHADOW = "0 -12px 40px rgba(0,0,0,0.25), 0 -2px 8px rgba(0,0,0,0.1)";
@@ -22,6 +23,7 @@ export default function Page() {
         <ProjectGrid />
         <Process />
         <AboutSection />
+        <BehanceSection />
         <Footer />
       </div>
     </main>
