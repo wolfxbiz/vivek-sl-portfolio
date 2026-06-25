@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
+import LiveWork from "@/components/LiveWork";
 import Process from "@/components/Process";
 import AboutSection from "@/components/AboutSection";
 import BehanceSection from "@/components/BehanceSection";
@@ -61,6 +62,7 @@ export default function Page() {
         style={{ zIndex: 10, boxShadow: CARD_SHADOW }}
       >
         <ProjectGrid />
+        <LiveWork />
         <Process />
         <AboutSection />
         <BehanceSection />
