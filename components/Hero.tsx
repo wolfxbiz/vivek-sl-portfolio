@@ -23,12 +23,9 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-end px-8 md:px-30 lg:px-60 pb-16 md:pb-24 pt-28 md:pt-32 bg-black overflow-hidden">
 
-      {/* Content */}
       <div className="relative z-10 flex w-full">
-        {/* Text — right half */}
         <div className="w-full md:max-w-2xl">
 
-          {/* Hero video — in flow, above text */}
           <div className="w-full aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden mb-6 md:mb-8">
             <video
               ref={videoRef}
