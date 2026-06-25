@@ -41,7 +41,7 @@ export default function PaperwurkPage() {
         </div>
         <div className="px-8 md:px-20 lg:px-32">
           <Image
-            src="/images/paperwurk/platform-overview.png"
+            src="/images/paperwurk/platform-overview.webp"
             alt="Paperwurk platform overview — product screens and mobile mockups"
             width={1400}
             height={900}
@@ -55,7 +55,7 @@ export default function PaperwurkPage() {
       <div className="flex flex-col">
 
         <Image
-          src="/images/paperwurk/problem.png"
+          src="/images/paperwurk/problem.webp"
           alt="01 — The Problem"
           width={1400}
           height={850}
@@ -63,7 +63,7 @@ export default function PaperwurkPage() {
         />
 
         <Image
-          src="/images/paperwurk/designing.png"
+          src="/images/paperwurk/designing.webp"
           alt="02 — Designing for Everyone at Once"
           width={1400}
           height={950}
@@ -71,7 +71,7 @@ export default function PaperwurkPage() {
         />
 
         <Image
-          src="/images/paperwurk/hardest-part.png"
+          src="/images/paperwurk/hardest-part.webp"
           alt="03 — The Hardest Part"
           width={1400}
           height={2100}
@@ -79,7 +79,7 @@ export default function PaperwurkPage() {
         />
 
         <Image
-          src="/images/paperwurk/journeys.png"
+          src="/images/paperwurk/journeys.webp"
           alt="04 — Key Product Journeys"
           width={1400}
           height={2500}
@@ -88,7 +88,7 @@ export default function PaperwurkPage() {
 
         <div className="bg-[#0D1B40]">
           <Image
-            src="/images/paperwurk/decisions.png"
+            src="/images/paperwurk/decisions.webp"
             alt="05 — Design Decisions"
             width={1400}
             height={2200}
@@ -97,7 +97,7 @@ export default function PaperwurkPage() {
         </div>
 
         <Image
-          src="/images/paperwurk/delivered-v2.png"
+          src="/images/paperwurk/delivered-v2.webp"
           alt="06 — What Was Delivered"
           width={1400}
           height={1050}
@@ -108,7 +108,7 @@ export default function PaperwurkPage() {
 
       {/* ── HERO OUTRO ── */}
       <Image
-        src="/images/paperwurk/hero.png"
+        src="/images/paperwurk/hero.webp"
         alt="Paperwurk — B2B Compliance SaaS Platform"
         width={1400}
         height={850}
