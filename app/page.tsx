@@ -55,6 +55,10 @@ export default function Page() {
         <Hero />
       </div>
 
+      {/* Mobile scroll buffer — hidden under the sticky hero, gives the user
+          time to read all hero content before the card slides up */}
+      <div className="md:hidden" style={{ height: '60vh', zIndex: 0 }} />
+
       {/* Content card — slides up over the hero */}
       <div
         className="relative bg-white rounded-t-3xl"
