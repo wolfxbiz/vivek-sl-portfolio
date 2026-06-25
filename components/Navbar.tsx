@@ -38,7 +38,7 @@ export default function Navbar() {
       <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 border-b transition-all duration-500 ${navBg}`}>
         <Link
           href="/"
-          className={`text-sm tracking-widest font-bold transition-colors duration-500 ${dark ? 'text-white' : 'text-black'}`}
+          className={`text-base md:text-sm tracking-widest font-bold transition-colors duration-500 ${dark ? 'text-white' : 'text-black'}`}
         >
           VIVEK S L
         </Link>

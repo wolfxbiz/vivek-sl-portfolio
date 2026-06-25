@@ -28,7 +28,7 @@ export default function Footer() {
               Email
             </span>
             <span className="text-white/75 text-sm md:text-base tracking-wide group-hover:text-[#FF4D00] transition-colors duration-300">
-              vivekshajilekha@gmail.com ↗
+              vivekshajilekha@gmail.com<span className="hidden md:inline"> ↗</span>
             </span>
           </a>
           <a
@@ -39,7 +39,7 @@ export default function Footer() {
               Phone
             </span>
             <span className="text-white/75 text-sm md:text-base tracking-wide group-hover:text-[#FF4D00] transition-colors duration-300">
-              +91 8921 284 894 ↗
+              +91 8921 284 894<span className="hidden md:inline"> ↗</span>
             </span>
           </a>
           <a
@@ -52,7 +52,7 @@ export default function Footer() {
               LinkedIn
             </span>
             <span className="text-white/75 text-sm md:text-base tracking-wide group-hover:text-[#FF4D00] transition-colors duration-300">
-              linkedin.com/in/viveksl ↗
+              linkedin.com/in/viveksl<span className="hidden md:inline"> ↗</span>
             </span>
           </a>
           <Link
@@ -63,7 +63,7 @@ export default function Footer() {
               Resume
             </span>
             <span className="text-white/75 text-sm md:text-base tracking-wide group-hover:text-[#FF4D00] transition-colors duration-300">
-              Download PDF ↗
+              Download PDF<span className="hidden md:inline"> ↗</span>
             </span>
           </Link>
         </div>
