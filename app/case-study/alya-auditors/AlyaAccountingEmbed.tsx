@@ -53,7 +53,7 @@ const AlyaAccountingEmbed = () => (
       {/* Desktop mascot — right side */}
       <div style={{ position: "absolute", right: 0, top: 0, width: "50%", height: "100%", pointerEvents: "none" }} aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/alya-hero-mascot.jpeg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 10%", display: "block" }} />
+        <img src="/images/alya-hero-mascot.webp" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 10%", display: "block" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, white 0%, rgba(255,255,255,0.7) 18%, rgba(255,255,255,0.1) 42%, transparent 62%), linear-gradient(to top, white 0%, transparent 10%)" }} />
       </div>
     </section>

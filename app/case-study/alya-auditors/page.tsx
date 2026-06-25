@@ -174,7 +174,7 @@ export default function AlyaAuditorsPage() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/alya-hero-mascot.jpeg"
+            src="/images/alya-hero-mascot.webp"
             alt=""
             className="w-full h-full object-cover"
             style={{ objectPosition: "50% 2%", maxHeight: "42vh", minHeight: "220px" }}
@@ -234,7 +234,7 @@ export default function AlyaAuditorsPage() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/alya-hero-mascot.jpeg"
+            src="/images/alya-hero-mascot.webp"
             alt=""
             className="w-full h-full object-cover"
             style={{ objectPosition: "50% 8%" }}

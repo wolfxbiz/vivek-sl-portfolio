@@ -12,7 +12,7 @@ const AlyaHeroEmbed = () => {
           aria-hidden
         >
           <img
-            src="/images/alya-hero-mascot.jpeg"
+            src="/images/alya-hero-mascot.webp"
             alt=""
             className="w-full h-full object-cover"
             style={{ objectPosition: "50% 8%", maxHeight: "40vh", minHeight: "220px" }}
@@ -98,7 +98,7 @@ const AlyaHeroEmbed = () => {
           aria-hidden
         >
           <img
-            src="/images/alya-hero-mascot.jpeg"
+            src="/images/alya-hero-mascot.webp"
             alt=""
             className="w-full h-full object-cover object-top"
           />

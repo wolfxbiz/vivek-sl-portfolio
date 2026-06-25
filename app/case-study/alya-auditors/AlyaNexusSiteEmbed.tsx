@@ -106,7 +106,7 @@ const AlyaNexusSiteEmbed = () => (
     <div style={{ height: 340, position: "relative", overflow: "hidden" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/alya-businesswoman.jpg"
+        src="/images/alya-businesswoman.webp"
         alt="Professional UAE businesswoman — ALYA Nexus Auditing compliance client"
         style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 20%", display: "block" }}
       />

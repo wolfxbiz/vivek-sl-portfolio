@@ -95,7 +95,7 @@ const LandingScreen = () => (
     <div style={{ height: 168, position: "relative", overflow: "hidden" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/alya-hero-mascot.jpeg"
+        src="/images/alya-hero-mascot.webp"
         alt=""
         style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 5%", display: "block" }}
       />
