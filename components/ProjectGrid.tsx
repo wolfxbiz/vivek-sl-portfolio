@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,6 +10,7 @@ const projects = [
     title: "Paperwurk",
     image: "/images/cover-paperwurk.png",
     hover: "/images/hover-paperwurk.png",
+    preload: "/images/paperwurk/platform-overview.webp",
   },
   {
     id: "02",
@@ -32,6 +35,11 @@ const projects = [
   },
 ];
 
+function prefetchImage(src: string) {
+  const img = new window.Image();
+  img.src = src;
+}
+
 export default function ProjectGrid() {
   return (
     <section className="bg-white border-t border-neutral-100">
@@ -51,6 +59,7 @@ export default function ProjectGrid() {
               key={p.id}
               href={`/case-study/${p.slug}`}
               className="group relative overflow-hidden rounded-xl"
+              onMouseEnter={() => p.preload && prefetchImage(p.preload)}
             >
               {/* Base image */}
               <Image
