@@ -50,14 +50,10 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Hero — sticky, sits behind the card */}
-      <div className="sticky top-0" style={{ zIndex: 1 }}>
+      {/* Hero — sticky on desktop only, scrolls normally on mobile */}
+      <div className="md:sticky top-0" style={{ zIndex: 1 }}>
         <Hero />
       </div>
-
-      {/* Mobile scroll buffer — hidden under the sticky hero, gives the user
-          time to read all hero content before the card slides up */}
-      <div className="md:hidden" style={{ height: '60vh', zIndex: 0 }} />
 
       {/* Content card — slides up over the hero */}
       <div
