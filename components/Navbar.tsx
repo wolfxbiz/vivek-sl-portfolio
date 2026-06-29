@@ -44,6 +44,12 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-3">
+          <Link
+            href="/blog"
+            className={`text-sm tracking-wider transition-colors duration-500 px-3 ${textColor}`}
+          >
+            Blog
+          </Link>
           <a
             href="https://www.linkedin.com/in/viveksl/"
             target="_blank"
@@ -106,6 +112,13 @@ export default function Navbar() {
         open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
         <div className="flex flex-col gap-10">
+          <Link
+            href="/blog"
+            onClick={() => setOpen(false)}
+            className="text-white text-5xl tracking-tight hover:text-white/40 transition-colors duration-300"
+          >
+            Blog
+          </Link>
           <a
             href="https://www.linkedin.com/in/viveksl/"
             target="_blank"
