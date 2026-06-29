@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* Exclude Alya embed sections from the global weight reset */
 *:not(.alya-embed, .alya-embed *) {

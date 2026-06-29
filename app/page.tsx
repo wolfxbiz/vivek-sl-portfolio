@@ -5,6 +5,7 @@ import Process from "@/components/Process";
 import AboutSection from "@/components/AboutSection";
 import Testimonials from "@/components/Testimonials";
 import BehanceSection from "@/components/BehanceSection";
+import BlogSection from "@/components/BlogSection";
 import Footer from "@/components/Footer";
 
 const CARD_SHADOW = "0 -12px 40px rgba(0,0,0,0.25), 0 -2px 8px rgba(0,0,0,0.1)";
@@ -68,6 +69,7 @@ export default function Page() {
         <Process />
         <AboutSection />
         <BehanceSection />
+        <BlogSection />
         <Footer />
       </div>
     </main>
