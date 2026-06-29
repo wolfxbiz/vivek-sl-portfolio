@@ -42,17 +42,22 @@ function prefetchImage(src: string) {
 
 export default function ProjectGrid() {
   return (
-    <section className="bg-white border-t border-neutral-100">
+    <section className="relative bg-black border-t border-white/10">
+
+      {/* Dot background */}
+      <div className="absolute inset-0 [background-size:20px_20px] [background-image:radial-gradient(#404040_1px,transparent_1px)]" />
+      <div className="pointer-events-none absolute inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]" />
 
       {/* Header */}
-      <div className="px-8 md:px-30 lg:px-60 pt-16 pb-10">
-        <h2 className="text-neutral-900 text-4xl md:text-5xl tracking-tight">
+      <div className="relative z-10 px-8 md:px-30 lg:px-60 pt-16 pb-10">
+        <p className="text-[#FF4D00] text-[10px] tracking-[0.4em] uppercase mb-4">Selected Work</p>
+        <h2 className="text-white text-3xl md:text-4xl tracking-tight leading-snug">
           Case Studies
         </h2>
       </div>
 
       {/* Card grid */}
-      <div className="px-8 md:px-30 lg:px-60 pb-16">
+      <div className="relative z-10 px-8 md:px-30 lg:px-60 pb-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {projects.map((p) => (
             <Link

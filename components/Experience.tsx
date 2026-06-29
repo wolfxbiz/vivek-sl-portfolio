@@ -57,15 +57,18 @@ const education = [
 
 export default function Experience() {
   return (
-    <section className="bg-black px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-white/5">
+    <section className="relative bg-black px-8 md:px-30 lg:px-60 py-14 md:py-24 border-t border-white/5">
+
+      <div className="absolute inset-0 [background-size:20px_20px] [background-image:radial-gradient(#404040_1px,transparent_1px)]" />
+      <div className="pointer-events-none absolute inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]" />
 
       {/* Section label */}
-      <p className="text-white/65 text-sm tracking-[0.3em] uppercase mb-16">
+      <p className="relative z-10 text-white/65 text-sm tracking-[0.3em] uppercase mb-16">
         Experience
       </p>
 
       {/* Two-column layout: Work left, Education right */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
         {/* ── LEFT: Work ── */}
         <div className="lg:col-span-7 flex flex-col">

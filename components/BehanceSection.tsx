@@ -45,11 +45,15 @@ function LazyIframe({ id, title }: { id: string; title: string }) {
 
 export default function BehanceSection() {
   return (
-    <section className="bg-black px-8 md:px-30 lg:px-60 pt-20 md:pt-28 pb-20 md:pb-28 border-t border-white/8">
+    <section className="relative bg-black px-8 md:px-30 lg:px-60 pt-20 md:pt-28 pb-20 md:pb-28 border-t border-white/8">
 
-      <div className="flex items-end justify-between mb-12">
+      {/* Dot background */}
+      <div className="absolute inset-0 [background-size:20px_20px] [background-image:radial-gradient(#404040_1px,transparent_1px)]" />
+      <div className="pointer-events-none absolute inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]" />
+
+      <div className="relative z-10 flex items-end justify-between mb-12">
         <div>
-          <p className="text-[#FF4D00] text-xs tracking-[0.4em] uppercase mb-3">Creative Work</p>
+          <p className="text-[#FF4D00] text-[10px] tracking-[0.4em] uppercase mb-3">Creative Work</p>
           <h2 className="text-white text-3xl md:text-4xl tracking-tight leading-snug">
             Behance
           </h2>
@@ -64,7 +68,7 @@ export default function BehanceSection() {
         </a>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((p) => (
           <LazyIframe key={p.id} id={p.id} title={p.title} />
         ))}

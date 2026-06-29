@@ -1,13 +1,14 @@
 'use client';
 
 const items = [
-  "DISCOVER",
-  "WIREFRAME",
-  "VISUAL DESIGN",
+  "PRODUCT DESIGN",
   "BRAND IDENTITY",
-  "ILLUSTRATE",
-  "BUILD",
-  "SHIP",
+  "WEB DESIGN",
+  "CRO LANDING PAGES",
+  "FIGMA TO CODE",
+  "UI/UX DESIGN",
+  "DESIGN SYSTEMS",
+  "CONVERSION DESIGN",
 ];
 
 const separator = <span className="mx-6 md:mx-10 opacity-60">✦</span>;
@@ -16,7 +17,7 @@ export default function Process() {
   const track = [...items, ...items, ...items, ...items];
 
   return (
-    <section className="bg-[#FF4D00] overflow-hidden py-6 md:py-8">
+    <section className="bg-[#FF4D00] overflow-hidden py-3 md:py-4">
       <style>{`
         @keyframes marquee {
           from { transform: translateX(0); }
@@ -34,7 +35,7 @@ export default function Process() {
         {track.map((item, i) => (
           <span
             key={i}
-            className="inline-flex items-center text-white font-black uppercase tracking-tight text-5xl md:text-7xl lg:text-8xl leading-none"
+            className="inline-flex items-center text-white font-black uppercase tracking-tight text-lg md:text-xl leading-none"
           >
             {item}
             {separator}

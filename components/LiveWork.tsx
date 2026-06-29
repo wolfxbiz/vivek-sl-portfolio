@@ -173,20 +173,23 @@ function SiteCard({ site }: { site: typeof sites[0] }) {
 
 export default function LiveWork() {
   return (
-    <section className="bg-black border-t border-white/8 pt-16 md:pt-24 pb-12 md:pb-20">
+    <section className="relative bg-black border-t border-white/8 pt-16 md:pt-24 pb-12 md:pb-20">
+
+      <div className="absolute inset-0 [background-size:20px_20px] [background-image:radial-gradient(#404040_1px,transparent_1px)]" />
+      <div className="pointer-events-none absolute inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]" />
 
       {/* Header */}
-      <div className="flex items-end justify-between mb-10 md:mb-12 px-8 md:px-30 lg:px-60">
+      <div className="relative z-10 flex items-end justify-between mb-10 md:mb-12 px-8 md:px-30 lg:px-60">
         <div>
           <p className="text-[#FF4D00] text-[10px] tracking-[0.4em] uppercase mb-3">Live Work</p>
-          <h2 className="text-white text-3xl md:text-4xl tracking-tight">Shipped & live</h2>
+          <h2 className="text-white text-3xl md:text-4xl tracking-tight leading-snug">Shipped & live</h2>
         </div>
         <span className="text-white/20 text-[10px] tracking-[0.3em] uppercase">{sites.length} sites</span>
       </div>
 
       {/* ── MOBILE: horizontal snap scroll ── */}
       <div
-        className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory px-8 pb-8"
+        className="relative z-10 md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory px-8 pb-8"
         style={{ scrollbarWidth: 'none' }}
       >
         {sites.map((site) => (
@@ -232,7 +235,7 @@ export default function LiveWork() {
       </div>
 
       {/* ── DESKTOP: 3-column card grid ── */}
-      <div className="hidden md:grid grid-cols-3 gap-4 px-30 lg:px-60">
+      <div className="relative z-10 hidden md:grid grid-cols-3 gap-4 px-30 lg:px-60">
         {sites.map((site) => (
           <SiteCard key={site.num} site={site} />
         ))}

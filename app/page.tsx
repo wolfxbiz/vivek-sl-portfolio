@@ -3,6 +3,7 @@ import ProjectGrid from "@/components/ProjectGrid";
 import LiveWork from "@/components/LiveWork";
 import Process from "@/components/Process";
 import AboutSection from "@/components/AboutSection";
+import Testimonials from "@/components/Testimonials";
 import BehanceSection from "@/components/BehanceSection";
 import Footer from "@/components/Footer";
 
@@ -62,6 +63,7 @@ export default function Page() {
         style={{ zIndex: 10, boxShadow: CARD_SHADOW }}
       >
         <ProjectGrid />
+        <Testimonials />
         <LiveWork />
         <Process />
         <AboutSection />
