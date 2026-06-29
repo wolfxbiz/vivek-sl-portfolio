@@ -10,8 +10,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
-  const isBlogListing = pathname === '/blog';
-  const isBlogPost = pathname.startsWith('/blog/');
   const hasDarkHero = pathname.startsWith('/case-study/paperwurk');
 
   useEffect(() => {
@@ -26,15 +24,11 @@ export default function Navbar() {
   }, [pathname, hasDarkHero]);
 
   const showTransparent = hasDarkHero && !pastHero;
-  const dark = isHome || isBlogListing || showTransparent;
+  const dark = true;
 
-  const navBg = isHome || isBlogListing
-    ? 'bg-black border-white/10'
-    : isBlogPost
-    ? 'bg-white border-neutral-100'
-    : showTransparent
+  const navBg = showTransparent
     ? 'bg-transparent border-transparent'
-    : 'bg-white border-neutral-100';
+    : 'bg-black border-white/10';
 
   const textColor = dark ? 'text-white/80 hover:text-white' : 'text-neutral-600 hover:text-black';
 

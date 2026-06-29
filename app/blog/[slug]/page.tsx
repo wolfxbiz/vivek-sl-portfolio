@@ -6,7 +6,6 @@ import type { Metadata } from 'next'
 import { client } from '@/sanity/client'
 import { POST_QUERY, POSTS_ALL_QUERY } from '@/sanity/queries'
 import Footer from '@/components/Footer'
-import ReadingModeToggle from '@/components/ReadingModeToggle'
 
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
@@ -38,104 +37,100 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   if (!post) return notFound()
 
   return (
-    <main className="bg-white min-h-screen">
+    <main className="relative bg-black min-h-screen">
 
-      <div className="max-w-2xl mx-auto px-6 md:px-8 pt-28 pb-20 md:pb-28">
+      {/* Dot background */}
+      <div className="fixed inset-0 [background-size:20px_20px] [background-image:radial-gradient(#404040_1px,transparent_1px)] pointer-events-none" style={{ zIndex: 0 }} />
+      <div className="fixed inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)] pointer-events-none" style={{ zIndex: 0 }} />
+
+      <article className="relative z-10 max-w-2xl mx-auto px-6 md:px-8 pt-28 pb-20 md:pb-28">
 
         {/* Back */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-black/30 text-[9px] tracking-[0.4em] uppercase hover:text-black transition-colors duration-200 mb-10"
+          className="inline-flex items-center gap-2 text-white/30 text-[9px] tracking-[0.4em] uppercase hover:text-white transition-colors duration-200 mb-10"
         >
           ← Blog
         </Link>
 
-        {/* Reading area with toggle */}
-        <ReadingModeToggle>
-          <div className="p-6 md:p-10">
+        {/* Category */}
+        {post.categories && post.categories.length > 0 && (
+          <p className="text-[#FF4D00] text-[9px] tracking-[0.45em] uppercase mb-4">
+            {post.categories[0]?.title}
+          </p>
+        )}
 
-            {/* Category */}
-            {post.categories && post.categories.length > 0 && (
-              <p className="text-[#FF4D00] text-[9px] tracking-[0.45em] uppercase mb-4">
-                {post.categories[0]?.title}
-              </p>
-            )}
+        {/* Title */}
+        <h1 className="text-white text-3xl md:text-5xl tracking-tight leading-tight mb-5">
+          {post.title}
+        </h1>
 
-            {/* Title */}
-            <h1 className="text-3xl md:text-5xl tracking-tight leading-tight mb-5 text-[inherit]"
-              style={{ color: 'inherit', opacity: 1 }}>
-              {post.title}
-            </h1>
+        {/* Byline */}
+        <div className="flex items-center gap-3 mb-8">
+          {post.author?.image?.asset?.url && (
+            <Image
+              src={post.author.image.asset.url}
+              alt={post.author.name ?? ''}
+              width={28}
+              height={28}
+              className="rounded-full object-cover"
+            />
+          )}
+          <p className="text-white/30 text-[10px] tracking-widest uppercase">
+            {[post.author?.name, post.publishedAt ? formatDate(post.publishedAt) : null]
+              .filter(Boolean)
+              .join(' · ')}
+          </p>
+        </div>
 
-            {/* Byline */}
-            <div className="flex items-center gap-3 mb-8">
-              {post.author?.image?.asset?.url && (
-                <Image
-                  src={post.author.image.asset.url}
-                  alt={post.author.name ?? ''}
-                  width={28}
-                  height={28}
-                  className="rounded-full object-cover"
-                />
-              )}
-              <p className="text-[10px] tracking-widest uppercase opacity-40">
-                {[post.author?.name, post.publishedAt ? formatDate(post.publishedAt) : null]
-                  .filter(Boolean)
-                  .join(' · ')}
-              </p>
-            </div>
+        <hr className="border-white/10 mb-8" />
 
-            <hr className="mb-8 opacity-10" />
-
-            {/* Hero image */}
-            {post.mainImage?.asset?.url && (
-              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-10">
-                <Image
-                  src={post.mainImage.asset.url}
-                  alt={post.mainImage.alt ?? post.title ?? ''}
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 672px"
-                />
-              </div>
-            )}
-
-            {/* Body */}
-            {Array.isArray(post.body) && (
-              <div className="prose prose-base prose-headings:tracking-tight prose-a:text-[#FF4D00] prose-a:no-underline hover:prose-a:underline prose-p:leading-[1.8]">
-                <PortableText
-                  value={post.body}
-                  components={{
-                    types: {
-                      image: ({ value }) => {
-                        const url = value?.asset?.url
-                        const w = value?.asset?.metadata?.dimensions?.width ?? 1200
-                        const h = value?.asset?.metadata?.dimensions?.height ?? 800
-                        if (!url) return null
-                        return (
-                          <div className="my-8 not-prose">
-                            <Image
-                              src={url}
-                              alt={value?.alt ?? ''}
-                              width={w}
-                              height={h}
-                              className="w-full rounded-xl opacity-90"
-                              sizes="(max-width: 768px) 100vw, 572px"
-                            />
-                          </div>
-                        )
-                      },
-                    },
-                  }}
-                />
-              </div>
-            )}
-
+        {/* Hero image */}
+        {post.mainImage?.asset?.url && (
+          <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-10">
+            <Image
+              src={post.mainImage.asset.url}
+              alt={post.mainImage.alt ?? post.title ?? ''}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, 672px"
+            />
           </div>
-        </ReadingModeToggle>
+        )}
 
-      </div>
+        {/* Body */}
+        {Array.isArray(post.body) && (
+          <div className="prose prose-invert prose-base prose-headings:tracking-tight prose-p:leading-[1.8] prose-a:text-[#FF4D00] prose-a:no-underline hover:prose-a:underline">
+            <PortableText
+              value={post.body}
+              components={{
+                types: {
+                  image: ({ value }) => {
+                    const url = value?.asset?.url
+                    const w = value?.asset?.metadata?.dimensions?.width ?? 1200
+                    const h = value?.asset?.metadata?.dimensions?.height ?? 800
+                    if (!url) return null
+                    return (
+                      <div className="my-8 not-prose">
+                        <Image
+                          src={url}
+                          alt={value?.alt ?? ''}
+                          width={w}
+                          height={h}
+                          className="w-full rounded-xl border border-white/8"
+                          sizes="(max-width: 768px) 100vw, 672px"
+                        />
+                      </div>
+                    )
+                  },
+                },
+              }}
+            />
+          </div>
+        )}
+
+      </article>
 
       <Footer />
     </main>
