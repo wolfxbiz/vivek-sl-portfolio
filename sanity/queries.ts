@@ -18,7 +18,14 @@ export const POSTS_ALL_QUERY = defineQuery(
 
 export const POST_QUERY = defineQuery(
   `*[_type == "post" && slug.current == $slug][0]{
-    _id, title, slug, publishedAt, excerpt, body,
+    _id, title, slug, publishedAt, excerpt,
+    body[]{
+      ...,
+      _type == "image" => {
+        ...,
+        asset->{ url, metadata { dimensions } },
+      }
+    },
     mainImage { asset->{ url }, alt },
     categories[]->{ title },
     author->{ name, image { asset->{ url } } }

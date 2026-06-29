@@ -97,8 +97,32 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
         {/* Body */}
         {Array.isArray(post.body) && (
-          <div className="prose prose-invert prose-base max-w-2xl prose-headings:tracking-tight prose-headings:text-white prose-p:text-white/60 prose-p:leading-relaxed prose-a:text-[#FF4D00] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:border prose-img:border-white/8">
-            <PortableText value={post.body} />
+          <div className="prose prose-invert prose-base max-w-2xl prose-headings:tracking-tight prose-headings:text-white prose-p:text-white/60 prose-p:leading-relaxed prose-a:text-[#FF4D00] prose-a:no-underline hover:prose-a:underline">
+            <PortableText
+              value={post.body}
+              components={{
+                types: {
+                  image: ({ value }) => {
+                    const url = value?.asset?.url
+                    const w = value?.asset?.metadata?.dimensions?.width ?? 1200
+                    const h = value?.asset?.metadata?.dimensions?.height ?? 800
+                    if (!url) return null
+                    return (
+                      <div className="my-8 not-prose">
+                        <Image
+                          src={url}
+                          alt={value?.alt ?? ''}
+                          width={w}
+                          height={h}
+                          className="w-full rounded-xl border border-white/8"
+                          sizes="(max-width: 768px) 100vw, 672px"
+                        />
+                      </div>
+                    )
+                  },
+                },
+              }}
+            />
           </div>
         )}
 
