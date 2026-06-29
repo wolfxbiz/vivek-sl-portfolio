@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const testimonials = [
   {
     quote:
@@ -5,6 +7,7 @@ const testimonials = [
     name: "Krishna Kumar Manmathan",
     role: "Operations Partner",
     company: "ARCO ANGOLA",
+    image: "/images/krishnakumar-manmathan.webp",
   },
   {
     quote:
@@ -12,6 +15,7 @@ const testimonials = [
     name: "Sukhdev Singh",
     role: "Director",
     company: "4BC Global",
+    image: "/images/sukhdev-singh.webp",
   },
 ];
 
@@ -31,9 +35,18 @@ export default function Testimonials() {
               <p className="text-white/70 text-sm md:text-base leading-relaxed">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div>
-                <p className="text-white text-sm font-medium">{t.name}</p>
-                <p className="text-white/40 text-xs mt-0.5">{t.role} · {t.company}</p>
+              <div className="flex items-center gap-4">
+                <Image
+                  src={t.image}
+                  alt={t.name}
+                  width={44}
+                  height={44}
+                  className="rounded-full object-cover object-top shrink-0"
+                />
+                <div>
+                  <p className="text-white text-sm">{t.name}</p>
+                  <p className="text-white/40 text-xs mt-0.5">{t.role} · {t.company}</p>
+                </div>
               </div>
             </div>
           ))}
