@@ -47,21 +47,21 @@ export default function Hero() {
         <div className="flex flex-col gap-7 md:gap-9 flex-1">
 
         {/* Roles */}
-        <div className="flex flex-wrap items-center gap-y-2">
+        <div className="flex flex-wrap items-center gap-y-1">
           {roles.map((role, i) => (
             <span key={role} className="flex items-center">
-              <span className="text-white/50 text-[10px] md:text-[11px] tracking-[0.3em] uppercase">
+              <span className="text-white/50 text-[8px] md:text-[11px] tracking-[0.2em] md:tracking-[0.3em] uppercase">
                 {role}
               </span>
               {i < roles.length - 1 && (
-                <span className="text-white/20 mx-4 md:mx-6 select-none">|</span>
+                <span className="text-white/20 mx-2 md:mx-6 select-none">|</span>
               )}
             </span>
           ))}
         </div>
 
         {/* Headline */}
-        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.08] tracking-tight max-w-4xl">
+        <h1 className="text-white text-3xl sm:text-4xl md:text-4xl lg:text-5xl leading-[1.08] tracking-tight max-w-4xl">
           I design digital products and experiences that help startups launch, grow, and convert.
         </h1>
 
@@ -88,7 +88,7 @@ export default function Hero() {
         </div>
 
         {/* Services */}
-        <div className="flex flex-wrap items-center gap-y-2">
+        <div className="hidden sm:flex flex-wrap items-center gap-y-2">
           {services.map((service, i) => (
             <span key={service} className="flex items-center">
               <span className="text-white/50 text-[10px] md:text-[11px] tracking-[0.25em] uppercase">
@@ -106,7 +106,7 @@ export default function Hero() {
         {/* Video + logos — right column */}
         <div className="flex flex-col flex-shrink-0 md:self-stretch w-full md:w-auto">
           <div className="hidden md:block h-14 flex-shrink-0" />
-          <div className="w-full md:w-64 h-52 md:h-44 overflow-hidden rounded-2xl">
+          <div className="w-full md:w-64 h-44 md:h-44 overflow-hidden rounded-2xl">
             <video
               src="/videos/hero.webm"
               autoPlay
