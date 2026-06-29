@@ -37,13 +37,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   if (!post) return notFound()
 
   return (
-    <main className="relative bg-black min-h-screen">
+    <main className="bg-black min-h-screen">
 
-      {/* Dot background */}
-      <div className="fixed inset-0 [background-size:20px_20px] [background-image:radial-gradient(#404040_1px,transparent_1px)] pointer-events-none" style={{ zIndex: 0 }} />
-      <div className="fixed inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)] pointer-events-none" style={{ zIndex: 0 }} />
-
-      <article className="relative z-10 max-w-2xl mx-auto px-6 md:px-8 pt-28 pb-20 md:pb-28">
+      <article className="max-w-2xl mx-auto px-6 md:px-8 pt-28 pb-20 md:pb-28">
 
         {/* Back */}
         <Link
