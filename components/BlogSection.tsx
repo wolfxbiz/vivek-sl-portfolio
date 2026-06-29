@@ -23,9 +23,7 @@ export default async function BlogSection() {
       <div className="relative z-10 flex items-end justify-between mb-12">
         <div>
           <p className="text-[#FF4D00] text-[10px] tracking-[0.4em] uppercase mb-3">Writing</p>
-          <h2 className="text-white text-3xl md:text-4xl tracking-tight leading-snug">
-            Blog
-          </h2>
+          <h2 className="text-white text-3xl md:text-4xl tracking-tight leading-snug">Blog</h2>
         </div>
         <Link
           href="/blog"
@@ -59,7 +57,7 @@ export default async function BlogSection() {
                   {post.categories[0]?.title}
                 </span>
               )}
-              <h3 className="text-white text-base leading-snug tracking-tight group-hover:text-white/80 transition-colors duration-200">
+              <h3 className="text-white text-base leading-snug tracking-tight group-hover:text-white/60 transition-colors duration-200">
                 {post.title}
               </h3>
               {post.excerpt && (

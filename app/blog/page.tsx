@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { client } from '@/sanity/client'
 import { POSTS_ALL_QUERY } from '@/sanity/queries'
 import Footer from '@/components/Footer'
+import BlogThemeWrapper from '@/components/BlogThemeWrapper'
 import type { PostPreview } from '@/sanity/types'
 
 export const metadata: Metadata = {
@@ -13,71 +14,121 @@ export const metadata: Metadata = {
 }
 
 function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+  return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 
 export default async function BlogPage() {
   const posts = await client.fetch(POSTS_ALL_QUERY, {}, { next: { revalidate: 60 } })
+  const [featured, ...rest] = (posts as PostPreview[]) ?? []
 
   return (
-    <main className="bg-black min-h-screen">
+    <BlogThemeWrapper>
+      <div className="max-w-5xl mx-auto px-6 md:px-10 pt-32 pb-20 md:pb-28">
 
-      {/* Dot background */}
-      <div className="fixed inset-0 [background-size:20px_20px] [background-image:radial-gradient(#404040_1px,transparent_1px)] pointer-events-none" style={{ zIndex: 0 }} />
-      <div className="fixed inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)] pointer-events-none" style={{ zIndex: 0 }} />
-
-      <div className="relative z-10 px-8 md:px-30 lg:px-60 pt-32 pb-20 md:pb-28">
-
-        <div className="mb-16">
-          <p className="text-[#FF4D00] text-[10px] tracking-[0.4em] uppercase mb-4">Writing</p>
-          <h1 className="text-white text-4xl md:text-5xl tracking-tight leading-snug">Blog</h1>
+        {/* Masthead */}
+        <div className="text-center mb-6">
+          <p className="text-[#FF4D00] text-[9px] tracking-[0.5em] uppercase mb-5">Writing & Thinking</p>
+          <h1 className="text-6xl md:text-8xl tracking-tighter leading-none font-light text-[var(--blog-text)]">
+            Blog
+          </h1>
         </div>
 
-        {posts && posts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {(posts as PostPreview[]).map((post) => (
-              <Link
-                key={post._id}
-                href={`/blog/${post.slug?.current}`}
-                className="group flex flex-col rounded-xl border border-white/8 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300 overflow-hidden"
-              >
-                {post.mainImage?.asset?.url && (
-                  <div className="relative w-full aspect-[16/9] overflow-hidden">
+        <hr className="mb-12" style={{ borderColor: 'var(--blog-divider)' }} />
+
+        {!posts || posts.length === 0 ? (
+          <p className="text-center text-sm tracking-wide text-[var(--blog-text-muted)]">
+            No posts yet — check back soon.
+          </p>
+        ) : (
+          <>
+            {featured && (
+              <Link href={`/blog/${featured.slug?.current}`} className="group block mb-12">
+                {featured.mainImage?.asset?.url && (
+                  <div className="relative w-full aspect-[16/7] overflow-hidden rounded-xl mb-6">
                     <Image
-                      src={post.mainImage.asset.url}
-                      alt={post.mainImage.alt ?? post.title ?? ''}
+                      src={featured.mainImage.asset.url}
+                      alt={featured.mainImage.alt ?? featured.title ?? ''}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      priority
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 960px"
                     />
                   </div>
                 )}
-                <div className="flex flex-col gap-3 p-5 flex-1">
-                  {post.categories && post.categories.length > 0 && (
-                    <span className="text-[#FF4D00] text-[9px] tracking-[0.35em] uppercase">
-                      {post.categories[0]?.title}
-                    </span>
+                <div className="max-w-2xl mx-auto text-center">
+                  {featured.categories?.[0]?.title && (
+                    <p className="text-[#FF4D00] text-[9px] tracking-[0.4em] uppercase mb-3">
+                      {featured.categories[0].title}
+                    </p>
                   )}
-                  <h2 className="text-white text-base leading-snug tracking-tight group-hover:text-white/80 transition-colors duration-200">
-                    {post.title}
+                  <h2 className="text-2xl md:text-4xl tracking-tight leading-snug mb-3 transition-opacity duration-200 group-hover:opacity-60 text-[var(--blog-text)]">
+                    {featured.title}
                   </h2>
-                  {post.excerpt && (
-                    <p className="text-white/40 text-sm leading-relaxed line-clamp-2">{post.excerpt}</p>
+                  {featured.excerpt && (
+                    <p className="text-sm md:text-base leading-relaxed mb-4 line-clamp-2 text-[var(--blog-text-muted)]">
+                      {featured.excerpt}
+                    </p>
                   )}
-                  <p className="text-white/20 text-[10px] tracking-widest uppercase mt-auto pt-2">
-                    {post.publishedAt ? formatDate(post.publishedAt) : ''}
+                  <p className="text-[10px] tracking-widest uppercase text-[var(--blog-text-faint)]">
+                    {featured.publishedAt ? formatDate(featured.publishedAt) : ''}
                   </p>
                 </div>
               </Link>
-            ))}
-          </div>
-        ) : (
-          <p className="text-white/30 text-sm tracking-wide">No posts yet — check back soon.</p>
+            )}
+
+            {rest.length > 0 && (
+              <>
+                <hr className="mb-10" style={{ borderColor: 'var(--blog-divider)' }} />
+                <p className="text-[9px] tracking-[0.4em] uppercase text-center mb-8 text-[var(--blog-text-muted)]">
+                  More
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '1px', backgroundColor: 'var(--blog-grid-gap)' }}>
+                  {rest.map((post) => (
+                    <Link
+                      key={post._id}
+                      href={`/blog/${post.slug?.current}`}
+                      className="group flex flex-col p-6 md:p-8 transition-colors duration-200"
+                      style={{ backgroundColor: 'var(--blog-card-bg)' }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--blog-card-hover)')}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--blog-card-bg)')}
+                    >
+                      {post.mainImage?.asset?.url && (
+                        <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg mb-5">
+                          <Image
+                            src={post.mainImage.asset.url}
+                            alt={post.mainImage.alt ?? post.title ?? ''}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        </div>
+                      )}
+                      {post.categories?.[0]?.title && (
+                        <p className="text-[#FF4D00] text-[9px] tracking-[0.35em] uppercase mb-2">
+                          {post.categories[0].title}
+                        </p>
+                      )}
+                      <h3 className="text-lg leading-snug tracking-tight mb-2 transition-opacity duration-200 group-hover:opacity-60 text-[var(--blog-text)]">
+                        {post.title}
+                      </h3>
+                      {post.excerpt && (
+                        <p className="text-sm leading-relaxed line-clamp-2 mb-4 text-[var(--blog-text-muted)]">
+                          {post.excerpt}
+                        </p>
+                      )}
+                      <p className="text-[10px] tracking-widest uppercase mt-auto text-[var(--blog-text-faint)]">
+                        {post.publishedAt ? formatDate(post.publishedAt) : ''}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
+          </>
         )}
 
       </div>
-
       <Footer />
-    </main>
+    </BlogThemeWrapper>
   )
 }

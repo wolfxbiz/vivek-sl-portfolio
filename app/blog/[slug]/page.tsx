@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 import { client } from '@/sanity/client'
 import { POST_QUERY, POSTS_ALL_QUERY } from '@/sanity/queries'
 import Footer from '@/components/Footer'
+import BlogThemeWrapper from '@/components/BlogThemeWrapper'
 
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
@@ -37,13 +38,13 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   if (!post) return notFound()
 
   return (
-    <main className="bg-white min-h-screen">
+    <BlogThemeWrapper>
       <article className="max-w-2xl mx-auto px-6 md:px-8 pt-28 pb-20 md:pb-28">
 
         {/* Back */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-black/30 text-[9px] tracking-[0.4em] uppercase hover:text-black transition-colors duration-200 mb-10"
+          className="inline-flex items-center gap-2 text-[9px] tracking-[0.4em] uppercase transition-colors duration-200 mb-10 text-[var(--blog-text-muted)] hover:text-[var(--blog-text)]"
         >
           ← Blog
         </Link>
@@ -56,7 +57,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         )}
 
         {/* Title */}
-        <h1 className="text-[#0a0a0a] text-3xl md:text-5xl tracking-tight leading-tight mb-5">
+        <h1 className="text-3xl md:text-5xl tracking-tight leading-tight mb-5 text-[var(--blog-text)]">
           {post.title}
         </h1>
 
@@ -71,14 +72,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               className="rounded-full object-cover"
             />
           )}
-          <p className="text-black/35 text-[10px] tracking-widest uppercase">
+          <p className="text-[10px] tracking-widest uppercase text-[var(--blog-text-muted)]">
             {[post.author?.name, post.publishedAt ? formatDate(post.publishedAt) : null]
               .filter(Boolean)
               .join(' · ')}
           </p>
         </div>
 
-        <hr className="border-black/10 mb-8" />
+        <hr className="mb-8" style={{ borderColor: 'var(--blog-divider)' }} />
 
         {/* Hero image */}
         {post.mainImage?.asset?.url && (
@@ -96,7 +97,21 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
         {/* Body */}
         {Array.isArray(post.body) && (
-          <div className="prose prose-base prose-headings:tracking-tight prose-headings:text-[#0a0a0a] prose-p:text-black/60 prose-p:leading-[1.8] prose-a:text-[#FF4D00] prose-a:no-underline hover:prose-a:underline">
+          <div
+            className="prose prose-base prose-headings:tracking-tight prose-a:text-[#FF4D00] prose-a:no-underline hover:prose-a:underline"
+            style={{
+              '--tw-prose-body': 'var(--blog-text-muted)',
+              '--tw-prose-headings': 'var(--blog-text)',
+              '--tw-prose-bold': 'var(--blog-text)',
+              '--tw-prose-links': '#FF4D00',
+              '--tw-prose-hr': 'var(--blog-divider)',
+              '--tw-prose-quotes': 'var(--blog-text-muted)',
+              '--tw-prose-quote-borders': 'var(--blog-border)',
+              '--tw-prose-captions': 'var(--blog-text-faint)',
+              '--tw-prose-code': 'var(--blog-text)',
+              '--tw-prose-pre-bg': 'var(--blog-card-bg)',
+            } as React.CSSProperties}
+          >
             <PortableText
               value={post.body}
               components={{
@@ -113,7 +128,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                           alt={value?.alt ?? ''}
                           width={w}
                           height={h}
-                          className="w-full rounded-xl border border-black/8"
+                          className="w-full rounded-xl"
+                          style={{ border: '1px solid var(--blog-border)' }}
                           sizes="(max-width: 768px) 100vw, 672px"
                         />
                       </div>
@@ -126,8 +142,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         )}
 
       </article>
-
       <Footer />
-    </main>
+    </BlogThemeWrapper>
   )
 }
