@@ -17,7 +17,7 @@ const testimonials = [
     role: "Director",
     company: "4BC Global",
     image: "/images/sukhdev-singh.webp",
-    imagePosition: "object-center",
+    imagePosition: "object-[center_15%]",
   },
 ];
 
@@ -38,13 +38,15 @@ export default function Testimonials() {
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="flex items-center gap-4">
-                <Image
-                  src={t.image}
-                  alt={t.name}
-                  width={44}
-                  height={44}
-                  className={`rounded-full object-cover shrink-0 ${t.imagePosition}`}
-                />
+                <div className="w-11 h-11 rounded-full overflow-hidden shrink-0">
+                  <Image
+                    src={t.image}
+                    alt={t.name}
+                    width={44}
+                    height={44}
+                    className={`w-full h-full object-cover ${t.imagePosition}`}
+                  />
+                </div>
                 <div>
                   <p className="text-white text-sm">{t.name}</p>
                   <p className="text-white/40 text-xs mt-0.5">{t.role} · {t.company}</p>
