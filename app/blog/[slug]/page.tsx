@@ -37,67 +37,66 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   if (!post) return notFound()
 
   return (
-    <main className="bg-black min-h-screen">
-
-      {/* Dot background */}
-      <div className="fixed inset-0 [background-size:20px_20px] [background-image:radial-gradient(#404040_1px,transparent_1px)] pointer-events-none" style={{ zIndex: 0 }} />
-      <div className="fixed inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)] pointer-events-none" style={{ zIndex: 0 }} />
-
-      <article className="relative z-10 px-8 md:px-30 lg:px-60 pt-32 pb-20 md:pb-28">
+    <main className="bg-white min-h-screen">
+      <article className="max-w-2xl mx-auto px-6 md:px-8 pt-28 pb-20 md:pb-28">
 
         {/* Back */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-white/30 text-[10px] tracking-[0.35em] uppercase hover:text-white transition-colors duration-200 mb-12"
+          className="inline-flex items-center gap-2 text-black/30 text-[9px] tracking-[0.4em] uppercase hover:text-black transition-colors duration-200 mb-10"
         >
           ← Blog
         </Link>
 
-        {/* Header */}
-        <header className="mb-12 max-w-2xl">
-          {post.categories && post.categories.length > 0 && (
-            <p className="text-[#FF4D00] text-[10px] tracking-[0.4em] uppercase mb-4">
-              {post.categories[0]?.title}
-            </p>
+        {/* Category */}
+        {post.categories && post.categories.length > 0 && (
+          <p className="text-[#FF4D00] text-[9px] tracking-[0.45em] uppercase mb-4">
+            {post.categories[0]?.title}
+          </p>
+        )}
+
+        {/* Title */}
+        <h1 className="text-[#0a0a0a] text-3xl md:text-5xl tracking-tight leading-tight mb-5">
+          {post.title}
+        </h1>
+
+        {/* Byline */}
+        <div className="flex items-center gap-3 mb-8">
+          {post.author?.image?.asset?.url && (
+            <Image
+              src={post.author.image.asset.url}
+              alt={post.author.name ?? ''}
+              width={28}
+              height={28}
+              className="rounded-full object-cover"
+            />
           )}
-          <h1 className="text-white text-3xl md:text-5xl tracking-tight leading-snug mb-6">
-            {post.title}
-          </h1>
-          <div className="flex items-center gap-4">
-            {post.author?.image?.asset?.url && (
-              <Image
-                src={post.author.image.asset.url}
-                alt={post.author.name ?? ''}
-                width={32}
-                height={32}
-                className="rounded-full object-cover"
-              />
-            )}
-            <div className="flex items-center gap-3 text-white/30 text-[10px] tracking-widest uppercase">
-              {post.author?.name && <span>{post.author.name}</span>}
-              {post.author?.name && post.publishedAt && <span>·</span>}
-              {post.publishedAt && <span>{formatDate(post.publishedAt)}</span>}
-            </div>
-          </div>
-        </header>
+          <p className="text-black/35 text-[10px] tracking-widest uppercase">
+            {[post.author?.name, post.publishedAt ? formatDate(post.publishedAt) : null]
+              .filter(Boolean)
+              .join(' · ')}
+          </p>
+        </div>
+
+        <hr className="border-black/10 mb-8" />
 
         {/* Hero image */}
         {post.mainImage?.asset?.url && (
-          <div className="relative w-full aspect-[16/7] rounded-xl overflow-hidden mb-12 border border-white/8">
+          <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-10">
             <Image
               src={post.mainImage.asset.url}
               alt={post.mainImage.alt ?? post.title ?? ''}
               fill
               className="object-cover"
               priority
-              sizes="(max-width: 768px) 100vw, 80vw"
+              sizes="(max-width: 768px) 100vw, 672px"
             />
           </div>
         )}
 
         {/* Body */}
         {Array.isArray(post.body) && (
-          <div className="prose prose-invert prose-base max-w-2xl prose-headings:tracking-tight prose-headings:text-white prose-p:text-white/60 prose-p:leading-relaxed prose-a:text-[#FF4D00] prose-a:no-underline hover:prose-a:underline">
+          <div className="prose prose-base prose-headings:tracking-tight prose-headings:text-[#0a0a0a] prose-p:text-black/60 prose-p:leading-[1.8] prose-a:text-[#FF4D00] prose-a:no-underline hover:prose-a:underline">
             <PortableText
               value={post.body}
               components={{
@@ -114,7 +113,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                           alt={value?.alt ?? ''}
                           width={w}
                           height={h}
-                          className="w-full rounded-xl border border-white/8"
+                          className="w-full rounded-xl border border-black/8"
                           sizes="(max-width: 768px) 100vw, 672px"
                         />
                       </div>
