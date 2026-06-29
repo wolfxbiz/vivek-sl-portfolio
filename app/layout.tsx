@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
@@ -80,6 +81,7 @@ export default function RootLayout({
         <Navbar />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
+      <GoogleAnalytics gaId="G-LFHSQLSKHP" />
     </html>
   );
 }
