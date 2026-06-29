@@ -8,6 +8,7 @@ const testimonials = [
     role: "Operations Partner",
     company: "ARCO ANGOLA",
     image: "/images/krishnakumar-manmathan.webp",
+    imagePosition: "object-top",
   },
   {
     quote:
@@ -16,6 +17,7 @@ const testimonials = [
     role: "Director",
     company: "4BC Global",
     image: "/images/sukhdev-singh.webp",
+    imagePosition: "object-center",
   },
 ];
 
@@ -41,7 +43,7 @@ export default function Testimonials() {
                   alt={t.name}
                   width={44}
                   height={44}
-                  className="rounded-full object-cover object-top shrink-0"
+                  className={`rounded-full object-cover shrink-0 ${t.imagePosition}`}
                 />
                 <div>
                   <p className="text-white text-sm">{t.name}</p>
