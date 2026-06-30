@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 import { client } from '@/sanity/client'
 import { POST_QUERY, POSTS_ALL_QUERY } from '@/sanity/queries'
 import Footer from '@/components/Footer'
+import ShareButtons from '@/components/ShareButtons'
 
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
@@ -20,13 +21,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const post = await client.fetch(POST_QUERY, { slug })
   if (!post) return {}
+  const ogImage = post.mainImage?.asset?.url
   return {
     title: post.title ?? undefined,
     description: post.excerpt ?? undefined,
     alternates: { canonical: `/blog/${slug}` },
-    openGraph: post.mainImage?.asset?.url
-      ? { images: [{ url: post.mainImage.asset.url }] }
-      : undefined,
+    openGraph: {
+      title: post.title ?? undefined,
+      description: post.excerpt ?? undefined,
+      url: `/blog/${slug}`,
+      type: 'article',
+      images: ogImage ? [{ url: ogImage }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title ?? undefined,
+      description: post.excerpt ?? undefined,
+      images: ogImage ? [ogImage] : undefined,
+    },
   }
 }
 
@@ -125,6 +137,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             />
           </div>
         )}
+
+        <hr className="border-white/10 mt-12 mb-8" />
+
+        <ShareButtons url={`https://viveksl.com/blog/${slug}`} title={post.title ?? ''} />
 
       </article>
 
