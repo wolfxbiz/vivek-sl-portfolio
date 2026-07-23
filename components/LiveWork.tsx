@@ -22,7 +22,6 @@ const sites = [
     market: "MEA · Research & Advisory",
     color: "#C9A84C",
     num: "02",
-    caseStudy: "/case-study/4bc-global",
     preview: "/images/previews/4bc-global.webp",
   },
   {

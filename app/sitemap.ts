@@ -35,12 +35,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: `${BASE}/case-study/4bc-global`,
-      lastModified: new Date("2025-06-01"),
-      changeFrequency: "yearly",
-      priority: 0.8,
-    },
-    {
       url: `${BASE}/case-study/alya-auditors`,
       lastModified: new Date("2025-06-01"),
       changeFrequency: "yearly",

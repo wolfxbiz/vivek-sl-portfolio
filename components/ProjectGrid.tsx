@@ -21,13 +21,6 @@ const projects = [
   },
   {
     id: "03",
-    slug: "4bc-global",
-    title: "4BC Global",
-    image: "/images/cover-4bc.png",
-    hover: "/images/hover-4bc.png",
-  },
-  {
-    id: "04",
     slug: "insure-first",
     title: "Insure First",
     image: "/images/cover-insure.png",
